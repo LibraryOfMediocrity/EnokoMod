@@ -1,0 +1,8 @@
+EConstrainSe:
+  Name: Constrain
+  Description: |-
+    {OwnerName} is dealt {Level} damage when attacked and loses {Level} life when {SelfName} is removed.
+    {SelfName} disappears at the start of {OwnerName}'s turn.
+
+  Brief: |-
+    Whenever this enemy is attacked, they take damage equal to {SelfName}'s Level.

@@ -16,7 +16,7 @@ namespace EnokoMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetTrapDefaultConfig();
-            config.Cost = new ManaGroup() { Any = 0 };
+            config.Cost = new ManaGroup() { Any = 1 };
             config.Damage = 8;
             config.UpgradedDamage = 10;
             config.Rarity = Rarity.Common;

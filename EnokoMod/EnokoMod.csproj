@@ -320,8 +320,12 @@
 
 
     <ItemGroup>
+      <None Remove="Resources\EnokoDefault.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
       <Folder Include="BattleActions\" />
-      <Folder Include="Resources\" />
     </ItemGroup>
 
 

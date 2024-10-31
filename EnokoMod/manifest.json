@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "version_number": "1.0.0",
-  "website_url": "",
-  "description": "",
+  "name": "Enoko Mitsugashira",
+  "version_number": "0.0.1",
+  "website_url": "https://github.com/LibraryOfMediocrity/EnokoMod",
+  "description": "Adds Enoko as a character to Lost Branch Of Legend.",
   "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.5.0"]
 }

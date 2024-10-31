@@ -32,7 +32,7 @@ namespace EnokoMod.model
         {
             
             //Load the custom character's sprite.
-            return new ModelOption(ResourceLoader.LoadSpriteAsync("EnokoModel.png", BepinexPlugin.directorySource, ppu: 490));
+            return new ModelOption(ResourceLoader.LoadSpriteAsync("EnokoModel.png", BepinexPlugin.directorySource, ppu: 650));
             
         }
 

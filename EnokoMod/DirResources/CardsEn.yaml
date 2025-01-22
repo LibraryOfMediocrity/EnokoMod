@@ -1,39 +1,53 @@
+EnokoTestTrap:
+  Name: Test Trap
+  Description: |-
+    |Trap Card|: Triggers when played.
+    |Triggered|: Deal {Damage} damage.
+    Apply |Vulnerable|.
+
 EnokoAttackW:
-  Name: White attack
+  Name: Biting Bullets
   Description: Deal {Damage} damage.
+  FlavorText: "*chomp* YEEOWCH"
 
 EnokoAttackB:
-  Name: Black attack
+  Name: Hidden Strike
   Description: Deal {Damage} damage.
+  FlavorText: When you least expect it.
 
 EnokoBlockW:
-  Name: White Block
+  Name: Camoflauge
   Description: Gain {Block} |Block|.
+  FlavorText: Can't hit what you can't see.
 
 EnokoBlockB:
-  Name: Black Block
+  Name: Sturdy Gauntlets
   Description: Gain {Block} |Block|.
+  FlavorText: 
 
 EnokoCatalyst:
   Name: Infectious Spread
   Description: |-
     Apply the selected enemy's debuffs to all enemies. Level/Duration is equal to the original's Level/Duration.
 
-EnokoSpikes:
-  Name: Hidden Spikes
+EnokoFort:
+  Name: Fortification
   Description: |-
     Gain {Block} |Block|.
-    Add a |Caltrops| to the hand.
+    Add a |Bear Trap| to the hand.
+  FlavorText: The best offense is a good defense, as they say.
 
-EnokoCaltrops:
-  Name: Caltrops
+EnokoBearTrap:
+  Name: Bear Trap
   Description: |-
     |Trap Card|: Triggers when {PlayerName} is attacked. Targets that enemy.
     |Triggered|: Deal {Damage} damage.
+  FlacorText: Classic.
 
 EnokoNetGun:
   Name: Net Gun
   Description: |-
     Deal {Damage} damage.
     Apply {Value1} |Constrain| to all enemies.
+  FlavorText: All tangled up, are ya?
 

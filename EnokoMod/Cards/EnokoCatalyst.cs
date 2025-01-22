@@ -40,9 +40,10 @@ namespace EnokoMod.Cards
                 if (status != null && status.Type == StatusEffectType.Negative)
                 {
                     Type type = status.GetType();
-                    int level = 0, duration = 0, limit = 0;
+                    int level = 0, duration = 0;
                     if (status.HasLevel) level = status.Level;
                     if (status.HasDuration) duration = status.Duration;
+                    //debuffaction returns enumerable for multible targets
                     foreach (BattleAction action in DebuffAction(type, base.Battle.AllAliveEnemies, level, duration, status.Limit))
                     {
                         yield return action;

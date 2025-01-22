@@ -37,6 +37,6 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoAttackWDef))]
     public sealed class EnokoAttackW : Card
     {
-
+        
     }
 }

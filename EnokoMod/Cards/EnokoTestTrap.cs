@@ -4,6 +4,7 @@ using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
@@ -17,9 +18,11 @@ namespace EnokoMod.Cards
         {
             CardConfig config = GetTrapDefaultConfig();
             config.Cost = new ManaGroup() { Any = 1 };
+            config.Colors = new List<ManaColor>() { ManaColor.Colorless };
             config.Damage = 8;
             config.UpgradedDamage = 10;
             config.Value1 = 1;
+            config.HideMesuem = true;
             config.Rarity = Rarity.Common;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

@@ -58,6 +58,8 @@ namespace EnokoMod.Config
                UpgradedMana: null,
                Scry: null,
                UpgradedScry: null,
+               Kicker: null,
+               UpgradedKicker: null,
 
                ToolPlayableTimes: null,
 
@@ -145,7 +147,8 @@ namespace EnokoMod.Config
                 RelativeEffects: new List<string>() { },
                 VFX: "Default",
                 VFXloop: "Default",
-                SFX: "Default"
+                SFX: "Default",
+                ImageId: null
             );
         }
 

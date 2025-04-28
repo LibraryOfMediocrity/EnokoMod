@@ -2,6 +2,7 @@
 using LBoL.Core;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
+using System.Linq;
 
 namespace EnokoMod.BattleActions
 {
@@ -13,7 +14,8 @@ namespace EnokoMod.BattleActions
 
         public override string GetBaseDebugString()
         {
-            return "Card: " + this.Card.Name + "\nUnits: " + this.Units.ToString();
+            string[] targets = Units.Select(unit => unit.Name).ToArray();
+            return "Card: " + this.Card.Name + " -> Units: " + string.Join(", ", targets);
         }
     }
 }

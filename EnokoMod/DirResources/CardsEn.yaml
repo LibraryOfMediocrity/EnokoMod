@@ -23,7 +23,7 @@ EnokoBlockW:
 EnokoBlockB:
   Name: Sturdy Gauntlets
   Description: Gain {Block} |Block|.
-  FlavorText: 
+  FlavorText: Capable of defelcting bullets.
 
 EnokoCatalyst:
   Name: Infectious Spread
@@ -50,4 +50,22 @@ EnokoNetGun:
     Deal {Damage} damage.
     Apply {Value1} |Constrain| to all enemies.
   FlavorText: All tangled up, are ya?
+
+EnokoPlayTrap:
+  Name: none
+  Description: |-
+    Deal {Damage} damage.
+    Create and play a |Bear Trap|.
+  UpgradedDescription: |-
+    Deal {Damage} damage.
+    Create and play a |Bear Trap+|.
+
+EnokoAdrenaline:
+  Name: Adrenaline Rush
+  Description: |-
+    Gain {Value1} |Graze|.
+    Draw {Value2} card.
+    If there are more than five cards in hand, gain {Mana} for each extra card.
+
+
 

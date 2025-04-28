@@ -1,9 +1,11 @@
 EnokoExhibitW:
   Name: Hand Traps
   Description: |-
-    Does nothing
+    Adds {Mana} to the mana base. Cards Unique to |Enoko| are added to the card pool.
+    Whenever an attack card is |Exiled|, gain {Value1} |Barrier|.
 
 EnokoExhibitB:
   Name: Pure Gemstone
   Description: |-
-    Does nothing
+    Adds {Mana} to the mana base. Cards Unique to |Enoko| are added to the card pool.
+    At the end of {PlayerName}'s turn, gain {Value1} |Block| for each enemy with a debuff.

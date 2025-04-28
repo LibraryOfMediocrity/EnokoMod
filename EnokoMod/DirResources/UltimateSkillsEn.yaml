@@ -1,9 +1,13 @@
 EnokoUltW:
   Title: Title
   Content: Ult W
-  Description: Deal {Damage} damage.
+  Description: |-
+    Deal {Damage} damage {Value1} times. |Accurate|
+    Trigger a |Trap Card| in hand {Value2} times.
 
 EnokoUltB:
   Title: Title
   Content: Ult B
-  Description: Deal {Damage} damage.
+  Description: |-
+    Deal {Damage} damage to each enemy. |Accurate|
+    Apply {Value1} |Constrain| to each enemy.

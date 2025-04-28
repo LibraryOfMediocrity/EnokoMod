@@ -11,6 +11,7 @@ using LBoL.Core.Units;
 using UnityEngine;
 using EnokoMod.TrapToolBox;
 using EnokoMod.BattleActions;
+using LBoL.Core.Battle.BattleActions;
 
 namespace EnokoMod.Cards
 {
@@ -21,7 +22,7 @@ namespace EnokoMod.Cards
             CardConfig config = GetTrapDefaultConfig();
             config.Cost = new ManaGroup() { Any = 1 };
             config.Damage = 8;
-            config.UpgradedDamage = 10;
+            config.UpgradedDamage = 12;
             config.Rarity = Rarity.Common;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

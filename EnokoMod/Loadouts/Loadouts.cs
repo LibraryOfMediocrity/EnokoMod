@@ -37,6 +37,7 @@ namespace EnokoMod.Loadouts
             Order: 0,
             UnlockLevel: new int?(0),
             ModleName: "",
+            HasHomeName: false,
             NarrativeColor: "#C9CBF4",
             IsSelectable: true,
             MaxHp: 78,
@@ -47,7 +48,9 @@ namespace EnokoMod.Loadouts
             UltimateSkillB: "EnokoUltB",
             ExhibitA: "EnokoExhibitW",
             ExhibitB: "EnokoExhibitB",
-
+            BasicRingOrder: null,
+            LeftColor: ManaColor.White,
+            RightColor: ManaColor.Black,
 
             DeckA: EnokoLoadouts.DeckA,
             DeckB: EnokoLoadouts.DeckB,

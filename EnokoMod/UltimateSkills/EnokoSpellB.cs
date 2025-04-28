@@ -1,4 +1,5 @@
-﻿using LBoL.Base;
+﻿using EnokoMod.StatusEffects;
+using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -15,7 +16,9 @@ namespace EnokoMod.UltimateSkills
         public override UltimateSkillConfig MakeConfig()
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
-            config.Damage = 50;
+            config.Damage = 15;
+            config.Value1 = 5;
+            config.RelativeEffects = new List<string>() { "EnokoConstrainSe" };
             return config;
         }
     }
@@ -25,15 +28,19 @@ namespace EnokoMod.UltimateSkills
     {
         public EnokoUltB()
         {
-            TargetType = TargetType.SingleEnemy;
+            TargetType = TargetType.AllEnemies;
             GunName = "Simple2";
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             yield return PerformAction.Spell(base.Battle.Player, "EnokoUltB");
-            EnemyUnit enemy = selector.GetEnemy(Battle);
-            yield return new DamageAction(Owner, enemy, Damage, GunName, GunType.Single);
+            Unit[] targets = selector.GetUnits(base.Battle);
+            yield return new DamageAction(Owner, targets, Damage, GunName, GunType.Single);
+            foreach (Unit target in targets) 
+            {
+                yield return new ApplyStatusEffectAction<EnokoConstrainSe>(target, Value1);
+            }
             yield break;
         }
     }

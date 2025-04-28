@@ -9,6 +9,8 @@ using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using LBoL.Base.Extensions;
 
 namespace EnokoMod.Cards
 {

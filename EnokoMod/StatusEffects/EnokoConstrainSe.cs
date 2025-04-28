@@ -47,12 +47,17 @@ namespace EnokoMod.StatusEffects
 
         private IEnumerable<BattleAction> OnDamageRecieved(DamageEventArgs args)
         {  
-            if (args.DamageInfo.DamageType == DamageType.Attack && args.DamageInfo.Amount > 0.0f)
+            if (args.DamageInfo.DamageType == DamageType.Attack)
             {
-                this.NotifyActivating();
-                yield return DamageAction.Reaction(this.Owner, this.Level);
+                yield return TriggerConstrain();
             }
             yield break;
+        }
+
+        public BattleAction TriggerConstrain()
+        {
+            this.NotifyActivating();
+            return DamageAction.Reaction(this.Owner, this.Level);
         }
 
         protected override void OnRemoved(Unit unit)

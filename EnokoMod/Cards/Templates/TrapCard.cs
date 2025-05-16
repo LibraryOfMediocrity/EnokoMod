@@ -20,7 +20,7 @@ namespace EnokoMod.Cards.Templates
         /// This effect is called when the trap is triggered. 
         /// <strong>Must be able to handle both single and multiple targets.</strong>
         /// </summary>
-        public abstract IEnumerable<BattleAction> TrapTriggered(Unit[] unit);
+        public abstract IEnumerable<BattleAction> TrapTriggered(Unit[] units);
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

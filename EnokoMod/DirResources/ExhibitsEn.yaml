@@ -2,7 +2,7 @@ EnokoExhibitW:
   Name: Hand Traps
   Description: |-
     Adds {Mana} to the mana base. Cards Unique to |Enoko| are added to the card pool.
-    Whenever an attack card is |Exiled|, gain {Value1} |Barrier|.
+    The first {Value2} times a card is |Exiled|, draw {Value1} card.
 
 EnokoExhibitB:
   Name: Pure Gemstone

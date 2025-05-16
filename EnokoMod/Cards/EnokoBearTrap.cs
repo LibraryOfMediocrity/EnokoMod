@@ -41,7 +41,6 @@ namespace EnokoMod.Cards
         {
             if (args.Source != base.Battle.Player && args.Source.IsAlive && args.DamageInfo.DamageType == DamageType.Attack && args.DamageInfo.Amount > 0f)
             {
-                base.NotifyActivating();
                 yield return new TriggerTrapAction(this, args.Source);
                 /*
                 var BattleActions = this.TrapTriggered(TrapTools.SelectUnit(args.Source));

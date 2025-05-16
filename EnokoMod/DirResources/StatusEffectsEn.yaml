@@ -2,11 +2,11 @@ TrapCardDisc:
   Name: Trap Card
   Brief: "Special cards that have an effect known as a |Trigger| action. This |Trigger| action will have a \
     specified condition that activates it while the |Trap Card| is in hand, and it can also be triggered by other effects. \
-    Playing the card will use the |Trigger| action if no other effect is given."
+    Playing the card will use the |Trigger| action on the selected enemy if no other effect is given."
 
 Trigger:
   Name: Trigger 
-  Brief: An action that is performed when the |Trap Card| it belongs to is triggered. This action will target a random enemy if no target is specified.
+  Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. This action will target a random enemy if no target is specified by the trigger source."
 
 
 
@@ -17,4 +17,10 @@ EnokoConstrainSe:
     {SelfName} disappears at the start of {OwnerName}'s turn.
   Brief: |-
     Whenever this enemy is attacked, they take damage equal to {SelfName}'s Level.
+
+EnokoTinySe:
+  Name: Tiny Traps
+  Description: |-
+    |Tiny Traps| deal {Level} more damage.
+  Brief: You are not supposed to be seeing this.
 

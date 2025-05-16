@@ -48,11 +48,11 @@ EnokoNetGun:
   Name: Net Gun
   Description: |-
     Deal {Damage} damage.
-    Apply {Value1} |Constrain| to all enemies.
+    Apply {Value1} |Constrain| to each enemy.
   FlavorText: All tangled up, are ya?
 
 EnokoPlayTrap:
-  Name: none
+  Name: unnamed
   Description: |-
     Deal {Damage} damage.
     Create and play a |Bear Trap|.
@@ -67,5 +67,39 @@ EnokoAdrenaline:
     Draw {Value2} card.
     If there are more than five cards in hand, gain {Mana} for each extra card.
 
+EnokoAoe:
+  Name: unnamed
+  Description: |-
+    Deal {Damage} damage to each enemy.
+    Trigger an attack |Trap Card| in hand. It will target all enemies.
 
+EnokoTinyTrap:
+  Name: Tiny Traps
+  Description: |-
+    |Trap Card|: Triggers at the end of the turn. When played, trigger and increase damage by {Value2} for all {SelfName}.
+    |Triggered|: Deal {Damage} damage {Value1} times.
+
+EnokoClawTrap:
+  Name: Honed Claws
+  Description: |-
+    |Trap Card|: Triggers at the end of the turn, targeting all enemies.
+    |Triggered|: Deal {Damage} damage.
+
+EnokoEyeTrap:
+  Name: Sharp Eyes
+  Description: |-
+    |Trap Card|: Triggers at the start of the turn.
+    |Triggered|: |Scry| {Scry}.
+
+EnokoCamoTrap:
+  Name: Camoflauge
+  Description: |-
+    |Trap Card|: Triggers at the end of the turn.
+    |Triggered|: Gain {Block} |Block|.
+
+EnokoAdapt:
+  Name: Adaptability
+  Description: |-
+    Choose to add |Honed Claws|, |Camoflauge|, or |Sharp Eyes| to the hand.
+  Header: Choose a card to add to the hand.
 

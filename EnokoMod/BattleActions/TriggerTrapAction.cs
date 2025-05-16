@@ -41,7 +41,7 @@ namespace EnokoMod.BattleActions
             base.Args = new TriggerTrapEventArgs
             {
                 Card = card,
-                Units = TrapTools.SelectUnit(selection, base.Battle)
+                Units = TrapTools.SelectUnit(selection, card.Battle)
             };
         }
 
@@ -55,14 +55,19 @@ namespace EnokoMod.BattleActions
                     yield break;
                 }
 
-                yield return CreateEventPhase<TriggerTrapEventArgs>("PreTrigger", Args, EnokoGameEvents.PreTriggerEvent);
-
-                yield return CreatePhase("Main", delegate
+                if (Args.Card.Zone == CardZone.Hand || Args.Card.Zone == CardZone.PlayArea || Args.Card.Zone == CardZone.FollowArea)
                 {
-                    base.React(new Reactor(Args.Card.TrapTriggered(unit: Args.Units)));
-                }, true);
 
-                yield return CreateEventPhase<TriggerTrapEventArgs>("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
+                    yield return CreateEventPhase<TriggerTrapEventArgs>("PreTrigger", Args, EnokoGameEvents.PreTriggerEvent);
+
+                    yield return CreatePhase("Main", delegate
+                    {
+                        Args.Card.NotifyActivating();
+                        base.React(new Reactor(Args.Card.TrapTriggered(units: Args.Units)));
+                    }, true);
+
+                    yield return CreateEventPhase<TriggerTrapEventArgs>("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
+                }
             }
             yield break;
         }

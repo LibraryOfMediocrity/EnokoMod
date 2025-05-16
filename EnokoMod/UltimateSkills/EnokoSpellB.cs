@@ -16,8 +16,8 @@ namespace EnokoMod.UltimateSkills
         public override UltimateSkillConfig MakeConfig()
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
-            config.Damage = 15;
-            config.Value1 = 5;
+            config.Damage = 18;
+            config.Value1 = 6;
             config.RelativeEffects = new List<string>() { "EnokoConstrainSe" };
             return config;
         }

@@ -19,14 +19,14 @@ namespace EnokoMod.Loadouts
         public static List<string> DeckA = new List<string>{
             "Shoot", "Shoot", "Boundary", "Boundary", 
             "EnokoAttackW", "EnokoAttackW", "EnokoAttackW", 
-            "EnokoBlockB", "EnokoBlockB"
+            "EnokoBlockB", "EnokoBlockB", "EnokoFort"
             //put Enoko cards here when done
         };
 
         public static List<string> DeckB = new List<string>{
             "Shoot", "Shoot", "Boundary", "Boundary",
             "EnokoAttackB", "EnokoAttackB", "EnokoBlockW", 
-            "EnokoBlockW", "EnokoBlockW"
+            "EnokoBlockW", "EnokoBlockW", "EnokoNetGun"
             // put Enoko cards here when done
             
         };

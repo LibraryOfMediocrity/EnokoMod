@@ -18,7 +18,9 @@ namespace EnokoMod.Exhibits
             ExhibitConfig exhibitConfig = this.GetDefaultExhibitConfig();
             exhibitConfig.Mana = new ManaGroup() { White = 1 };
             exhibitConfig.Value1 = 1;
-            exhibitConfig.Keywords = Keyword.Shield | Keyword.Exile;
+            exhibitConfig.Value2 = 3;
+            exhibitConfig.HasCounter = true;
+            exhibitConfig.InitialCounter = 3;
             exhibitConfig.BaseManaColor = ManaColor.White;
             return exhibitConfig;
         }
@@ -30,11 +32,22 @@ namespace EnokoMod.Exhibits
         protected override void OnEnterBattle()
         {
             base.ReactBattleEvent<CardEventArgs>(base.Battle.CardExiled, new EventSequencedReactor<CardEventArgs>(this.OnCardExiled));
+            this.Counter = Value2;
+        }
+
+        protected override void OnLeaveBattle()
+        {
+            this.Counter = Value2;
         }
 
         private IEnumerable<BattleAction> OnCardExiled(CardEventArgs args)
         {
-            if (args.Card.CardType == CardType.Attack) yield return new CastBlockShieldAction(base.Battle.Player, new ShieldInfo(Value1));
+            if (this.Counter > 0)
+            {
+                this.NotifyActivating();
+                yield return new DrawCardAction();
+                Counter--;
+            }
             yield break;
         }
     }

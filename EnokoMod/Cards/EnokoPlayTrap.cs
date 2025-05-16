@@ -24,6 +24,7 @@ namespace EnokoMod.Cards
             config.Damage = 8;
             config.TargetType = TargetType.SingleEnemy;
             config.RelativeCards = new List<string>() { "EnokoBearTrap" };
+            config.UpgradedRelativeCards = new List<string>() { "EnokoBearTrap+" };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }

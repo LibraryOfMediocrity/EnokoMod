@@ -1,5 +1,6 @@
 using EnokoMod.BattleActions;
 using EnokoMod.Cards.Templates;
+using EnokoMod.TrapToolBox;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -34,7 +35,7 @@ namespace EnokoMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new TriggerTrapAction(this, selector.GetUnits(Battle));
+            yield return new TriggerTrapAction(this, TrapSelector.MostLife);
         }
 
         public override IEnumerable<BattleAction> TrapTriggered(Unit[] selector)

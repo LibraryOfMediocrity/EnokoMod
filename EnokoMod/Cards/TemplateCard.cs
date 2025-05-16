@@ -17,6 +17,9 @@ namespace EnokoMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
+            config.HideMesuem = true;
+            config.IsPooled = false;
+            config.FindInBattle = false;
             config.Rarity = Rarity.Common;
             config.Type = CardType.Attack;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };

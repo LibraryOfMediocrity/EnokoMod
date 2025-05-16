@@ -3,6 +3,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Units;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -20,6 +21,7 @@ namespace EnokoMod.TrapToolBox
         /// </summary>
         public static Unit[] SelectUnit(TrapSelector selector, BattleController battle)
         {
+            
             switch (selector)
             {
                 case TrapSelector.RandomEnemy:

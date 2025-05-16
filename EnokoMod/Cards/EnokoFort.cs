@@ -25,6 +25,8 @@ namespace EnokoMod.Cards
             config.TargetType = TargetType.Nobody;
             config.Block = 13;
             config.UpgradedBlock = 16;
+            config.RelativeKeyword = Keyword.Block;
+            config.UpgradedRelativeKeyword = Keyword.Block;
             config.RelativeCards = new List<string>() { "EnokoBearTrap" };
             config.UpgradedRelativeCards = new List<string>() { "EnokoBearTrap" };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);

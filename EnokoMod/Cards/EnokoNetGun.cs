@@ -40,7 +40,10 @@ namespace EnokoMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            yield return DebuffAction<EnokoConstrainSe>((Unit)base.Battle.AllAliveEnemies, level: base.Value1);
+            foreach (BattleAction action in DebuffAction<EnokoConstrainSe>(base.Battle.AllAliveEnemies, level: base.Value1))
+            {
+                yield return action;
+            }
             yield break;
         }
     }

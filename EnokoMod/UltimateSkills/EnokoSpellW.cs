@@ -19,10 +19,10 @@ namespace EnokoMod.UltimateSkills
         public override UltimateSkillConfig MakeConfig()
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
-            config.Damage = 10;
+            config.Damage = 12;
             config.Value1 = 2;
             config.Value2 = 2;
-            config.RelativeEffects = new List<string>() { "TrapCardDisc", "Trigger" };
+            config.RelativeEffects = new List<string>() { "TrapCardDisc" };
             return config;
         }
     }

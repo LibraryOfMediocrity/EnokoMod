@@ -46,6 +46,7 @@ namespace EnokoMod.Exhibits
                 }).ToList();
                 if (effects.Count > 0) block += base.Value1;
             }
+            if (block <= 0) yield break; 
             this.NotifyActivating();
             yield return new CastBlockShieldAction(base.Battle.Player, new BlockInfo(block));
             yield break;

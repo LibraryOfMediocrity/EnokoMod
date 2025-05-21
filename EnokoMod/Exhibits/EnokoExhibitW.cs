@@ -42,7 +42,7 @@ namespace EnokoMod.Exhibits
 
         private IEnumerable<BattleAction> OnCardExiled(CardEventArgs args)
         {
-            if (this.Counter > 0)
+            if (this.Counter > 0 && args.Card.CardType == CardType.Attack)
             {
                 this.NotifyActivating();
                 yield return new DrawCardAction();

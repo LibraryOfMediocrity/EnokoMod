@@ -103,3 +103,23 @@ EnokoAdapt:
     Choose to add |Honed Claws|, |Camoflauge|, or |Sharp Eyes| to the hand.
   Header: Choose a card to add to the hand.
 
+EnokoBoon:
+  Name: Beast King's Blessing
+  Description: |-
+    |At the start of combat|: Choose 1 of 3 |Boons|, add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile and |Exile| {SelfName}.
+  Header: Choose a Boon for this battle.
+
+BoonCardW:
+  Name: Power
+  Description: |-
+    Gain {Value1} |Firepower| and |Spirit|.
+
+BoonCardE:
+  Name: Wisdom
+  Description: |-
+    At the start of the turn, gain {Mana} and draw {Value1} card.
+
+BoonCardO:
+  Name: Safety
+  Description: |-
+    Gain {Value1} |Defense Matrix|.

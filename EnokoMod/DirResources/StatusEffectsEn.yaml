@@ -24,3 +24,8 @@ EnokoTinySe:
     |Tiny Traps| deal {Level} more damage.
   Brief: You are not supposed to be seeing this.
 
+BoonESe:
+  Name: Wisdom
+  Description: |-
+    At the start of the turn, gain {Mana} and draw {Level} card{Level:plural one='' other='s'}.
+

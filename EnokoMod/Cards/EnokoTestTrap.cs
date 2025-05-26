@@ -6,6 +6,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
@@ -44,6 +45,7 @@ namespace EnokoMod.Cards
             foreach(var action in DebuffAction<TempFirepowerNegative>(selector, base.Value1)) yield return action;
             yield break;
         }
+
 
     }
 }

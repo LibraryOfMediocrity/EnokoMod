@@ -25,7 +25,7 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1 };
             config.Damage = 10;
             config.UpgradedDamage = 14;
-            config.Index = CardIndexGenerator.GetUniqueIndex(config);
+            config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }
     }

@@ -44,7 +44,7 @@ namespace EnokoMod.Cards
             List<Card> cards = base.Battle.HandZone.Where((Card card) => card is TrapCard && card.CardType == CardType.Attack).ToList();
             if (cards.Count > 0)
             {
-                return new SelectHandInteraction(0, 1, cards);
+                return new SelectHandInteraction(1, 1, cards);
             }
             return null;
         }
@@ -54,8 +54,7 @@ namespace EnokoMod.Cards
             yield return AttackAction(selector);
             if (precondition != null)
             {
-                TrapCard card = ((SelectHandInteraction)precondition).SelectedCards[0] as TrapCard;
-                yield return new TriggerTrapAction(card, base.Battle.AllAliveEnemies.ToArray());
+                if (((SelectHandInteraction)precondition).SelectedCards[0] is TrapCard card) yield return new TriggerTrapAction(card, base.Battle.AllAliveEnemies.ToArray());
             }
             yield break;
         }

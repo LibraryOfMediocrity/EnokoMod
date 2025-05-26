@@ -8,6 +8,9 @@ Trigger:
   Name: Trigger 
   Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. This action will target a random enemy if no target is specified by the trigger source."
 
+Burial:
+  Name: Burial
+  Brief: The following effect will only activate if this card is |Exiled|.
 
 
 EnokoConstrainSe:

@@ -26,7 +26,7 @@ EnokoBlockB:
   FlavorText: Capable of defelcting bullets.
 
 EnokoCatalyst:
-  Name: Infectious Spread
+  Name: Disaster Catalyst
   Description: |-
     Apply the selected enemy's debuffs to all enemies. Level/Duration is equal to the original's Level/Duration.
 
@@ -52,7 +52,7 @@ EnokoNetGun:
   FlavorText: All tangled up, are ya?
 
 EnokoPlayTrap:
-  Name: unnamed
+  Name: Yamainu Combo
   Description: |-
     Deal {Damage} damage.
     Create and play a |Bear Trap|.
@@ -68,7 +68,7 @@ EnokoAdrenaline:
     If there are more than five cards in hand, gain {Mana} for each extra card.
 
 EnokoAoe:
-  Name: unnamed
+  Name: Surrounded
   Description: |-
     Deal {Damage} damage to each enemy.
     Trigger an attack |Trap Card| in hand. It will target all enemies.
@@ -78,6 +78,7 @@ EnokoTinyTrap:
   Description: |-
     |Trap Card|: Triggers at the end of the turn. When played, trigger and increase damage by {Value2} for all {SelfName}.
     |Triggered|: Deal {Damage} damage {Value1} times.
+  FlavorText: They make up for their size with large numbers.
 
 EnokoClawTrap:
   Name: Honed Claws
@@ -106,7 +107,7 @@ EnokoAdapt:
 EnokoBoon:
   Name: Beast King's Blessing
   Description: |-
-    |At the start of combat|: Choose 1 of 3 |Boons|, add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile and |Exile| {SelfName}.
+    |At the start of combat|: |Exile| {SelfName}, then choose 1 of 3 |Boons| and add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile.
   Header: Choose a Boon for this battle.
 
 BoonCardW:
@@ -123,3 +124,28 @@ BoonCardO:
   Name: Safety
   Description: |-
     Gain {Value1} |Defense Matrix|.
+
+EnokoPitfall:
+  Name: Pitfall
+  Description: |-
+    Gain {Block} |Block|.
+    If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
+    |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain|.
+
+EnokoMulligan:
+  Name: Mulligan
+  Description: |-
+    Choose a card in hand. Swap it with a card of the same type in the draw pile.
+    If there are no cards of the same type in the draw pile, instead shuffle the card into the draw pile and draw {Value1} card.
+  DetailText: |-
+    Swap in this case means the card in the hand will take the exact position of the card that was in the draw pile.
+    The card in th draw pile will not take the exact position of the card in hand because I don't know how to do that (it will move to the right side of the hand like normal).
+  Header1: Choose a card to move to the draw pile.
+  Header2: Choose a card to move to the hand.
+
+EnokoTrueDraw:
+  Name: Beast Unchained
+  Description: |-
+    Choose a card in the draw pile to move to the hand.
+    It will be replaced with a |Glare|.
+  Header: Choose a card to move to the hand.

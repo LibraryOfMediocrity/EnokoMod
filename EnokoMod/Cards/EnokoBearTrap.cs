@@ -24,7 +24,7 @@ namespace EnokoMod.Cards
             config.Damage = 8;
             config.UpgradedDamage = 12;
             config.Rarity = Rarity.Common;
-            config.Index = CardIndexGenerator.GetUniqueIndex(config);
+            config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }
     }

@@ -33,7 +33,7 @@ namespace EnokoMod.Cards
             config.UpgradedRelativeKeyword = Keyword.Exile;
             config.TargetType = TargetType.Nobody;
             config.RelativeCards = new List<string>() { "BoonCardW", "BoonCardE", "BoonCardO", "Xuanguang" };
-            config.UpgradedRelativeCards = new List<string>() { "BoonCardW", "BoonCardE", "BoonCardO", "Xuanguang" };
+            config.UpgradedRelativeCards = new List<string>() { "BoonCardW+", "BoonCardE+", "BoonCardO+", "Xuanguang" };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }
@@ -57,6 +57,7 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnBattleStarted(GameEventArgs args)
         {
+            yield return new ExileCardAction(this);
             List<Card> list = new List<Card>()
             {
                 Library.CreateCard<BoonCardW>(this.IsUpgraded),
@@ -78,7 +79,6 @@ namespace EnokoMod.Cards
                 }
             }
             yield return new AddCardsToDrawZoneAction(Library.CreateCards<Xuanguang>(Value1), DrawZoneTarget.Random);
-            yield return new ExileCardAction(this);
             yield break;
         }
 

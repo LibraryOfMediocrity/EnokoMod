@@ -47,7 +47,7 @@ namespace EnokoMod.Cards.Templates
             }
         }
 
-        public static int GetUniqueIndex(CardConfig config)
+        public static int GetUniqueIndex(CardConfig config, bool isTrap = false)
         {
             /*
             Generate a unique card ID based on the original offset, the card's rarity, colors and the type:
@@ -75,7 +75,14 @@ namespace EnokoMod.Cards.Templates
             id += config.Colors.Any(x => offColors.Any(y => y == x)) ? 1000000 : 0;
 
             //Rarity
-            id += config.Keywords.HasFlag(LBoL.Base.Keyword.Basic) ? 0 : (int)(config.Rarity + 1) * 100000;
+            if (isTrap)
+            {
+                id += 600000;
+            }
+            else
+            {
+                id += config.Keywords.HasFlag(LBoL.Base.Keyword.Basic) ? 0 : (int)(config.Rarity + 1) * 100000;
+            }
 
             //Color
             int color = config.Colors.Count > 1 ? 9 : (int)config.Colors[0];

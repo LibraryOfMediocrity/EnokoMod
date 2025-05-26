@@ -29,7 +29,7 @@ namespace EnokoMod.Cards
             config.UpgradedScry = 3;
             config.Keywords = config.Keywords | Keyword.Scry;
             config.UpgradedKeywords = config.UpgradedKeywords | Keyword.Scry;
-            config.Index = CardIndexGenerator.GetUniqueIndex(config);
+            config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }
     }

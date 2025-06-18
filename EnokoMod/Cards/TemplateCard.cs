@@ -33,10 +33,6 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(ReplaceMeDef))]
     public sealed class ReplaceMe : Card
     {
-        private bool IsBuried
-        {
-            get { return this.Zone == CardZone.Exile; }
-        }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

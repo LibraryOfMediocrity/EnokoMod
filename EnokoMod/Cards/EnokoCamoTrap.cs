@@ -27,8 +27,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1 };
             config.Block = 7;
             config.UpgradedBlock = 10;
-            config.Keywords = config.Keywords | Keyword.Block;
-            config.UpgradedKeywords = config.UpgradedKeywords | Keyword.Block;
+            config.RelativeKeyword = Keyword.Block;
+            config.UpgradedRelativeKeyword = Keyword.Block;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }
@@ -37,12 +37,7 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoCamoTrapDef))]
     public sealed class EnokoCamoTrap : TrapCard
     {
-        protected override void OnEnterBattle(BattleController battle)
-        {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnTurnEnding));
-        }
-
-        private IEnumerable<BattleAction> OnTurnEnding(UnitEventArgs args)
+        public override IEnumerable<BattleAction> OnTurnEndingInHand()
         {
             yield return new TriggerTrapAction(this);
             yield break;

@@ -35,12 +35,7 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoTinyTrapDef))]
     public sealed class EnokoTinyTrap : TrapCard
     {
-        protected override void OnEnterBattle(BattleController battle)
-        {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnTurnEnding));
-        }
-
-        private IEnumerable<BattleAction>OnTurnEnding(UnitEventArgs args)
+        public override IEnumerable<BattleAction> OnTurnEndingInHand()
         {
             yield return new TriggerTrapAction(this, DefaultTarget);
             yield break;

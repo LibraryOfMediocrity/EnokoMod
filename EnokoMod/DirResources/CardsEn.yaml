@@ -107,7 +107,7 @@ EnokoAdapt:
 EnokoBoon:
   Name: Beast King's Blessing
   Description: |-
-    |At the start of combat|: |Exile| {SelfName}, then choose 1 of 3 |Boons| and add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile.
+    |At the start of combat|: |Exile| {SelfName}. Then, choose 1 of 3 |Boons| and add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile.
   Header: Choose a Boon for this battle.
 
 BoonCardW:
@@ -149,3 +149,63 @@ EnokoTrueDraw:
     Choose a card in the draw pile to move to the hand.
     It will be replaced with a |Glare|.
   Header: Choose a card to move to the hand.
+
+EnokoRupture:
+  Name: Ruptured Earth
+  Description: |-
+    Deal {Damage} damage to each enemy.
+    |When Exiled|: Deal {Damage} damage to each enemy and return this card to the hand.
+
+EnokoBlind:
+  Name: Blinding Speed
+  Description: |-
+    Apply {Value2} |Temporary Firepower Down| to each enemy.
+    Draw {Value1} cards.
+
+EnokoBunkerTrap:
+  Name: Hidden Bunker
+  Description: |-
+    |Trap Card|: Triggers at the end of the turn.
+    |Triggered|: Gain |Block| equal to {Value1} times the number of |Exiled| cards.
+
+EnokoHiddenTrap:
+  Name: Hidden Trap
+  Description: |-
+    |Trap Card|: Triggers at the start of the turn, targeting all enemies.
+    |Triggered|: Apply |Constrain| equal to {Value1} times the number of cards in the hand.
+
+EnokoHiddenSummon:
+  Name: Hidden Move
+  Description: |-
+    Choose to add either |Hidden Trap| or |Hidden Bunker| to the hand.
+  Header: Choose a card to add.
+
+EnokoWeapon:
+  Name: Secret Weapon
+  Description: |-
+    |Trap Card|: Does not trigger on its own. Always targets all enemies.
+    |Triggered|: Deal {Damage} damage to each enemy {Value1} times and gain {Block} |Block|.
+
+EnokoSenseWeakTrap:
+  Name: Sense Weakness
+  Description: |-
+    |Trap Card|: Triggers whenever an enemy loses a debuff, targeting that enemy.
+    |Triggered|: Deal {Damage} damage. Increase this card's damage by {Value1} for the rest of combat.
+
+EnokoGrasp:
+  Name: Inescapable Grasp
+  Description: |-
+    Apply {Value1} |Constrain| to each enemy.
+    Prevent the next time each enemy would lose |Constrain|.
+    |Debut|: Prevent |Constrain| loss 1 additional time.
+  ExtraDescription1: |-
+    Apply {Value1} |Constrain| to each enemy.
+    Prevent the next time each enemy would lose |Constrain|.
+    |d:Debut: Prevent Constrain loss 1 additional time|.
+
+EnokoConstrainTrigger:
+  Name: Hunting Prowess
+  Description: |-
+    Gain {Block} |Block|.
+    Apply {Value1} |Constrain| to each enemy.
+    Trigger each enemy's |Constrain|.

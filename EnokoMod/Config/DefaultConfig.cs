@@ -26,8 +26,8 @@ namespace EnokoMod.Config
                Order: 10,
                AutoPerform: true,
                Perform: new string[0][],
-               GunName: "Simple1",
-               GunNameBurst: "Simple2",
+               GunName: "ShootC",
+               GunNameBurst: "ShootC1",
                DebugLevel: 0,
                Revealable: false,
 

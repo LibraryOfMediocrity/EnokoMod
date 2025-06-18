@@ -33,12 +33,7 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoClawTrapDef))]
     public sealed class EnokoClawTrap : TrapCard
     {
-        protected override void OnEnterBattle(BattleController battle)
-        {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnEnding, new EventSequencedReactor<UnitEventArgs>(this.OnTurnEnding));
-        }
-
-        private IEnumerable<BattleAction> OnTurnEnding(UnitEventArgs args)
+        public override IEnumerable<BattleAction> OnTurnEndingInHand()
         {
             yield return new TriggerTrapAction(this, TrapSelector.AllEnemies);
             yield break;

@@ -2,6 +2,7 @@
 using EnokoMod.TrapToolBox;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using System;
@@ -60,11 +61,30 @@ namespace EnokoMod.BattleActions
 
                     yield return CreateEventPhase<TriggerTrapEventArgs>("PreTrigger", Args, EnokoGameEvents.PreTriggerEvent);
 
+                    List<DamageAction> damageActions = new List<DamageAction>();
                     yield return CreatePhase("Main", delegate
                     {
-                        Args.Card.NotifyActivating();
-                        base.React(new Reactor(Args.Card.TrapTriggered(units: Args.Units)));
+                        //add statisticaltotaldamageaction if there were damageactions
+                        if(Args.Card.Zone == CardZone.Hand) Args.Card.NotifyActivating();
+                        List<BattleAction> actions = new List<BattleAction>();
+                        foreach (BattleAction item in Args.Card.TrapTriggered(units: Args.Units))
+                        {
+                            if (item is DamageAction damageAction)
+                            {
+                                damageActions.Add(damageAction);
+                            }
+                            actions.Add(item);
+                        }
+                        base.React(new Reactor(actions));
                     }, true);
+
+                    if (damageActions.Count > 0)
+                    {
+                        yield return CreatePhase("Statistics", delegate
+                        {
+                            base.Battle.React(new StatisticalTotalDamageAction(damageActions), Args.Card, ActionCause.Card);
+                        });
+                    }
 
                     yield return CreateEventPhase<TriggerTrapEventArgs>("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
                 }

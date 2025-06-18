@@ -18,6 +18,7 @@ namespace EnokoMod.StatusEffects
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.Type = StatusEffectType.Negative;
+            config.Order = 11;
             return config;
         }
     }
@@ -57,14 +58,14 @@ namespace EnokoMod.StatusEffects
         public BattleAction TriggerConstrain()
         {
             this.NotifyActivating();
-            return DamageAction.Reaction(this.Owner, this.Level);
+            return DamageAction.Reaction(this.Owner, this.Level, "Cold1");
         }
 
         protected override void OnRemoved(Unit unit)
         {
             if (unit.IsAlive)
             {
-                base.React(DamageAction.LoseLife(unit, this.Level));
+                base.React(DamageAction.LoseLife(unit, this.Level, "Sacrifice"));
             }
         }
     }

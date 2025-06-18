@@ -51,10 +51,10 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return AttackAction(selector);
+            yield return AttackAllAliveEnemyAction();
             if (precondition != null)
             {
-                if (((SelectHandInteraction)precondition).SelectedCards[0] is TrapCard card) yield return new TriggerTrapAction(card, base.Battle.AllAliveEnemies.ToArray());
+                if (((SelectHandInteraction)precondition).SelectedCards.First() is TrapCard card) yield return new TriggerTrapAction(card, base.Battle.AllAliveEnemies.ToArray());
             }
             yield break;
         }

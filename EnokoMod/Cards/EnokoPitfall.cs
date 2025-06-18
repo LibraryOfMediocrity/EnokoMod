@@ -14,6 +14,7 @@ using System.Linq;
 using EnokoMod.BattleActions;
 using LBoL.Core.Units;
 using LBoL.EntityLib.StatusEffects.Cirno;
+using LBoL.Core.StatusEffects;
 
 namespace EnokoMod.Cards
 {
@@ -31,6 +32,8 @@ namespace EnokoMod.Cards
             config.Value1 = 2;
             config.UpgradedValue1 = 3;
             config.TargetType = TargetType.Self;
+            config.RelativeKeyword = Keyword.Block;
+            config.UpgradedRelativeKeyword = Keyword.Block;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe), nameof(TrapCardDisc), nameof(Burial) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(EnokoConstrainSe), nameof(TrapCardDisc), nameof(Burial) };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
@@ -39,17 +42,14 @@ namespace EnokoMod.Cards
     }
 
     [EntityLogic(typeof(EnokoPitfallDef))]
-    public sealed class EnokoPitfall : Card
+    public sealed class EnokoPitfall : BurialCard
     {
-        private bool IsBuried
-        {
-            get { return this.Zone == CardZone.Exile; }
-        }
 
         protected override void OnEnterBattle(BattleController battle)
         {
             base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
         }
+
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
@@ -70,6 +70,8 @@ namespace EnokoMod.Cards
                 return base.Battle != null && base.Battle.AllAliveEnemies.Any((EnemyUnit enemy) => enemy.HasStatusEffect<EnokoConstrainSe>());
             }
         }
+
+        public override int CardIndex { get => 0; }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

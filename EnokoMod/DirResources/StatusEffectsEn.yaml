@@ -19,7 +19,7 @@ EnokoConstrainSe:
     {OwnerName} is dealt {Level} damage when attacked and loses {Level} life when {SelfName} is removed.
     {SelfName} disappears at the start of {OwnerName}'s turn.
   Brief: |-
-    Whenever this enemy is attacked, they take damage equal to {SelfName}'s Level.
+    Whenever this unit is attacked, they take damage equal to {SelfName}'s Level.
 
 EnokoTinySe:
   Name: Tiny Traps
@@ -32,3 +32,11 @@ BoonESe:
   Description: |-
     At the start of the turn, gain {Mana} and draw {Level} card{Level:plural one='' other='s'}.
 
+BurialIndicator:
+  Name: you should not see This
+  Description: "{Name} is |Buried| and its effect is active."
+
+EnokoRetainConstrainSe:
+  Name: Retain Constrain
+  Description: |-
+    Prevents the next {Level} time{Level:plural one='' other='s'} {OwnerName} would lose |Constrain|.

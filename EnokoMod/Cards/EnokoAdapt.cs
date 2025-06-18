@@ -47,7 +47,6 @@ namespace EnokoMod.Cards
         public override Interaction Precondition()
         {
             List<Card> cards = new List<Card>() { Library.CreateCard<EnokoClawTrap>(), Library.CreateCard<EnokoCamoTrap>(), Library.CreateCard<EnokoEyeTrap>() };
-            //figure out how to make a cancellable interaction (it may just be precondition)
             return new SelectCardInteraction(1, 1, cards)
             {
                 Source = this,

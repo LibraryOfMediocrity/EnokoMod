@@ -44,6 +44,10 @@ namespace EnokoMod.Cards
             {
                 base.ReactBattleEvent<StatusEffectEventArgs>(unit.StatusEffectRemoved, new EventSequencedReactor<StatusEffectEventArgs>(this.OnStatusEffectRemoved));
             }
+            base.HandleBattleEvent<UnitEventArgs>(Battle.EnemySpawned, new GameEventHandler<UnitEventArgs>(delegate (UnitEventArgs args)
+            {
+                base.ReactBattleEvent<StatusEffectEventArgs>(args.Unit.StatusEffectRemoved, new EventSequencedReactor<StatusEffectEventArgs>(this.OnStatusEffectRemoved));
+            }));
         }
 
         private IEnumerable<BattleAction> OnStatusEffectRemoved(StatusEffectEventArgs args)

@@ -24,12 +24,11 @@ namespace EnokoMod.Cards
             config.Type = CardType.Defense;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
-            config.UpgradedCost = new ManaGroup() { Any = 2 };
-            config.Block = 13;
+            config.Block = 14;
             config.UpgradedBlock = 18;
-            config.Value1 = 3;
-            config.UpgradedValue1 = 5;
-            config.TargetType = TargetType.AllEnemies;
+            config.Value1 = 4;
+            config.UpgradedValue1 = 6;
+            config.TargetType = TargetType.SingleEnemy;
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };
@@ -46,10 +45,7 @@ namespace EnokoMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            foreach (BattleAction action in DebuffAction<EnokoConstrainSe>(Battle.AllAliveEnemies, level: Value1))
-            {
-                yield return action;
-            }
+            yield return DebuffAction<EnokoConstrainSe>(selector.SelectedEnemy, level: Value1);
             foreach (Unit enemy in Battle.AllAliveEnemies.Where((EnemyUnit unit) => unit.HasStatusEffect<EnokoConstrainSe>()))
             {
                 enemy.TryGetStatusEffect<EnokoConstrainSe>(out EnokoConstrainSe statusEffect);

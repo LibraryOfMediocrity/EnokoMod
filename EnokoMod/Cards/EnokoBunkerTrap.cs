@@ -27,7 +27,7 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 2 };
             config.Value1 = 1;
             config.UpgradedValue1 = 2;
-            config.Block = 0;
+            config.Block = 7;
             config.TargetType = TargetType.Self;
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
@@ -43,7 +43,7 @@ namespace EnokoMod.Cards
         {  
             get
             {
-                return base.Battle != null? base.Battle.ExileZone.Count * Value1 : 0;
+                return (base.Battle != null? base.Battle.ExileZone.Count * Value1 : 0) + 7;
             }
         }
 
@@ -56,7 +56,7 @@ namespace EnokoMod.Cards
 
         public override IEnumerable<BattleAction> TrapTriggered(Unit[] units)
         {
-            if(TriggerBlock > 0) yield return new CastBlockShieldAction(Battle.Player, TriggerBlock, 0);
+            if(TriggerBlock > 0) yield return new CastBlockShieldAction(Battle.Player, TriggerBlock, 0, cast: false);
             yield break;
         }
 

@@ -14,8 +14,6 @@ namespace EnokoMod.Cards
         public override CardConfig MakeConfig()
         {
             CardConfig config = GetCardDefaultConfig();
-            config.GunName = "Simple1";
-            config.GunNameBurst = "Simple2";
             config.Rarity = Rarity.Common;
             config.Type = CardType.Attack;
             config.IsPooled = false;

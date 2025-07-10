@@ -19,7 +19,7 @@ EnokoConstrainSe:
     {OwnerName} is dealt {Level} damage when attacked and loses {Level} life when {SelfName} is removed.
     {SelfName} disappears at the start of {OwnerName}'s turn.
   Brief: |-
-    Whenever this unit is attacked, they take damage equal to {SelfName}'s Level.
+    Whenever this unit is attacked, they take damage equal to |Constrain|'s Level.
 
 EnokoTinySe:
   Name: Tiny Traps
@@ -40,3 +40,18 @@ EnokoRetainConstrainSe:
   Name: Retain Constrain
   Description: |-
     Prevents the next {Level} time{Level:plural one='' other='s'} {OwnerName} would lose |Constrain|.
+  
+EnokoBolasSe:
+  Name: Incoming Bolas
+  Description: |-
+    At the start of the next turn, apply {Level} |Constrain| to each enemy.
+
+EnokoRevengeSe:
+  Name: Trap Counter
+  Description: |-
+    Apply {Count} |Constrain| to the next {Level:plural one='enemy' other='% enemies'} to attack {OwnerName} this turn.
+
+EnokoDomainSe:
+  Name: Domain Expansion
+  Description: |-
+    Hand size is increased to {MaxHand}.

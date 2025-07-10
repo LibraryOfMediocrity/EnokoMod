@@ -21,7 +21,7 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Uncommon;
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
-            config.Cost = new ManaGroup() { Any = 1, White = 1, Black = 1 };
+            config.Cost = new ManaGroup() { Any = 2, White = 1, Black = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 2, Hybrid = 1, HybridColor = 1 };
             config.RelativeCards = new List<string>() { nameof(EnokoHiddenTrap), nameof(EnokoBunkerTrap) };
             config.UpgradedRelativeCards = new List<string>() { nameof(EnokoHiddenTrap), nameof(EnokoBunkerTrap) };

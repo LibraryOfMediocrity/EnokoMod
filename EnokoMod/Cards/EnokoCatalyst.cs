@@ -36,7 +36,7 @@ namespace EnokoMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            var statusEffect = selector.SelectedEnemy.StatusEffects;
+            List<StatusEffect> statusEffect = selector.SelectedEnemy.StatusEffects.ToList();
             foreach (StatusEffect status in statusEffect)
             {
                 if (status != null && status.Type == StatusEffectType.Negative)

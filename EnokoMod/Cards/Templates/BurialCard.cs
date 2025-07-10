@@ -24,6 +24,8 @@ namespace EnokoMod.Cards.Templates
             yield break;
         }
 
+        public override bool OnMoveVisual => false;
+
         public override IEnumerable<BattleAction> OnMove(CardZone srcZone, CardZone dstZone)
         {
             if (srcZone != CardZone.Exile && dstZone == CardZone.Exile)

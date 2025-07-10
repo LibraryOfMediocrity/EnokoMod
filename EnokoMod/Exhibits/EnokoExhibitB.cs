@@ -20,7 +20,7 @@ namespace EnokoMod.Exhibits
         {
             ExhibitConfig exhibitConfig = this.GetDefaultExhibitConfig();
             exhibitConfig.Mana = new ManaGroup() { Black = 1 };
-            exhibitConfig.Value1 = 3;
+            exhibitConfig.Value1 = 2;
             exhibitConfig.BaseManaColor = ManaColor.Black;
             exhibitConfig.Keywords = Keyword.Block;
             return exhibitConfig;

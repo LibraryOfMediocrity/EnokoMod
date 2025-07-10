@@ -48,7 +48,7 @@ namespace EnokoMod.StatusEffects
 
         private IEnumerable<BattleAction> OnDamageRecieved(DamageEventArgs args)
         {  
-            if (args.DamageInfo.DamageType == DamageType.Attack)
+            if (args.DamageInfo.DamageType == DamageType.Attack && args.DamageInfo.Amount > 0f)
             {
                 yield return TriggerConstrain();
             }

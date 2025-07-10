@@ -166,7 +166,7 @@ EnokoBunkerTrap:
   Name: Hidden Bunker
   Description: |-
     |Trap Card|: Triggers at the end of the turn.
-    |Triggered|: Gain |Block| equal to {Value1} times the number of |Exiled| cards.
+    |Triggered|: Gain {Block} |Block|. Gain additional |Block| equal to {Value1} times the number of |Exiled| cards.
 
 EnokoHiddenTrap:
   Name: Hidden Trap
@@ -207,5 +207,54 @@ EnokoConstrainTrigger:
   Name: Hunting Prowess
   Description: |-
     Gain {Block} |Block|.
-    Apply {Value1} |Constrain| to each enemy.
+    Apply {Value1} |Constrain|.
     Trigger each enemy's |Constrain|.
+
+EnokoDiscombobulate:
+  Name: Discombobulate
+  Description: |-
+    Deal {Damage} damage.
+    Apply {Value1} |Weak|, |Vulnerable| and |Temporary Firepower Down|, and {Value2} |Poison|, |Lock On| and |Constrain|.
+  FlavorText: Discombobulate.
+
+EnokoHaymaker:
+  Name: Haymaker
+  Description: |-
+    Deal {Damage} damage. If the enemy has a debuff, this card hits twice.
+
+EnokoBolas:
+  Name: Bolas
+  Description: |-
+    Apply {Value1} |Constrain| and {Value2} |Weak| to each enemy.
+  UpgradedDescription: |-
+    Apply {Value1} |Constrain| and {Value2} |Weak| to each enemy.
+    Repeat this effect at the start of the next turn.
+
+EnokoRevenge:
+  Name: Trap Counter
+  Description: |-
+    Gain {Block} |Block|.
+    Apply {Value1} |Constrain| to the next {Value2} {Value2:plural one='enemy' other='enemies'} to attack {PlayerName}.
+
+EnokoReckless:
+  Name: Reckless Abandon
+  Description: |-
+    Lose {Value1} Life.
+    Choose a card in the draw pile. Play it.
+  UpgradedDescription: |-
+    Lose {Value1} Life.
+    Choose a card in the draw or discard pile. Play it.
+  Header: Choose a card to play.
+
+EnokoDomain:
+  Name: Domain Expansion
+  Description: |-
+    The maximum hand size becomes {Value1}.
+    Choose up to {Value2:plural one='a card' other='% cards'} in the hand. Add a |Copy| of {Value2:plural one='it' other='each'} to the hand.
+
+EnokoLoad:
+  Name: Load Bearer
+  Description: |-
+    If there are less than {Value1} cards in the hand, draw, and discard pile, gain {Mana}.
+    Otherwise, |Exile| up to {Value2} cards from the hand, draw pile, and discard pile.
+  

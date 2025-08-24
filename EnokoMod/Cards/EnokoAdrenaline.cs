@@ -21,7 +21,7 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Common;
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White };
-            config.Cost = new ManaGroup() { White = 1 };
+            config.Cost = new ManaGroup() { Any = 1, White = 1 };
             config.TargetType = TargetType.Self;
             config.Value1 = 1;
             config.UpgradedValue1 = 2;

@@ -17,7 +17,6 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Common;
             config.Type = CardType.Defense;
             config.IsPooled = false;
-            config.FindInBattle = false;
             config.HideMesuem = false;
             config.Block = 10;
             config.UpgradedBlock = 13;

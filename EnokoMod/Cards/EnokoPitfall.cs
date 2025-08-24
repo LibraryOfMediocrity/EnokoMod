@@ -79,8 +79,8 @@ namespace EnokoMod.Cards
             if (!base.Battle.BattleShouldEnd && PlayInTriggered)
             {
                 List<Card> traps = base.Battle.HandZone.Where((Card card) => card is TrapCard).ToList();
-                if (traps.FirstOrDefault() is TrapCard trap1) yield return new TriggerTrapAction(trap1);
-                if (traps.LastOrDefault() is TrapCard trap2) yield return new TriggerTrapAction(trap2);
+                if (!base.Battle.BattleShouldEnd && traps.FirstOrDefault() is TrapCard trap1) yield return new TriggerTrapAction(trap1);
+                if (!base.Battle.BattleShouldEnd && traps.LastOrDefault() is TrapCard trap2) yield return new TriggerTrapAction(trap2);
             }
             yield break;
         }

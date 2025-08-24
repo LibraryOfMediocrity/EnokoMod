@@ -1,16 +1,17 @@
 ﻿using EnokoMod.Cards.Templates;
 using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
+using LBoL.Core.Cards;
+using LBoL.EntityLib.Cards.Character.Cirno;
 using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
 using System.Linq;
-using LBoL.Core.Battle.Interactions;
+using System.Text;
 
 namespace EnokoMod.Cards
 {
@@ -39,14 +40,36 @@ namespace EnokoMod.Cards
     public sealed class EnokoLoad : Card
     {
 
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        public override Interaction Precondition()
         {
             List<Card> allcards = Battle.DrawZoneToShow.Concat(Battle.HandZone).Concat(Battle.DiscardZone).ToList();
-            if (allcards.Count > Value1)
+            if (allcards.Count >= Value1)
+            {
+                List<EnokoLoad> list = Library.CreateCards<EnokoLoad>(2, this.IsUpgraded).ToList<EnokoLoad>();
+                EnokoLoad enokoLoad = list[0];
+                EnokoLoad enokoLoad2 = list[1];
+                enokoLoad.ChoiceCardIndicator = 1;
+                enokoLoad2.ChoiceCardIndicator = 2;
+                enokoLoad.SetBattle(base.Battle);
+                enokoLoad2.SetBattle(base.Battle);
+                return new MiniSelectCardInteraction(list);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        {
+            MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
+            Card card = (miniSelectCardInteraction?.SelectedCard);
+            List<Card> allcards = Battle.DrawZoneToShow.Concat(Battle.HandZone).Concat(Battle.DiscardZone).ToList();
+            if (card != null && card.ChoiceCardIndicator == 2) 
             {
                 SelectCardInteraction interaction = new SelectCardInteraction(0, Value2, allcards);
                 yield return new InteractionAction(interaction);
-                if(interaction.SelectedCards.Count > 0)
+                if (interaction.SelectedCards.Count > 0)
                 {
                     yield return new ExileManyCardAction(interaction.SelectedCards);
                 }

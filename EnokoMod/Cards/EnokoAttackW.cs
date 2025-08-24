@@ -17,7 +17,6 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Common;
             config.Type = CardType.Attack;
             config.IsPooled = false;
-            config.FindInBattle = false;
             config.HideMesuem = false;
             config.Damage = 10;
             config.UpgradedDamage = 14;

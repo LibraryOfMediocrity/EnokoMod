@@ -250,11 +250,15 @@ EnokoDomain:
   Name: Domain Expansion
   Description: |-
     The maximum hand size becomes {Value1}.
-    Choose up to {Value2:plural one='a card' other='% cards'} in the hand. Add a |Copy| of {Value2:plural one='it' other='each'} to the hand.
+    Choose up to {Value2} {Value2:plural one='card' other='cards'} in the hand. Add a |Copy| of {Value2:plural one='it' other='each'} to the hand.
 
 EnokoLoad:
   Name: Load Bearer
   Description: |-
-    If there are less than {Value1} cards in the hand, draw, and discard pile, gain {Mana}.
-    Otherwise, |Exile| up to {Value2} cards from the hand, draw pile, and discard pile.
+    Gain {Mana}. 
+    If there are at least {Value1} cards in the hand, draw, and discard pile, you may |Exile| up to {Value2} cards from the hand, draw pile, and discard pile instead.
+  ExtraDescription1: |-
+    Gain {Mana}.
+  ExtraDescription2: |-
+    |Exile| up to {Value2} cards from the hand, draw pile, and discard pile.
   

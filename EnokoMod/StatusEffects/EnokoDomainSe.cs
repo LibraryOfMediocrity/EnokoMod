@@ -14,7 +14,7 @@ namespace EnokoMod.StatusEffects
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.HasLevel = false;
-            return base.MakeConfig();
+            return config;
         }
     }
 

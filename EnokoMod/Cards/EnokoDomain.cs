@@ -52,9 +52,9 @@ namespace EnokoMod.Cards
             List<Card> copies = new List<Card>();
             foreach (Card item in interaction.SelectedCards)
             {
-                list.Add(item.CloneBattleCard());
+                copies.Add(item.CloneBattleCard());
             }
-            yield return new AddCardsToHandAction(list);
+            yield return new AddCardsToHandAction(copies);
             yield break;
         }
     }

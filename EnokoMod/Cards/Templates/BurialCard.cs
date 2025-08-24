@@ -11,6 +11,20 @@ namespace EnokoMod.Cards.Templates
 {
     public abstract class BurialCard : Card
     {
+        protected override void OnLeaveBattle()
+        {
+            StatusEffect effect = null;
+            foreach (StatusEffect status in Battle.Player.StatusEffects)
+            {
+                if (status is BurialIndicator && status.Limit == CardIndex)
+                {
+                    effect = status;
+                    break;
+                }
+            }
+            if(effect != null) base.React(new RemoveStatusEffectAction(effect));
+        }
+
         public bool IsBuried
         {
             get { return this.Zone == CardZone.Exile; }
@@ -43,9 +57,11 @@ namespace EnokoMod.Cards.Templates
                         break;
                     }
                 }
-                yield return new RemoveStatusEffectAction(effect);
+                if (effect != null)  yield return new RemoveStatusEffectAction(effect);
             }
             yield break;
         }
+
+        
     }
 }

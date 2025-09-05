@@ -34,7 +34,9 @@ BoonESe:
 
 BurialIndicator:
   Name: you should not see This
-  Description: "{Name} is |Buried| and its effect is active."
+  Description: |-
+    {Name} is |Buried| and its effect is active.
+    {BurialEffect}
 
 EnokoRetainConstrainSe:
   Name: Retain Constrain

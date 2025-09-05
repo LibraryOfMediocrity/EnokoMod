@@ -131,6 +131,8 @@ EnokoPitfall:
     Gain {Block} |Block|.
     If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
     |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain|.
+  ShortDescription: |-
+    Whenever a non attack card is used, apply |Constrain|.
 
 EnokoMulligan:
   Name: Mulligan

@@ -74,6 +74,7 @@ namespace EnokoMod.Cards
             {
                 yield return DebuffAction(type, selector.SelectedEnemy, level: (i > 2 ? Value2 : Value1), duration: (i > 2 ? Value2 : Value1));
                 i++;
+                if (base.Battle.BattleShouldEnd) yield break;
             }
             yield break;
         }

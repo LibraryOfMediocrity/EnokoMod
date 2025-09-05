@@ -1,6 +1,7 @@
 ﻿using EnokoMod.StatusEffects;
-using LBoL.Core.Battle.BattleActions;
+using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using System;
@@ -11,6 +12,15 @@ namespace EnokoMod.Cards.Templates
 {
     public abstract class BurialCard : Card
     {
+
+        public string BurialDescription
+        {
+            get
+            {
+                return this.LocalizeProperty("ShortDescription");
+            }
+        }
+
         protected override void OnLeaveBattle()
         {
             StatusEffect effect = null;
@@ -34,7 +44,7 @@ namespace EnokoMod.Cards.Templates
 
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {
-            yield return new ApplyStatusEffectAction<BurialIndicator>(Battle.Player, limit: CardIndex);
+            yield return BuffAction<BurialIndicator>(limit: CardIndex);
             yield break;
         }
 
@@ -44,7 +54,7 @@ namespace EnokoMod.Cards.Templates
         {
             if (srcZone != CardZone.Exile && dstZone == CardZone.Exile)
             {
-                yield return new ApplyStatusEffectAction<BurialIndicator>(Battle.Player, limit: CardIndex);
+                yield return BuffAction<BurialIndicator>(limit: CardIndex);
             }
             if (srcZone == CardZone.Exile && dstZone != CardZone.Exile)
             {
@@ -57,11 +67,10 @@ namespace EnokoMod.Cards.Templates
                         break;
                     }
                 }
-                if (effect != null)  yield return new RemoveStatusEffectAction(effect);
+                if (effect != null) yield return new RemoveStatusEffectAction(effect);
             }
             yield break;
         }
-
         
     }
 }

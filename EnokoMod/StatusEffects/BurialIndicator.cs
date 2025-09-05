@@ -1,9 +1,11 @@
 ﻿using EnokoMod.Cards;
+using EnokoMod.Cards.Templates;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
+using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
@@ -27,26 +29,28 @@ namespace EnokoMod.StatusEffects
     [EntityLogic(typeof(BurialIndicatorDef))]
     public sealed class BurialIndicator : StatusEffect
     {
-        //test if sourcecard is recorded. if it is, everything is easy.
-
+       
         public override string Name
         {
             get
             {
-                try
+                if(SourceCard is BurialCard)
                 {
-                    return TypeFactory<Card>.LocalizeProperty(BurialCards[Limit].Name, "Name", false, true);
+                    return SourceCardName;
                 }
-                catch
+                else
                 {
                     return base.Name;
                 }
             }
         }
 
-        private readonly List<Type> BurialCards = new List<Type>()
+        public string BurialEffect
         {
-            typeof(EnokoPitfall)
-        }; 
+            get
+            {
+                return SourceCard is BurialCard burial ? burial.BurialDescription : "ERROR";
+            }
+        }
     }
 }

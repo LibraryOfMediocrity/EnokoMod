@@ -88,11 +88,12 @@ namespace EnokoMod.Config
                Owner: OwnerName,
                ImageId: "",
                UpgradeImageId: "",
+               Pack: null,
 
                Unfinished: true,
                Illustrator: null,
                SubIllustrator: new List<string>() { }
-            );
+            ); 
         }
 
         public static ExhibitConfig GetDefaultExhibitConfig()

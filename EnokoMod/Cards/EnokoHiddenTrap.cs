@@ -47,6 +47,7 @@ namespace EnokoMod.Cards
             }
         }
 
+        public override Unit[] DefaultTarget => TrapTools.SelectUnit(TrapSelector.MostLife, base.Battle);
 
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {

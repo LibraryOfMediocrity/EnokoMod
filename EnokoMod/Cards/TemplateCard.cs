@@ -1,14 +1,11 @@
 ﻿using EnokoMod.Cards.Templates;
 using LBoL.Base;
 using LBoL.ConfigData;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
-using LBoL.Core;
 using LBoLEntitySideloader.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
 
 namespace EnokoMod.Cards
 {

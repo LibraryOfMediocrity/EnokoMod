@@ -37,13 +37,8 @@ namespace EnokoMod.BattleActions
         {
         }
 
-        public TriggerTrapAction(TrapCard card, TrapSelector selection)
+        public TriggerTrapAction(TrapCard card, TrapSelector selection) : this(card, TrapTools.SelectUnit(selection, card.Battle))
         {
-            base.Args = new TriggerTrapEventArgs
-            {
-                Card = card,
-                Units = TrapTools.SelectUnit(selection, card.Battle)
-            };
         }
 
         public override IEnumerable<Phase> GetPhases()
@@ -66,16 +61,8 @@ namespace EnokoMod.BattleActions
                     {
                         //add statisticaltotaldamageaction if there were damageactions
                         if(Args.Card.Zone == CardZone.Hand) Args.Card.NotifyActivating();
-                        List<BattleAction> actions = new List<BattleAction>();
-                        foreach (BattleAction item in Args.Card.TrapTriggered(units: Args.Units))
-                        {
-                            if (item is DamageAction damageAction)
-                            {
-                                damageActions.Add(damageAction);
-                            }
-                            actions.Add(item);
-                        }
-                        base.React(new Reactor(actions));
+                        IEnumerable<BattleAction> actions = Args.Card.TrapTriggered(units: Args.Units);
+                        base.React(new Reactor(StatisticalTotalDamageAction.WrapReactorWithStats(actions, damageActions)));
                     }, true);
 
                     if (damageActions.Count > 0)

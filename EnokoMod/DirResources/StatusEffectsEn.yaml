@@ -6,7 +6,9 @@ TrapCardDisc:
 
 Trigger:
   Name: Trigger 
-  Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. This action will target a random enemy if no target is specified by the trigger source."
+  Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. \
+    This action will use a default target if no target is specified by the trigger source or |Trap Card|. \ 
+    The default target is a random enemy unless otherwise specified."
 
 Burial:
   Name: Burial
@@ -57,3 +59,9 @@ EnokoDomainSe:
   Name: Domain Expansion
   Description: |-
     Hand size is increased to {MaxHand}.
+
+EnokoThornsSe:
+  Name: Thorns
+  Description: |-
+    {OwnerName} takes {Level} additional damage.
+    {OwnerName} loses |a:1| {SelfName} when attacked and half of {SelfName} at the end of the turn.

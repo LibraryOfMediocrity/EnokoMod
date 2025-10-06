@@ -24,9 +24,12 @@ namespace EnokoMod.Cards
             config.Damage = 18;
             config.UpgradedDamage = 24;
             config.TargetType = TargetType.AllEnemies;
+            config.Mana = new ManaGroup() { White = 1 };
+            config.UpgradedMana = new ManaGroup() { Philosophy = 1 };
+            config.Keywords = Keyword.Accuracy;
             config.UpgradedKeywords = Keyword.Accuracy;
-            config.RelativeKeyword = Keyword.Exile;
-            config.UpgradedRelativeKeyword = Keyword.Exile;
+            config.RelativeKeyword = Keyword.Exile | Keyword.Plentiful;
+            config.UpgradedRelativeKeyword = Keyword.Exile | Keyword.Plentiful | Keyword.Philosophy; 
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }
@@ -40,6 +43,14 @@ namespace EnokoMod.Cards
             yield return AttackAllAliveEnemyAction();
             yield return new MoveCardAction(this, CardZone.Hand);
             yield break;
+        }
+
+        public override ManaGroup? PlentifulMana => this.Mana;
+
+        protected override string GetBaseDescription()
+        {
+            if (base.PlentifulHappenThisTurn) return base.GetExtraDescription1;
+            return base.GetBaseDescription();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

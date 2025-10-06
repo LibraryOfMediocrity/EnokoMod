@@ -83,8 +83,9 @@ EnokoTinyTrap:
 EnokoClawTrap:
   Name: Honed Claws
   Description: |-
-    |Trap Card|: Triggers at the end of the turn, targeting all enemies.
+    |Trap Card|: Triggers at the end of the turn, targeting all enemies. 
     |Triggered|: Deal {Damage} damage.
+  DetailText: "Default target is the enemy with the least life."
 
 EnokoEyeTrap:
   Name: Sharp Eyes
@@ -111,17 +112,17 @@ EnokoBoon:
   Header: Choose a Boon for this battle.
 
 BoonCardW:
-  Name: Power
+  Name: Boon of Power
   Description: |-
     Gain {Value1} |Firepower| and |Spirit|.
 
 BoonCardE:
-  Name: Wisdom
+  Name: Boon of Wisdom
   Description: |-
     At the start of the turn, gain {Mana} and draw {Value1} card.
 
 BoonCardO:
-  Name: Safety
+  Name: Boon of Safety
   Description: |-
     Gain {Value1} |Defense Matrix|.
 
@@ -157,6 +158,11 @@ EnokoRupture:
   Description: |-
     Deal {Damage} damage to each enemy.
     |When Exiled|: Deal {Damage} damage to each enemy and return this card to the hand.
+    |Overflow|: Gain {Mana}.
+  ExtraDescription1: |-
+    Deal {Damage} damage to each enemy.
+    |When Exiled|: Deal {Damage} damage to each enemy and return this card to the hand.
+    |d:Overflow: Gain {Mana}.|
 
 EnokoBlind:
   Name: Blinding Speed
@@ -173,8 +179,9 @@ EnokoBunkerTrap:
 EnokoHiddenTrap:
   Name: Hidden Trap
   Description: |-
-    |Trap Card|: Triggers at the start of the turn, targeting all enemies.
+    |Trap Card|: Triggers at the start of the turn, targeting all enemies. 
     |Triggered|: Apply |Constrain| equal to {Value1} times the number of cards in the hand.
+  DetailText: "Default target is the enemy with the most life."
 
 EnokoHiddenSummon:
   Name: Hidden Move
@@ -263,4 +270,30 @@ EnokoLoad:
     Gain {Mana}.
   ExtraDescription2: |-
     |Exile| up to {Value2} cards from the hand, draw pile, and discard pile.
+
+EnokoRefine:
+  Name: Trap Refinement
+  Description: |-
+    |Exile| up to |a:1| |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to |a:1| |Trap Card| in hand {Value1} times.
+    The first time this card is played each turn, draw {Value2} cards.
+  ExtraDescription1: |-
+    |Exile| up to |a:1| |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to |a:1| |Trap Card| in hand {Value1} times.
+    |d:The first time this card is played each turn, draw {Value2} cards.|
+  Header1: Choose a Trap Card to Exile
+  Header2: Choose a Trap Card to Trigger
+
+EnokoShovelTrap:
+  Name: Shovel
+  Description: |-
+    |Trap Card|: Triggers the first time a non attack card is played each turn.
+    |Triggered|: Choose up to {Value1} non |Exile| card or |Trap Card| from |Exile| to return to the hand. If there are none, draw {Value2} card{Value2:plural one="" other="s"}.
+  Header: CHoose a card to return from Exile
   
+
+EnokoEdge:
+  Name: Battle Edge
+  Description: |-
+    Apply {Value1} |Constrain|.
+    Draw {Value2} card and gain {Mana} for each unique debuff on the enemy.

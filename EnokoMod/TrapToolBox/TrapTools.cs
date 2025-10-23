@@ -21,20 +21,15 @@ namespace EnokoMod.TrapToolBox
         /// </summary>
         public static Unit[] SelectUnit(TrapSelector selector, BattleController battle)
         {
-            
-            switch (selector)
+
+            return selector switch
             {
-                case TrapSelector.RandomEnemy:
-                    return new Unit[1] { battle.RandomAliveEnemy };
-                case TrapSelector.AllEnemies:
-                    return battle.AllAliveEnemies.ToArray();
-                case TrapSelector.LeastLife:
-                    return new Unit[1] { battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp) };
-                case TrapSelector.MostLife:
-                    return new Unit[1] { battle.EnemyGroup.Alives.MaxBy((EnemyUnit unit) => unit.Hp) };
-                default:
-                    return Array.Empty<Unit>();
-            }
+                TrapSelector.RandomEnemy => new Unit[1] { battle.RandomAliveEnemy },
+                TrapSelector.AllEnemies => battle.AllAliveEnemies.ToArray(),
+                TrapSelector.LeastLife => new Unit[1] { battle.EnemyGroup.Alives.MinBy((EnemyUnit unit) => unit.Hp) },
+                TrapSelector.MostLife => new Unit[1] { battle.EnemyGroup.Alives.MaxBy((EnemyUnit unit) => unit.Hp) },
+                _ => Array.Empty<Unit>(),
+            };
         }
     }
 

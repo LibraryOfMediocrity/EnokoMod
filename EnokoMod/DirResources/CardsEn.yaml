@@ -85,7 +85,6 @@ EnokoClawTrap:
   Description: |-
     |Trap Card|: Triggers at the end of the turn, targeting all enemies. 
     |Triggered|: Deal {Damage} damage.
-  DetailText: "Default target is the enemy with the least life."
 
 EnokoEyeTrap:
   Name: Sharp Eyes
@@ -131,7 +130,7 @@ EnokoPitfall:
   Description: |-
     Gain {Block} |Block|.
     If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
-    |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain|.
+    |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain| to each enemy.
   ShortDescription: |-
     Whenever a non attack card is used, apply |Constrain|.
 
@@ -141,8 +140,7 @@ EnokoMulligan:
     Choose a card in hand. Swap it with a card of the same type in the draw pile.
     If there are no cards of the same type in the draw pile, instead shuffle the card into the draw pile and draw {Value1} card.
   DetailText: |-
-    Swap in this case means the card in the hand will take the exact position of the card that was in the draw pile.
-    The card in th draw pile will not take the exact position of the card in hand because I don't know how to do that (it will move to the right side of the hand like normal).
+    Swap means that the card in the hand will take the position of the card in the draw pile, and the card in the draw pile will move to the hand.
   Header1: Choose a card to move to the draw pile.
   Header2: Choose a card to move to the hand.
 
@@ -274,12 +272,12 @@ EnokoLoad:
 EnokoRefine:
   Name: Trap Refinement
   Description: |-
-    |Exile| up to |a:1| |Trap Card| from the hand.
-    For each card |Exiled| this way, trigger up to |a:1| |Trap Card| in hand {Value1} times.
+    |Exile| up to |c:1| |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to |c:1| |Trap Card| in hand {Value1} times.
     The first time this card is played each turn, draw {Value2} cards.
   ExtraDescription1: |-
-    |Exile| up to |a:1| |Trap Card| from the hand.
-    For each card |Exiled| this way, trigger up to |a:1| |Trap Card| in hand {Value1} times.
+    |Exile| up to |c:1| |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to |c:1| |Trap Card| in hand {Value1} times.
     |d:The first time this card is played each turn, draw {Value2} cards.|
   Header1: Choose a Trap Card to Exile
   Header2: Choose a Trap Card to Trigger

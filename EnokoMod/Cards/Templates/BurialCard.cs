@@ -32,7 +32,11 @@ namespace EnokoMod.Cards.Templates
                     break;
                 }
             }
-            if(effect != null) base.React(new RemoveStatusEffectAction(effect));
+            if (effect != null)
+            {
+                effect.Level--;
+                if (effect.Level == 0) base.React(new RemoveStatusEffectAction(effect));
+            }
         }
 
         public bool IsBuried
@@ -44,7 +48,23 @@ namespace EnokoMod.Cards.Templates
 
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {
-            yield return BuffAction<BurialIndicator>(limit: CardIndex);
+            StatusEffect effect = null;
+            foreach (StatusEffect status in Battle.Player.StatusEffects)
+            {
+                if (status is BurialIndicator && status.Limit == CardIndex)
+                {
+                    effect = status;
+                    break;
+                }
+            }
+            if(effect == null)
+            {
+                yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
+            }
+            else
+            {
+                effect.Level++;
+            }
             yield break;
         }
 
@@ -54,7 +74,23 @@ namespace EnokoMod.Cards.Templates
         {
             if (srcZone != CardZone.Exile && dstZone == CardZone.Exile)
             {
-                yield return BuffAction<BurialIndicator>(limit: CardIndex);
+                StatusEffect effect = null;
+                foreach (StatusEffect status in Battle.Player.StatusEffects)
+                {
+                    if (status is BurialIndicator && status.Limit == CardIndex)
+                    {
+                        effect = status;
+                        break;
+                    }
+                }
+                if (effect == null)
+                {
+                    yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
+                }
+                else
+                {
+                    effect.Level++;
+                }
             }
             if (srcZone == CardZone.Exile && dstZone != CardZone.Exile)
             {
@@ -67,7 +103,11 @@ namespace EnokoMod.Cards.Templates
                         break;
                     }
                 }
-                if (effect != null) yield return new RemoveStatusEffectAction(effect);
+                if (effect != null)
+                {
+                    effect.Level--;
+                    if (effect.Level == 0) yield return new RemoveStatusEffectAction(effect);
+                }
             }
             yield break;
         }

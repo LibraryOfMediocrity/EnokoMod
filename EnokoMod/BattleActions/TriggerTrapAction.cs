@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace EnokoMod.BattleActions
     public sealed class TriggerTrapAction : EventBattleAction<TriggerTrapEventArgs>
     {
 
-        public TriggerTrapAction(TrapCard card, Unit[] units)
+        public TriggerTrapAction(TrapCard card, Unit[] units) 
         {
             base.Args = new TriggerTrapEventArgs
             {

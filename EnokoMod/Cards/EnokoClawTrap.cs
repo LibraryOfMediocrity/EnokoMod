@@ -33,7 +33,6 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoClawTrapDef))]
     public sealed class EnokoClawTrap : TrapCard
     {
-        public override Unit[] DefaultTarget => TrapTools.SelectUnit(TrapSelector.LeastLife, base.Battle);
 
         public override IEnumerable<BattleAction> OnTurnEndingInHand()
         {

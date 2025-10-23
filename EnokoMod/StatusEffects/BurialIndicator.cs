@@ -19,7 +19,6 @@ namespace EnokoMod.StatusEffects
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.Type = StatusEffectType.Special;
-            config.HasLevel = false;
             config.IsStackable = false;
             config.RelativeEffects = new List<string>() { nameof(Burial) };
             return config;
@@ -43,6 +42,11 @@ namespace EnokoMod.StatusEffects
                     return base.Name;
                 }
             }
+        }
+
+        protected override void OnAdded(Unit unit)
+        {
+            //_showCount = false;
         }
 
         public string BurialEffect

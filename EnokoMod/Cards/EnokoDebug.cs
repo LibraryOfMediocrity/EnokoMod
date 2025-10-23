@@ -37,26 +37,7 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            UnityEngine.Debug.Log("Start of function");
-            List<Card> cards = base.Battle.ExileZone.Where((Card exile) => exile is TrapCard || !exile.IsExile).ToList();
-            if (cards != null && cards.Count > 0)
-            {
-                UnityEngine.Debug.Log("Inside if statement");
-                SelectCardInteraction interaction = new SelectCardInteraction(0, 1/*Value1*/, cards);
-                UnityEngine.Debug.Log("Calling interaction");
-                yield return new InteractionAction(interaction); 
-                UnityEngine.Debug.Log("Interaction Called");
-                if (interaction.SelectedCards.Count > 0)
-                {
-                    UnityEngine.Debug.Log("Moving cards");
-                    yield return new MoveCardAction(interaction.SelectedCards[0], CardZone.Hand);
-                }
-                UnityEngine.Debug.Log("End of if statement");
-            }
-            else
-            {
-                yield return new DrawManyCardAction(Value2);
-            }
+            
             yield break;
         }
     }

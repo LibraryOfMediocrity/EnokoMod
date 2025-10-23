@@ -13,7 +13,7 @@ namespace EnokoMod
 {
     [BepInPlugin(EnokoMod.PInfo.GUID, EnokoMod.PInfo.Name, EnokoMod.PInfo.version)]
     [BepInDependency(LBoLEntitySideloader.PluginInfo.GUID, BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency(AddWatermark.API.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    //[BepInDependency(AddWatermark.API.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInProcess("LBoL.exe")]
     public class BepinexPlugin : BaseUnityPlugin
     {
@@ -47,8 +47,8 @@ namespace EnokoMod
 
             harmony.PatchAll();
 
-            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
-                WatermarkWrapper.ActivateWatermark();
+            //if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
+              //  WatermarkWrapper.ActivateWatermark();
         }
 
         private void OnDestroy()

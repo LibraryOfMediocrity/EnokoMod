@@ -37,7 +37,7 @@ BoonESe:
 BurialIndicator:
   Name: you should not see This
   Description: |-
-    {Name} is |Buried| and its effect is active.
+    {Level} cop{Level:plural one='y' other='ies'} of {Name} {Level:plural one='is' other='are'} |Buried| and its effect is active.
     {BurialEffect}
 
 EnokoRetainConstrainSe:
@@ -65,3 +65,8 @@ EnokoThornsSe:
   Description: |-
     {OwnerName} takes {Level} additional damage.
     {OwnerName} loses |a:1| {SelfName} when attacked and half of {SelfName} at the end of the turn.
+
+ReactToPassiveSe:
+  Name: React to passive
+  Description: |-
+    Whenever a teammate passive activates, gain 5 block.

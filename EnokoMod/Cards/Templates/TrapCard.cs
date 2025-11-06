@@ -12,12 +12,12 @@ namespace EnokoMod.Cards.Templates
     public abstract class TrapCard : Card
     {
         /// <summary>
-        /// Gets the default target enemy using the <strong>SelectUnit</strong> method.
+        /// Gets the default target enemy using the <c>SelectUnit</c> method.
         /// </summary>
         public virtual Unit[] DefaultTarget => TrapTools.SelectUnit(TrapSelector.RandomEnemy, base.Battle);
         
         /// <summary>
-        /// This effect is called when the trap is triggered. 
+        /// This effect is called when the trap is triggered. <br></br>
         /// <strong>Must be able to handle both single and multiple targets.</strong>
         /// </summary>
         public abstract IEnumerable<BattleAction> TrapTriggered(Unit[] units);

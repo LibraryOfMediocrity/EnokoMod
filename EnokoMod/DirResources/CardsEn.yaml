@@ -272,12 +272,12 @@ EnokoLoad:
 EnokoRefine:
   Name: Trap Refinement
   Description: |-
-    |Exile| up to |c:1| |Trap Card| from the hand.
-    For each card |Exiled| this way, trigger up to |c:1| |Trap Card| in hand {Value1} times.
+    |Exile| up to {One} |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to {One} |Trap Card| in hand {Value1} times.
     The first time this card is played each turn, draw {Value2} cards.
   ExtraDescription1: |-
-    |Exile| up to |c:1| |Trap Card| from the hand.
-    For each card |Exiled| this way, trigger up to |c:1| |Trap Card| in hand {Value1} times.
+    |Exile| up to {One} |Trap Card| from the hand.
+    For each card |Exiled| this way, trigger up to {One} |Trap Card| in hand {Value1} times.
     |d:The first time this card is played each turn, draw {Value2} cards.|
   Header1: Choose a Trap Card to Exile
   Header2: Choose a Trap Card to Trigger
@@ -295,3 +295,24 @@ EnokoEdge:
   Description: |-
     Apply {Value1} |Constrain|.
     Draw {Value2} card and gain {Mana} for each unique debuff on the enemy.
+
+EnokoShovelSummon:
+  Name: Foolish Burial
+  Description: |-
+    |Exile| a card in the hand.
+    If there is not a |Shovel| in the hand, add one to the hand.
+  FlavorText: I have never played Yu Gi Oh
+
+
+# Debug - No need to translate
+TempMaxHpGain:
+  Name: Gain Temporary Maximum Life
+  Description: |-
+    Gain {Value1} |Temporary Maximum Life|.
+  UpgradedDescription: |-
+    Lose {Value1} |Temporary Maximum Life|.
+
+EnokoDebug:
+  Name: Enoko Debug
+  Description: "currently: gain 10 life"
+ 

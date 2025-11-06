@@ -62,6 +62,8 @@ namespace EnokoMod.Cards
             }
         }
 
+        public int One { get => 1; }
+
         protected override string GetBaseDescription()
         {
             if (First || base.Battle == null)
@@ -76,7 +78,7 @@ namespace EnokoMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card hand) => hand is TrapCard).ToList<Card>();
-            if (list.Count <= 1)
+            if (list.Count < 1)
             {
                 return null;
             }

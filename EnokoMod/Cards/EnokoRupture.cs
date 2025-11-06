@@ -20,7 +20,7 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Uncommon;
             config.Type = CardType.Attack;
             config.Colors = new List<ManaColor>() { ManaColor.White };
-            config.Cost = new ManaGroup() { Any = 1, White = 2 };
+            config.Cost = new ManaGroup() { Any = 2, White = 2 };
             config.Damage = 18;
             config.UpgradedDamage = 24;
             config.TargetType = TargetType.AllEnemies;

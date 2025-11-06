@@ -70,3 +70,23 @@ ReactToPassiveSe:
   Name: React to passive
   Description: |-
     Whenever a teammate passive activates, gain 5 block.
+
+
+# Debug - No need to translate
+
+TempMaxHpTest:
+  Name: Temporary Maximum Life
+  Description: |-
+    At the end of combat, {OwnerName} loses {Level} maximum life.
+
+HealBlockTest:
+  Name: Heal Block
+  Description: |-
+    Negate the next {Level} life that {OwnerName} would gain.
+
+YuyukoCounter:
+  Name: Convenient Power
+  Description: |-
+    {OwnerName} cannot be prevented from gaining life.
+    {OwnerName} gains twice as much |Law of Mortality|.
+    At the start of the turn, gain |Heal Block| equal to {OwnerName}'s |Law of Mortality|.

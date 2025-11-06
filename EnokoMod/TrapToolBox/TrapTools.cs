@@ -12,12 +12,12 @@ namespace EnokoMod.TrapToolBox
     public static class TrapTools
     {
         /// <summary>
-        /// Returns an array containing the selected enemies. Accepts a single unit or a TrapSelector value.
+        /// Returns an array containing the selected enemies. Accepts a single unit or a <c>TrapSelector</c> value.
         /// </summary>
         public static Unit[] SelectUnit(Unit unit) => new Unit[] { unit };
 
         /// <summary>
-        /// Returns an array containing the selected enemies. Accepts a single unit or a TrapSelector value.
+        /// Returns an array containing the selected enemies. Accepts a single unit or a <c>TrapSelector</c> value.
         /// </summary>
         public static Unit[] SelectUnit(TrapSelector selector, BattleController battle)
         {

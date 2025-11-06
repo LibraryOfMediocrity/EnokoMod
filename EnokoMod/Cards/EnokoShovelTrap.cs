@@ -37,7 +37,7 @@ namespace EnokoMod.Cards
 
         protected override void OnEnterBattle(BattleController battle)
         {
-            base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
+            base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, this.OnCardUsed);
             base.HandleBattleEvent<UnitEventArgs>(Battle.Player.TurnStarted, delegate { this.First = true; });
             First = true;
         }

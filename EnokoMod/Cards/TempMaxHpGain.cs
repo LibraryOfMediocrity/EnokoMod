@@ -36,11 +36,13 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(TempMaxHpGainDef))]
     public sealed class TempMaxHpGain : Card
     {
+        public override bool Triggered => Battle.HandZone.Count % 2 == 0;
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            
-            yield return TempMaxHpChange(Battle.Player, Value1, this.IsUpgraded);
+            // reminder to retest burialcard
+            int num = !Triggered ? 9999 : Value1;
+            yield return TempMaxHpChange(Battle.Player, num, this.IsUpgraded);
             yield break;
         }
 
@@ -51,16 +53,19 @@ namespace EnokoMod.Cards
         /// </summary>
         private BattleAction TempMaxHpChange(Unit target, int amount, bool isNegative = false)
         {
-            // untested
-            if (amount < 0) throw new ArgumentException("amount should no be negative", "amount");
+            // could place hp change logic in status to allow them to be buff/debuff
+            // would change life when added/stacked/removed + check if battle end removes status(prob not)
+            // only edge case: externally changing level won't work as expected
+            // place in battleaction if reacting is needed
+            if (amount < 0) throw new ArgumentException("amount should not be negative", "amount");
             int newMaxHp = isNegative ? Math.Max(target.MaxHp - amount, 1) : Math.Min(target.MaxHp + amount, 9999);
             int newHp = Math.Min(target.Hp, newMaxHp);
             int change = Math.Abs(target.MaxHp - newMaxHp);
             target.SetMaxHp(newHp, newMaxHp);
             IGameRunVisualTrigger visualTrigger = base.GameRun.VisualTrigger;
             visualTrigger?.OnSetHpAndMaxHp(newHp, newMaxHp, true);
-            if(isNegative) return new ApplyStatusEffectAction<TempMaxHpTestDown>(target, level: change);
-            else return new ApplyStatusEffectAction<TempMaxHpTest>(target, level: change);
+            if(isNegative) return new ApplyStatusEffectAction<TempMaxHpTestDown>(target, level: change, limit: change);
+            else return new ApplyStatusEffectAction<TempMaxHpTest>(target, level: change, limit: change);
         }
     }
 }

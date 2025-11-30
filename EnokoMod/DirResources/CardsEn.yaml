@@ -28,7 +28,8 @@ EnokoBlockB:
 EnokoCatalyst:
   Name: Disaster Catalyst
   Description: |-
-    Apply the selected enemy's debuffs to all enemies. Level/Duration is equal to the original's Level/Duration.
+    Apply the selected enemy's debuffs to all enemies. 
+  DetailText: Level/Duration is equal to the original's Level/Duration.
 
 EnokoFort:
   Name: Fortification
@@ -132,7 +133,7 @@ EnokoPitfall:
     If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
     |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain| to each enemy.
   ShortDescription: |-
-    Whenever a non attack card is used, apply |Constrain|.
+    Whenever a non attack card is used, apply |Constrain| to each enemy.
 
 EnokoMulligan:
   Name: Mulligan
@@ -285,10 +286,9 @@ EnokoRefine:
 EnokoShovelTrap:
   Name: Shovel
   Description: |-
-    |Trap Card|: Triggers the first time a non attack card is played each turn.
+    |Trap Card|: Triggers the first time a card is |Exiled| each turn.
     |Triggered|: Choose up to {Value1} non |Exile| card or |Trap Card| from |Exile| to return to the hand. If there are none, draw {Value2} card{Value2:plural one="" other="s"}.
   Header: CHoose a card to return from Exile
-  
 
 EnokoEdge:
   Name: Battle Edge
@@ -301,7 +301,6 @@ EnokoShovelSummon:
   Description: |-
     |Exile| a card in the hand.
     If there is not a |Shovel| in the hand, add one to the hand.
-  FlavorText: I have never played Yu Gi Oh
 
 
 # Debug - No need to translate

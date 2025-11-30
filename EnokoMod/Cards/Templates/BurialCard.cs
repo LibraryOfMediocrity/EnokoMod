@@ -17,7 +17,7 @@ namespace EnokoMod.Cards.Templates
         {
             get
             {
-                return this.LocalizeProperty("ShortDescription");
+                return this.LocalizeProperty("ShortDescription", decorated: true);
             }
         }
 

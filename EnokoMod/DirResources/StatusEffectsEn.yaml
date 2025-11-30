@@ -77,7 +77,12 @@ ReactToPassiveSe:
 TempMaxHpTest:
   Name: Temporary Maximum Life
   Description: |-
-    At the end of combat, {OwnerName} loses {Level} maximum life.
+    At the end of combat, {OwnerName} loses {Limit} maximum life.
+
+TempMaxHpTestDown:
+  Name: Temporary Maximum Life Down
+  Description: |-
+    At the end of combat, {OwnerName} gains {Limit} maximum life.
 
 HealBlockTest:
   Name: Heal Block

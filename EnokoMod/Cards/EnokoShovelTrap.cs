@@ -37,16 +37,16 @@ namespace EnokoMod.Cards
 
         protected override void OnEnterBattle(BattleController battle)
         {
-            base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, this.OnCardUsed);
+            base.ReactBattleEvent<CardEventArgs>(base.Battle.CardExiled, this.OnCardExiled);
             base.HandleBattleEvent<UnitEventArgs>(Battle.Player.TurnStarted, delegate { this.First = true; });
             First = true;
         }
 
         private bool First = true;
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnCardExiled(CardEventArgs args)
         {
-            if (args.Card.CardType != CardType.Attack && First)
+            if (First)
             {
                 yield return new TriggerTrapAction(this);
                 First = false;

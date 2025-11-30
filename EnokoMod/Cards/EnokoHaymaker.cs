@@ -35,7 +35,7 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoHaymakerDef))]
     public sealed class EnokoHaymaker : Card
     {
-
+        // could make hit 3 times for more late game value. more base damage is only good early.
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             int hittimes = (selector.SelectedEnemy.StatusEffects.Where((StatusEffect effect) => effect.Type == StatusEffectType.Negative).Any() == true ? 2 : 1);

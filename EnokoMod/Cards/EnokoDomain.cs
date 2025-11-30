@@ -1,17 +1,19 @@
 ﻿using EnokoMod.Cards.Templates;
+using EnokoMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
+using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
+using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
-using EnokoMod.StatusEffects;
-using LBoL.Core.Battle.Interactions;
 using System.Linq;
+using System.Text;
 
 namespace EnokoMod.Cards
 {
@@ -56,6 +58,33 @@ namespace EnokoMod.Cards
             }
             yield return new AddCardsToHandAction(copies);
             yield break;
+        }
+    }
+
+    public sealed class EnokoDomainSeDef : EnokoStatusEffectTemplate
+    {
+        public override StatusEffectConfig MakeConfig()
+        {
+            StatusEffectConfig config = GetDefaultStatusEffectConfig();
+            config.HasLevel = false;
+            return config;
+        }
+    }
+
+    [EntityLogic(typeof(EnokoDomainSeDef))]
+    public sealed class EnokoDomainSe : StatusEffect
+    {
+        public int MaxHand
+        {
+            get
+            {
+                return 12;
+            }
+        }
+
+        protected override void OnAdded(Unit unit)
+        {
+            base.Battle.MaxHand = this.MaxHand;
         }
     }
 }

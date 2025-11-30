@@ -17,6 +17,7 @@ namespace EnokoMod.StatusEffects
         {
             StatusEffectConfig config = GetDefaultStatusEffectConfig();
             config.Type = StatusEffectType.Special;
+            config.LimitStackType = StackType.Add;
             return config;
         }
     }
@@ -29,25 +30,28 @@ namespace EnokoMod.StatusEffects
             base.HandleOwnerEvent<GameEventArgs>(base.Battle.BattleEnding, delegate
             {
                 int num1 = Owner.Hp;
-                int num2 = Owner.MaxHp + Level;
+                int num2 = Owner.MaxHp + Limit;
                 base.Battle.Player.SetMaxHp(num1, num2);
                 IGameRunVisualTrigger visualTrigger = base.GameRun.VisualTrigger;
                 visualTrigger?.OnSetHpAndMaxHp(num1, num2, true);
             });
+
         }
 
         public OpposeResult Oppose(TempMaxHpTest other)
         {
-            if (base.Level < other.Level)
+            if (base.Limit < other.Limit)
             {
-                other.Level -= base.Level;
+                other.Limit -= base.Limit;
+                other.Level = other.Limit;
                 return OpposeResult.KeepOther;
             }
-            if (base.Level == other.Level)
+            if (base.Limit == other.Limit)
             {
                 return OpposeResult.Neutralize;
             }
-            base.Level -= other.Level;
+            base.Limit -= other.Limit;
+            base.Level = base.Limit;
             return OpposeResult.KeepSelf;
         }
     }

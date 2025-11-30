@@ -1,18 +1,14 @@
-﻿using EnokoMod.Cards.Templates;
+﻿using EnokoMod.BattleActions;
+using EnokoMod.Cards.Templates;
+using EnokoMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core;
-using LBoLEntitySideloader.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle;
+using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
-using EnokoMod.StatusEffects;
-using EnokoMod.BattleActions;
-using EnokoMod.TrapToolBox;
+using LBoLEntitySideloader.Attributes;
+using System.Collections.Generic;
 
 namespace EnokoMod.Cards
 {
@@ -58,5 +54,20 @@ namespace EnokoMod.Cards
             yield return BuffAction<EnokoTinySe>(Value2);
             yield break;
         }
+    }
+
+    public sealed class EnokoTinySeDef : EnokoStatusEffectTemplate
+    {
+        public override StatusEffectConfig MakeConfig()
+        {
+            StatusEffectConfig config = GetDefaultStatusEffectConfig();
+            return config;
+        }
+    }
+
+    [EntityLogic(typeof(EnokoTinySeDef))]
+    public sealed class EnokoTinySe : StatusEffect
+    {
+
     }
 }

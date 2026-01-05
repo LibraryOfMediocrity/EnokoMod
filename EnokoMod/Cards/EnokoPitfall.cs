@@ -55,6 +55,7 @@ namespace EnokoMod.Cards
         {
             if (IsBuried && args.Card.CardType != CardType.Attack)
             {
+                Indicator.NotifyActivating();
                 foreach (BattleAction action in DebuffAction<EnokoConstrainSe>(base.Battle.AllAliveEnemies, Value1))
                 {
                     yield return action;

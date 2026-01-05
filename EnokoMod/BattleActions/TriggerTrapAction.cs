@@ -1,14 +1,10 @@
 ﻿using EnokoMod.Cards.Templates;
 using EnokoMod.TrapToolBox;
-using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 using UnityEngine;
 
 namespace EnokoMod.BattleActions

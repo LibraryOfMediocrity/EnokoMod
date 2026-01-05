@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using LBoL.Core;
+using LBoL.Core.Battle;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,5 +21,7 @@ namespace EnokoMod.BattleActions
             PostTriggerEvent = new GameEvent<TriggerTrapEventArgs>();
             return true;
         }
+
+
     }
 }

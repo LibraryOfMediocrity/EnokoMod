@@ -60,6 +60,8 @@ namespace EnokoMod.Cards
             }
         }
 
+        public override bool Triggered => Battle.DrawZoneToShow.Concat(Battle.HandZone).Concat(Battle.DiscardZone).ToList().Count >= Value1;
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;

@@ -21,17 +21,31 @@ namespace EnokoMod.Cards.Templates
             }
         }
 
+        public StatusEffect Indicator
+        {
+            get
+            {
+                StatusEffect effect = null;
+                foreach (StatusEffect status in Battle.Player.StatusEffects)
+                {
+                    if (status is BurialIndicator && status.Limit == CardIndex)
+                    {
+                        effect = status;
+                        break;
+                    }
+                }
+                return effect;
+            }
+        }
+
+
         protected override void OnLeaveBattle()
         {
-            StatusEffect effect = null;
-            foreach (StatusEffect status in Battle.Player.StatusEffects)
+            if (base.Battle.BattleShouldEnd)
             {
-                if (status is BurialIndicator && status.Limit == CardIndex)
-                {
-                    effect = status;
-                    break;
-                }
+                return;
             }
+            StatusEffect effect = Indicator;
             if (effect != null)
             {
                 effect.Level--;
@@ -48,15 +62,11 @@ namespace EnokoMod.Cards.Templates
 
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {
-            StatusEffect effect = null;
-            foreach (StatusEffect status in Battle.Player.StatusEffects)
+            if (base.Battle.BattleShouldEnd)
             {
-                if (status is BurialIndicator && status.Limit == CardIndex)
-                {
-                    effect = status;
-                    break;
-                }
+                yield break;
             }
+            StatusEffect effect = Indicator;
             if(effect == null)
             {
                 yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
@@ -72,17 +82,13 @@ namespace EnokoMod.Cards.Templates
 
         public override IEnumerable<BattleAction> OnMove(CardZone srcZone, CardZone dstZone)
         {
+            if (base.Battle.BattleShouldEnd)
+            {
+                yield break;
+            }
             if (srcZone != CardZone.Exile && dstZone == CardZone.Exile)
             {
-                StatusEffect effect = null;
-                foreach (StatusEffect status in Battle.Player.StatusEffects)
-                {
-                    if (status is BurialIndicator && status.Limit == CardIndex)
-                    {
-                        effect = status;
-                        break;
-                    }
-                }
+                StatusEffect effect = Indicator;
                 if (effect == null)
                 {
                     yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
@@ -94,15 +100,7 @@ namespace EnokoMod.Cards.Templates
             }
             if (srcZone == CardZone.Exile && dstZone != CardZone.Exile)
             {
-                StatusEffect effect = null;
-                foreach (StatusEffect status in Battle.Player.StatusEffects)
-                {
-                    if (status is BurialIndicator && status.Limit == CardIndex)
-                    {
-                        effect = status;
-                        break;
-                    }
-                }
+                StatusEffect effect = Indicator;
                 if (effect != null)
                 {
                     effect.Level--;

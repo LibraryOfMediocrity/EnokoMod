@@ -24,6 +24,8 @@ namespace EnokoMod.StatusEffects
         [EntityLogic(typeof(EnokoThornsSeDef))]
         public sealed class EnokoThornsSe : StatusEffect
         {
+
+
             protected override void OnAdded(Unit unit)
             {
                 base.HandleOwnerEvent<UnitEventArgs>(base.Owner.TurnEnding, new GameEventHandler<UnitEventArgs>(delegate

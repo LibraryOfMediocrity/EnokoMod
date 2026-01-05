@@ -141,7 +141,7 @@ EnokoMulligan:
     Choose a card in hand. Swap it with a card of the same type in the draw pile.
     If there are no cards of the same type in the draw pile, instead shuffle the card into the draw pile and draw {Value1} card.
   DetailText: |-
-    Swap means that the card in the hand will take the position of the card in the draw pile, and the card in the draw pile will move to the hand.
+    Swap means that the card in the hand will take the position of the card in the draw pile, and the card in the draw pile will move to the rightmost position in the hand.
   Header1: Choose a card to move to the draw pile.
   Header2: Choose a card to move to the hand.
 
@@ -288,7 +288,7 @@ EnokoShovelTrap:
   Description: |-
     |Trap Card|: Triggers the first time a card is |Exiled| each turn.
     |Triggered|: Choose up to {Value1} non |Exile| card or |Trap Card| from |Exile| to return to the hand. If there are none, draw {Value2} card{Value2:plural one="" other="s"}.
-  Header: CHoose a card to return from Exile
+  Header: Choose a card to return from Exile
 
 EnokoEdge:
   Name: Battle Edge
@@ -301,6 +301,56 @@ EnokoShovelSummon:
   Description: |-
     |Exile| a card in the hand.
     If there is not a |Shovel| in the hand, add one to the hand.
+  Header: "Choose a card to exile"
+
+EnokoSticky:
+  Name: Sticky Bullets
+  Description: |-
+    Deal {Damage} damage.
+    Apply {Value1} |Constrain| to the selected enemy at the start of each turn.
+
+EnokoScrappy:
+  Name: Scrappy Trapper
+  Description: |-
+    |Choose|: |Upgrade| {Value1} random cards in hand, or |Exile| this card.
+    |Burial|: Whenever a card is |Exiled|, deal {Value2} damage to each enemy.
+  UpgradedDescription: |-
+    |Choose|: |Upgrade| all cards in hand, or |Exile| this card.
+    |Burial|: Whenever a card is |Exiled|, deal {Value2} damage to each enemy.
+  ExtraDescription1: |-
+    |Upgrade| {Value1} random cards in hand.
+  UpgradedExtraDesription1: |-
+    |Upgrade| all cards in hand.
+  ExtraDescription2: |-
+    |Exile| this card.
+  ShortDescription: |-
+    Whenever a card is |Exiled|, deal damage to each enemy.
+
+EnokoDig:
+  Name: Treasure Digger
+  Description: |-
+    Deal {Damage} damage {Value1} times.
+    |Debut|: Create and play |Buried Treasure|.
+    |Burial|: At the start of the turn, return this card to the hand.
+  UpgradedDescription: |-
+    Deal {Damage} damage {Value1} times.
+    |Debut|: Create and play |Buried Treasure+|.
+    |Burial|: At the start of the turn, return this card to the hand.
+  ExtraDescription1: |-
+    Deal {Damage} damage {Value1} times.
+    |d:Debut: Create and play Buried Treasure.|
+    |Burial|: At the start of the turn, return this card to the hand.
+  UpgradedExtraDescription1: |-
+    Deal {Damage} damage {Value1} times.
+    |d:Debut: Create and play Buried Treasure+.|
+    |Burial|: At the start of the turn, return this card to the hand.
+  ShortDescription: "At the start of the turn, return this card to the hand."
+
+EnokoTreasure:
+  Name: Buried Treasure
+  Description: |-
+    Whenever a card leaves |Exile|, gain {Value1} |Firepower|.
+    
 
 
 # Debug - No need to translate
@@ -313,5 +363,4 @@ TempMaxHpGain:
 
 EnokoDebug:
   Name: Enoko Debug
-  Description: "currently: gain 10 life"
- 
+  Description: "When this card would be played through an effect, gain 10 life."

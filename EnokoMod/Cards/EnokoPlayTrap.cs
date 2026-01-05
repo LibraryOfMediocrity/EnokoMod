@@ -36,8 +36,7 @@ namespace EnokoMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            Card card = Library.CreateCard<EnokoBearTrap>();
-            if(this.IsUpgraded) card.Upgrade();
+            Card card = Library.CreateCard<EnokoBearTrap>(this.IsUpgraded);
             yield return new PlayCardAction(card, selector);
             yield break;
         }

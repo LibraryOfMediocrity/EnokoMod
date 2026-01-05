@@ -57,7 +57,7 @@ namespace EnokoMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnokoStickyDef))]
+    [EntityLogic(typeof(EnokoStickySeDef))]
     public sealed class EnokoStickySe : StatusEffect
     {
         protected override void OnAdded(Unit unit)

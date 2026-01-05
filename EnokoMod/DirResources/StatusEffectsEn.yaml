@@ -21,7 +21,7 @@ EnokoConstrainSe:
     {OwnerName} is dealt {Level} damage when attacked and loses {Level} life when {SelfName} is removed.
     {SelfName} disappears at the start of {OwnerName}'s turn.
   Brief: |-
-    Whenever this unit is attacked, they take damage equal to |Constrain|'s Level.
+    Whenever this unit is attacked, they take damage equal to |Constrain|'s Level. |Constrian| is lost at the start of the turn.
 
 EnokoTinySe:
   Name: Tiny Traps
@@ -66,13 +66,22 @@ EnokoThornsSe:
     {OwnerName} takes {Level} additional damage.
     {OwnerName} loses |a:1| {SelfName} when attacked and half of {SelfName} at the end of the turn.
 
+EnokoStickySe:
+  Name: Entangled
+  Description: |-
+    Apply {Level} |Constrain| to {OwnerName} at the start of {PlayerName}'s turn.
+
+EnokoTreasureSe:
+  Name: Buried Treasure
+  Description: |-
+    Whenever a card leaves |Exile|, gain {Level} |Firepower|.
+
+# Debug - No need to translate
+
 ReactToPassiveSe:
   Name: React to passive
   Description: |-
     Whenever a teammate passive activates, gain 5 block.
-
-
-# Debug - No need to translate
 
 TempMaxHpTest:
   Name: Temporary Maximum Life

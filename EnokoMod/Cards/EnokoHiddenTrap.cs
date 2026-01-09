@@ -1,19 +1,13 @@
-﻿using EnokoMod.Cards.Templates;
+﻿using EnokoMod.BattleActions;
+using EnokoMod.Cards.Templates;
+using EnokoMod.StatusEffects;
+using EnokoMod.TrapToolBox;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
-using LBoL.Core;
-using LBoLEntitySideloader.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
-using EnokoMod.BattleActions;
-using EnokoMod.StatusEffects;
-using System.Linq;
-using EnokoMod.TrapToolBox;
+using LBoLEntitySideloader.Attributes;
+using System.Collections.Generic;
 
 namespace EnokoMod.Cards
 {
@@ -47,11 +41,11 @@ namespace EnokoMod.Cards
             }
         }
 
-        public override Unit[] DefaultTarget => TrapTools.SelectUnit(TrapSelector.MostLife, base.Battle);
+        //public override Unit[] DefaultTarget => TrapTools.SelectUnit(TrapSelector.MostLife, base.Battle);
 
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
-            yield return new TriggerTrapAction(this, TrapSelector.AllEnemies);
+            yield return new TriggerTrapAction(this, TrapSelector.MostLife);
             yield break;
         }
 

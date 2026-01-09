@@ -25,7 +25,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 2 };
             config.Damage = 12;
-            config.UpgradedDamage = 16;
+            config.Value1 = 2;
+            config.UpgradedValue1 = 3;
             config.TargetType = TargetType.SingleEnemy;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
@@ -38,7 +39,7 @@ namespace EnokoMod.Cards
         // could make hit 3 times for more late game value. more base damage is only good early.
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            int hittimes = (selector.SelectedEnemy.StatusEffects.Where((StatusEffect effect) => effect.Type == StatusEffectType.Negative).Any() == true ? 2 : 1);
+            int hittimes = (selector.SelectedEnemy.StatusEffects.Where((StatusEffect effect) => effect.Type == StatusEffectType.Negative).Any() == true ? Value1 : 1);
             for (int i = 0; i < hittimes; i++)
             {
                 yield return AttackAction(selector);   

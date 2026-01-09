@@ -28,7 +28,7 @@ EnokoBlockB:
 EnokoCatalyst:
   Name: Disaster Catalyst
   Description: |-
-    Apply the selected enemy's debuffs to all enemies. 
+    Apply the selected enemy's debuffs to each enemy. 
   DetailText: Level/Duration is equal to the original's Level/Duration.
 
 EnokoFort:
@@ -52,7 +52,7 @@ EnokoNetGun:
     Apply {Value1} |Constrain| to each enemy.
   FlavorText: All tangled up, are ya?
 
-EnokoPlayTrap:
+EnokoTrapPlay:
   Name: Yamainu Combo
   Description: |-
     Deal {Damage} damage.
@@ -140,8 +140,6 @@ EnokoMulligan:
   Description: |-
     Choose a card in hand. Swap it with a card of the same type in the draw pile.
     If there are no cards of the same type in the draw pile, instead shuffle the card into the draw pile and draw {Value1} card.
-  DetailText: |-
-    Swap means that the card in the hand will take the position of the card in the draw pile, and the card in the draw pile will move to the rightmost position in the hand.
   Header1: Choose a card to move to the draw pile.
   Header2: Choose a card to move to the hand.
 
@@ -176,11 +174,11 @@ EnokoBunkerTrap:
     |Triggered|: Gain {Block} |Block|. Gain additional |Block| equal to {Value1} times the number of |Exiled| cards.
 
 EnokoHiddenTrap:
-  Name: Hidden Trap
+  Name: Hidden Snare
   Description: |-
-    |Trap Card|: Triggers at the start of the turn, targeting all enemies. 
+    |Trap Card|: Triggers at the start of the turn, targeting the enemy with the most life. 
     |Triggered|: Apply |Constrain| equal to {Value1} times the number of cards in the hand.
-  DetailText: "Default target is the enemy with the most life."
+#  DetailText: "Default target is the enemy with the most life."
 
 EnokoHiddenSummon:
   Name: Hidden Move
@@ -228,10 +226,10 @@ EnokoDiscombobulate:
 EnokoHaymaker:
   Name: Haymaker
   Description: |-
-    Deal {Damage} damage. If the enemy has a debuff, this card hits twice.
+    Deal {Damage} damage. If the enemy has a debuff, this card hits {Value1} times.
 
 EnokoBolas:
-  Name: Bolas
+  Name: Boleadoras
   Description: |-
     Apply {Value1} |Constrain| and {Value2} |Weak| to each enemy.
   UpgradedDescription: |-
@@ -239,13 +237,13 @@ EnokoBolas:
     Repeat this effect at the start of the next turn.
 
 EnokoRevenge:
-  Name: Trap Counter
+  Name: Countermeasures
   Description: |-
     Gain {Block} |Block|.
     Apply {Value1} |Constrain| to the next {Value2} {Value2:plural one='enemy' other='enemies'} to attack {PlayerName}.
 
 EnokoReckless:
-  Name: Reckless Abandon
+  Name: Life Burns Bright
   Description: |-
     Lose {Value1} Life.
     Choose a card in the draw pile. Play it.
@@ -297,7 +295,7 @@ EnokoEdge:
     Draw {Value2} card and gain {Mana} for each unique debuff on the enemy.
 
 EnokoShovelSummon:
-  Name: Foolish Burial
+  Name: Reserve Stash
   Description: |-
     |Exile| a card in the hand.
     If there is not a |Shovel| in the hand, add one to the hand.
@@ -339,7 +337,7 @@ EnokoDig:
   ExtraDescription1: |-
     Deal {Damage} damage {Value1} times.
     |d:Debut: Create and play Buried Treasure.|
-    |Burial|: At the start of the turn, return this card to the hand.
+    |Burial|: At the start of the turn, return this card to the hand. 1
   UpgradedExtraDescription1: |-
     Deal {Damage} damage {Value1} times.
     |d:Debut: Create and play Buried Treasure+.|
@@ -350,7 +348,42 @@ EnokoTreasure:
   Name: Buried Treasure
   Description: |-
     Whenever a card leaves |Exile|, gain {Value1} |Firepower|.
-    
+
+EnokoKill: 
+  Name: Killer Instinct
+  Description: |-
+    Deal {Damage} damage.
+    Trigger a |Trap Card| in hand, targeting that enemy.
+    If {SelfName} defeated an enemy, trigger all |Trap Cards| in hand instead.
+  Header: Choose a Trap Card to trigger.
+
+EnokoPlaySummon: 
+  Name: Mystic Arts
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Shield} |Barrier|.
+    |Debut|: Add |Magic Trap| to the hand. Trigger it once, targeting all enemies.
+  ExtraDescription1: |-
+    Gain {Block} |Block|.
+    Gain {Shield} |Barrier|.
+    |d:Debut: Add Magic Trap to the hand. Trigger it once, targeting all enemies.|
+
+EnokoPlayTrap:
+  Name: Magic Trap
+  Description: |-
+    |Trap Card|: Triggers whenever a card is played through an effect, targeting all enemies.
+    |Triggered|: Deal {Damage} damage and gain {Block} |Block|.
+
+EnokoInfinite:
+  Name: Endless Strikes
+  Description: |-
+    Gain {Value1} |Graze|.
+    Deal {Damage} damage.
+    If mana was spent to play {SelfName}, add |Endless Strikes| to the hand.
+  UpgradedDescription: |-
+    Gain {Value1} |Graze|.
+    Deal {Damage} damage.
+    If mana was spent to play {SelfName}, add |Endless Strikes+| to the hand.
 
 
 # Debug - No need to translate
@@ -363,4 +396,4 @@ TempMaxHpGain:
 
 EnokoDebug:
   Name: Enoko Debug
-  Description: "When this card would be played through an effect, gain 10 life."
+  Description: "i forget what this card does at this point"

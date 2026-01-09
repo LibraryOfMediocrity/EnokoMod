@@ -12,7 +12,7 @@ using LBoL.Core.Battle.BattleActions;
 
 namespace EnokoMod.Cards
 {
-    public sealed class EnokoPlayTrapDef : EnokoCardTemplate
+    public sealed class EnokoTrapPlayDef : EnokoCardTemplate
     {
         public override CardConfig MakeConfig()
         {
@@ -30,8 +30,8 @@ namespace EnokoMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnokoPlayTrapDef))]
-    public sealed class EnokoPlayTrap : Card
+    [EntityLogic(typeof(EnokoTrapPlayDef))]
+    public sealed class EnokoTrapPlay : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

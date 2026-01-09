@@ -8,7 +8,7 @@ Trigger:
   Name: Trigger 
   Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. \
     This action will use a default target if no target is specified by the trigger source or |Trap Card|. \ 
-    The default target is a random enemy unless otherwise specified."
+    Will target a random enemy if no target is specified."
 
 Burial:
   Name: Burial

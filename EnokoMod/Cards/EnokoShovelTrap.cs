@@ -46,7 +46,7 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnCardExiled(CardEventArgs args)
         {
-            if (First)
+            if (First && !base.Battle.BattleShouldEnd)
             {
                 yield return new TriggerTrapAction(this);
                 First = false;

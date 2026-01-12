@@ -24,7 +24,7 @@ namespace EnokoMod.Cards
             config.UpgradedCost = new ManaGroup() { Any = 1, White = 1 };
             config.TargetType = TargetType.Nobody;
             config.Block = 13;
-            config.UpgradedBlock = 16;
+            config.UpgradedBlock = 18;
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
             config.RelativeCards = new List<string>() { "EnokoBearTrap" };

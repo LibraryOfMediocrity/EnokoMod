@@ -33,6 +33,7 @@ namespace EnokoMod.Cards
     {
         public override IEnumerable<BattleAction> OnTurnEndingInHand()
         {
+            if(base.Battle.BattleShouldEnd) yield break; 
             yield return new TriggerTrapAction(this, DefaultTarget);
             yield break;
         }

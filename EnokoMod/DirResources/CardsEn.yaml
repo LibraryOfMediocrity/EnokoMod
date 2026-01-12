@@ -385,6 +385,29 @@ EnokoInfinite:
     Deal {Damage} damage.
     If mana was spent to play {SelfName}, add |Endless Strikes+| to the hand.
 
+EnokoSet:
+  Name: Setup
+  Description: |-
+    Gain {Block} |Block|.
+    Add |Tiny Traps| to the hand.
+
+EnokoBlade:
+  Name: Hunting Blade
+  Description: |-
+    Deal {Damage} damage.
+    Whenever a |Trap Card| is triggered, increase {SelfName}'s damage by {Value1}.
+    If at least {Value2} cards have been used this turn and |Forest Snares| is not in hand, add one to the hand. 
+
+EnokoSnareTrap:
+  Name: Forest Snares
+  Description: |-
+    |Trap Card|: Triggers after every third card is used, targeting the enemy with the least life. ({Counter} card{Counter:plural one='' other='s'} remaining)
+    |Triggered|: Deal {Damage} damage.
+  NonbattleDescription: |-
+    |Trap Card|: Triggers after every third card is used, targeting the enemy with the least life.
+    |Triggered|: Deal {Damage} damage.
+  
+
 
 # Debug - No need to translate
 TempMaxHpGain:

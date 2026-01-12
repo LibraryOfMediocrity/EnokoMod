@@ -33,6 +33,8 @@ namespace EnokoMod.Cards
             config.UpgradedKeywords = Keyword.Debut;
             config.RelativeKeyword = Keyword.Block|Keyword.Shield;
             config.UpgradedRelativeKeyword = Keyword.Block|Keyword.Shield;
+            config.RelativeCards = new List<string>() { nameof(EnokoPlayTrap) };
+            config.UpgradedRelativeCards = config.RelativeCards;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }
@@ -69,7 +71,8 @@ namespace EnokoMod.Cards
             config.UpgradedDamage = 15;
             config.Block = 10;
             config.UpgradedBlock = 15;
-            config.Cost = new ManaGroup() { Any = 1 };
+            config.Rarity = Rarity.Uncommon;
+            config.Cost = new ManaGroup() { Any = 2 };
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
@@ -88,6 +91,7 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnCardPlayed(CardUsingEventArgs args)
         {
+            if (base.Battle.BattleShouldEnd) yield break;
             yield return new TriggerTrapAction(this, TrapSelector.AllEnemies);
             yield break;
         }

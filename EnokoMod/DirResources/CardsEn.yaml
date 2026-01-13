@@ -88,13 +88,13 @@ EnokoClawTrap:
     |Triggered|: Deal {Damage} damage.
 
 EnokoEyeTrap:
-  Name: Sharp Eyes
+  Name: Keen Eye
   Description: |-
     |Trap Card|: Triggers at the start of the turn.
     |Triggered|: |Scry| {Scry}.
 
 EnokoCamoTrap:
-  Name: Camoflauge
+  Name: Illusionist
   Description: |-
     |Trap Card|: Triggers at the end of the turn.
     |Triggered|: Gain {Block} |Block|.
@@ -131,9 +131,9 @@ EnokoPitfall:
   Description: |-
     Gain {Block} |Block|.
     If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
-    |Burial|: Whenever a non attack card is used, apply {Value1} |Constrain| to each enemy.
+    |Burial|: Whenever a non attack card is played, apply {Value1} |Constrain| to each enemy.
   ShortDescription: |-
-    Whenever a non attack card is used, apply |Constrain| to each enemy.
+    Whenever a non attack card is played, apply |Constrain| to each enemy.
 
 EnokoMulligan:
   Name: Mulligan
@@ -371,8 +371,9 @@ EnokoPlaySummon:
 EnokoPlayTrap:
   Name: Magic Trap
   Description: |-
-    |Trap Card|: Triggers whenever a card is played through an effect, targeting all enemies.
+    |Trap Card|: Triggers whenever a card is played through an effect, targeting all enemies. When played, this targets all enemies.
     |Triggered|: Deal {Damage} damage and gain {Block} |Block|.
+  DetailText: "\"Played through an effect\" refers to when a card is played by a battle effect like another card, rather than by the Player."
 
 EnokoInfinite:
   Name: Endless Strikes
@@ -396,16 +397,49 @@ EnokoBlade:
   Description: |-
     Deal {Damage} damage.
     Whenever a |Trap Card| is triggered, increase {SelfName}'s damage by {Value1}.
-    If at least {Value2} cards have been used this turn and |Forest Snares| is not in hand, add one to the hand. 
+    If at least {Value2} cards have been played this turn and |Forest Snares| is not in hand, add one to the hand. 
 
 EnokoSnareTrap:
   Name: Forest Snares
   Description: |-
-    |Trap Card|: Triggers after every third card is used, targeting the enemy with the least life. ({Counter} card{Counter:plural one='' other='s'} remaining)
+    |Trap Card|: Triggers after every third card is played, targeting the enemy with the least life. ({Counter} card{Counter:plural one='' other='s'} remaining)
     |Triggered|: Deal {Damage} damage.
   NonbattleDescription: |-
-    |Trap Card|: Triggers after every third card is used, targeting the enemy with the least life.
+    |Trap Card|: Triggers after every third card is played, targeting the enemy with the least life.
     |Triggered|: Deal {Damage} damage.
+
+EnokoBarrage:
+  Name: Biting Barrage
+  Description: |-
+    Add {Value1} |Tiny Traps| to the hand.
+    |Burial|: At the end of each turn, trigger all attack |Trap Cards| in hand.
+  UpgradedDescription: |-
+    Add {Value1} |Tiny Traps+| to the hand.
+    |Burial|: At the end of each turn, trigger all attack |Trap Cards| in hand.
+  ShortDescription: |-
+    At the end of each turn, trigger all attack |Trap Cards| in hand.
+
+EnokoFresh:
+  Name: Breath of Fresh Air
+  Description: |-
+    Discard all non |Retain| cards in hand.
+    Draw {Value1} cards.
+    |Burial|: At the end of the turn, return this card to the discard pile.
+  ShortDescription: |-
+    At the end of the turn, return this card to the discard pile.
+
+EnokoAllSeeing:
+  Name: All-Seeing Eyes
+  Description: |-
+    At the start of the turn, apply {Value1} |Weak| or |Vulnereable| to each enemy without |Weak| or |Vulnerable|.
+
+EnokoWait:
+  Name: Wait and See
+  Description: |-
+    Gain {Shield} |Barrier|.
+    Choose a card in the hand, draw pile, or discard pile. It gains |Echo|. Place it on top of the draw pile.
+    Add a |Glare| to the draw pile.
+
   
 
 

@@ -19,10 +19,10 @@ namespace EnokoMod.Cards
             CardConfig config = GetTrapDefaultConfig();
             config.Rarity = Rarity.Common;
             config.Cost = new ManaGroup() { Any = 1 };
-            config.Damage = 6;
+            config.Damage = 5;
             config.Value1 = 2;
             config.Value2 = 3;
-            config.UpgradedValue1 = 3;
+            config.UpgradedValue2 = 4;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }

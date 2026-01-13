@@ -103,6 +103,12 @@ namespace EnokoMod.Cards
             yield break;
         }
 
+        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        {
+            yield return new TriggerTrapAction(this, TrapSelector.AllEnemies);
+            yield break;
+        }
+
     }
 
 

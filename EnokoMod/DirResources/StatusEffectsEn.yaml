@@ -76,6 +76,11 @@ EnokoTreasureSe:
   Description: |-
     Whenever a card leaves |Exile|, gain {Level} |Firepower|.
 
+EnokoAllSeeingSe:
+  Name: All-Seeing Eyes
+  Description: |-
+    At the start of the turn, apply {Level} |Weak| or |Vulnereable| to each enemy without |Weak| or |Vulnerable|.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

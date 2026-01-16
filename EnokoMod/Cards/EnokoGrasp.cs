@@ -19,7 +19,7 @@ namespace EnokoMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Rarity = Rarity.Uncommon;
-            config.Type = CardType.Attack;
+            config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 1 };

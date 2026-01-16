@@ -23,8 +23,8 @@ namespace EnokoMod.Cards
             CardConfig config = GetTrapDefaultConfig();
             config.Rarity = Rarity.Common;
             config.Cost = new ManaGroup() { Any = 1 };
-            config.Damage = 10;
-            config.UpgradedDamage = 14;
+            config.Damage = 7;
+            config.UpgradedDamage = 11;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }

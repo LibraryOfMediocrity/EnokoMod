@@ -75,6 +75,8 @@ namespace EnokoMod.Cards
 
         private bool First = true;
 
+        public override bool Triggered => First;
+
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card hand) => hand is TrapCard).ToList<Card>();

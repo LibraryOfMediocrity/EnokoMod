@@ -70,6 +70,11 @@ namespace EnokoMod.BattleActions
                         });
                     }
 
+                    yield return CreatePhase("Special Resolve", delegate
+                    {
+                        base.Battle.React(new SpecialResolveAction(Args.Card), Args.Card, ActionCause.Card);
+                    });
+
                     yield return CreateEventPhase<TriggerTrapEventArgs>("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
                 }
             }

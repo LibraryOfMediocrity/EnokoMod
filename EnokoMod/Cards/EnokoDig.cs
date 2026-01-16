@@ -91,10 +91,8 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            for (int i = 0; i < Value1; i++)
-            {
-                yield return AttackAction(selector);
-            }
+            yield return AttackAction(selector);
+
             if (TriggeredAnyhow)
             {
                 Card card = Library.CreateCard<EnokoTreasure>(this.IsUpgraded);

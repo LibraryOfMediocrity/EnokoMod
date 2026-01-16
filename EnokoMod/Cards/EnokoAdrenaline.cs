@@ -42,7 +42,7 @@ namespace EnokoMod.Cards
             yield return BuffAction<Graze>(base.Value1);
             yield return new DrawCardAction();
             int count = base.Battle.HandZone.Count - 5;
-            if (count < 0) count = 0;
+            if (count <= 0) yield break;
             ManaGroup manaGroup = new ManaGroup() { Colorless = count };
             yield return new GainManaAction(manaGroup);
             yield break;

@@ -25,8 +25,8 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.TargetType = TargetType.Nobody;
             config.Cost = new ManaGroup() { Any = 1 };
-            config.Scry = 2;
-            config.UpgradedScry = 3;
+            config.Scry = 5;
+            config.UpgradedScry = 7;
             config.Keywords = config.Keywords | Keyword.Scry;
             config.UpgradedKeywords = config.UpgradedKeywords | Keyword.Scry;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);

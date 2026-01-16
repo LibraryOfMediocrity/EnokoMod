@@ -81,6 +81,12 @@ EnokoAllSeeingSe:
   Description: |-
     At the start of the turn, apply {Level} |Weak| or |Vulnereable| to each enemy without |Weak| or |Vulnerable|.
 
+EnokoMasterSe:
+  Name: Battlefield Maestro
+  Description: |-
+    Whenever a |Trap Card| is triggered, gain {Count} |Block|.
+    If it was an attack, increase its damage by {Level}.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

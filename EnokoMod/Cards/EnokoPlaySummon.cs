@@ -75,6 +75,7 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 2 };
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
+            config.TargetType = TargetType.AllEnemies;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }
@@ -100,12 +101,6 @@ namespace EnokoMod.Cards
         {
             yield return AttackAction(units);
             yield return DefenseAction();
-            yield break;
-        }
-
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            yield return new TriggerTrapAction(this, TrapSelector.AllEnemies);
             yield break;
         }
 

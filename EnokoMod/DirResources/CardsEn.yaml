@@ -240,7 +240,7 @@ EnokoRevenge:
   Name: Countermeasures
   Description: |-
     Gain {Block} |Block|.
-    Apply {Value1} |Constrain| to the next {Value2} {Value2:plural one='enemy' other='enemies'} to attack {PlayerName}.
+    Apply {Value1} |Constrain| to the next {Value2} {Value2:plural one='enemy' other='enemies'} to attack {PlayerName} this turn.
 
 EnokoReckless:
   Name: Life Burns Bright
@@ -327,19 +327,19 @@ EnokoScrappy:
 EnokoDig:
   Name: Treasure Digger
   Description: |-
-    Deal {Damage} damage {Value1} times.
+    Deal {Damage} damage.
     |Debut|: Create and play |Buried Treasure|.
     |Burial|: At the start of the turn, return this card to the hand.
   UpgradedDescription: |-
-    Deal {Damage} damage {Value1} times.
+    Deal {Damage} damage.
     |Debut|: Create and play |Buried Treasure+|.
     |Burial|: At the start of the turn, return this card to the hand.
   ExtraDescription1: |-
-    Deal {Damage} damage {Value1} times.
+    Deal {Damage} damage.
     |d:Debut: Create and play Buried Treasure.|
     |Burial|: At the start of the turn, return this card to the hand. 1
   UpgradedExtraDescription1: |-
-    Deal {Damage} damage {Value1} times.
+    Deal {Damage} damage.
     |d:Debut: Create and play Buried Treasure+.|
     |Burial|: At the start of the turn, return this card to the hand.
   ShortDescription: "At the start of the turn, return this card to the hand."
@@ -437,8 +437,32 @@ EnokoWait:
   Name: Wait and See
   Description: |-
     Gain {Shield} |Barrier|.
-    Choose a card in the hand, draw pile, or discard pile. It gains |Echo|. Place it on top of the draw pile.
-    Add a |Glare| to the draw pile.
+    Choose up to {Value1} card in the hand, draw pile, or discard pile. It gains |Echo|. Place it on top of the draw pile.
+    For each card chosen, add a |Glare| to the draw pile.
+
+EnokoFinisher:
+  Name: Finishing Move
+  Description: |-
+    Deal {Damage} damage.
+    Repeat this damage for each unique debuff on the enemy.
+
+EnokoWire:
+  Name: Steel Wire
+  Description: |-
+    Apply {Value1} |Constrain| to each enemy.
+    Add |Barbed Wire| to the hand.
+
+EnokoBarbTrap:
+  Name: Barbed Wire
+  Description: |-
+    |Trap Card|: Triggers when an attack card is played, using the targeting of that card.
+    |Triggered|: Deal {Damage} damage.
+
+EnokoMaster:
+  Name: Battlefield Maestro
+  Description: |-
+    Whenever a |Trap Card| is triggered, gain {Value1} |Block|.
+    If it was an attack, increase its damage by {Value2}.
 
   
 

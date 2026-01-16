@@ -39,13 +39,28 @@ namespace EnokoMod.Cards
     public sealed class EnokoWait : Card
     {
 
+        private string Header
+        {
+            get
+            {
+                return this.LocalizeProperty("Header");
+            }
+        }
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
             List<Card> cards = Battle.HandZone.Concat(Battle.DrawZoneToShow.Concat(Battle.DiscardZone)).ToList();
-            SelectCardInteraction interaction = new SelectCardInteraction(0, Value1, cards);
+            SelectCardInteraction interaction = new SelectCardInteraction(0, Value1, cards)
+            {
+                Source = this,
+                Description = Header
+            };
             yield return new InteractionAction(interaction);
             Card card = interaction.SelectedCards[0];
+            if(card == null) yield break;
+            card.IsEcho = true;
+            card.NotifyChanged();
             yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Top);
             yield return new AddCardsToDrawZoneAction(Library.CreateCards<Xuanguang>(1), DrawZoneTarget.Random);
             yield break;

@@ -7,8 +7,7 @@ TrapCardDisc:
 Trigger:
   Name: Trigger 
   Brief: "An action that is performed when the |Trap Card| it belongs to is triggered. \
-    This action will use a default target if no target is specified by the trigger source or |Trap Card|. \ 
-    Will target a random enemy if no target is specified."
+    This action will target a random enemy if no target is specified by the trigger source or |Trap Card|."
 
 Burial:
   Name: Burial
@@ -86,6 +85,21 @@ EnokoMasterSe:
   Description: |-
     Whenever a |Trap Card| is triggered, gain {Count} |Block|.
     If it was an attack, increase its damage by {Level}.
+
+EnokoImmortalSe:
+  Name: Immortal Yamainu
+  Description: |-
+    Whenever any enemy loses a debuff, gain {Level} |Barrier|.
+
+EnokoGraveSe: 
+  Name: Gravedigger
+  Description: |-
+    At the start of each turn, add {Level:plural one='a |Spade|' other='% |Spades|'} to the hand.
+
+EnokoGoldbergSe:
+  Name: Rube Goldberg Machine
+  Description: |-
+    Whenever {First} is triggered, trigger {Second} using the same targeting.
 
 # Debug - No need to translate
 

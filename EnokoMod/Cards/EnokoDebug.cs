@@ -37,7 +37,6 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoDebugDef))]
     public sealed class EnokoDebug : Card
     {
-        
 
         public override Interaction Precondition()
         {

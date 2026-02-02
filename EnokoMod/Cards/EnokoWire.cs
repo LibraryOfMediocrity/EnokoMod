@@ -22,7 +22,8 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
-            config.Value1 = 2;
+            config.UpgradedCost = new ManaGroup() { Any = 1 };
+            config.Value1 = 3;
             config.UpgradedValue1 = 4;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };
             config.UpgradedRelativeEffects = config.RelativeEffects;

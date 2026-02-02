@@ -18,9 +18,9 @@ namespace EnokoMod.Exhibits
             ExhibitConfig exhibitConfig = this.GetDefaultExhibitConfig();
             exhibitConfig.Mana = new ManaGroup() { White = 1 };
             exhibitConfig.Value1 = 1;
-            exhibitConfig.Value2 = 3;
+            exhibitConfig.Value2 = 2;
             exhibitConfig.HasCounter = true;
-            exhibitConfig.InitialCounter = 3;
+            exhibitConfig.InitialCounter = 2;
             exhibitConfig.BaseManaColor = ManaColor.White;
             return exhibitConfig;
         }

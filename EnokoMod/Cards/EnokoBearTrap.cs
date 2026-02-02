@@ -39,16 +39,9 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnDamageRecieving(DamageEventArgs args)
         {
-            if (args.Source != base.Battle.Player && args.Source.IsAlive && args.DamageInfo.DamageType == DamageType.Attack && args.DamageInfo.Amount > 0f)
+            if (args.Source != base.Battle.Player && args.Source.IsAlive && args.DamageInfo.DamageType == DamageType.Attack && !args.DamageInfo.ZeroDamage)
             {
                 yield return new TriggerTrapAction(this, args.Source);
-                /*
-                var BattleActions = this.TrapTriggered(TrapTools.SelectUnit(args.Source));
-                foreach (var action in BattleActions)
-                {
-                    yield return action;
-                }
-                */
                 yield break;
             }
             yield break;

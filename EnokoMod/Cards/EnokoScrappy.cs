@@ -19,15 +19,17 @@ namespace EnokoMod.Cards
         {
             CardConfig config = GetCardDefaultConfig();
             config.Rarity = Rarity.Uncommon;
-            config.Type = CardType.Skill;
+            config.Type = CardType.Defense;
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 1, White = 1 };
+            config.Shield = 5;
+            config.UpgradedShield = 7;
             config.Value1 = 3;
             config.Value2 = 7;
             config.UpgradedValue2 = 10;
             config.TargetType = TargetType.Nobody;
-            config.RelativeKeyword = Keyword.Upgrade | Keyword.Exile;
-            config.UpgradedRelativeKeyword = Keyword.Upgrade | Keyword.Exile;
+            config.RelativeKeyword = Keyword.Upgrade | Keyword.Exile | Keyword.Shield;
+            config.UpgradedRelativeKeyword = Keyword.Upgrade | Keyword.Exile | Keyword.Shield;
             config.RelativeEffects = new List<string>() { nameof(Burial) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(Burial) };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
@@ -70,6 +72,7 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return DefenseAction();
             MiniSelectCardInteraction miniSelectCardInteraction = (MiniSelectCardInteraction)precondition;
             Card card = (miniSelectCardInteraction?.SelectedCard);
             if (card != null && card.ChoiceCardIndicator == 1)

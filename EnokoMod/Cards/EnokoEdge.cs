@@ -22,7 +22,7 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 2 };
-            config.UpgradedCost = new ManaGroup() { Any = 2, Black = 1 };
+            config.UpgradedCost = new ManaGroup() { Any = 1, Black = 1 };
             config.Value1 = 6;
             config.Value2 = 1;
             config.Mana = new ManaGroup() { Philosophy = 1 };
@@ -40,6 +40,21 @@ namespace EnokoMod.Cards
     public sealed class EnokoEdge : Card
     {
 
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            Count = 0;
+            base.HandleBattleEvent<UnitEventArgs>(Battle.Player.TurnEnded, delegate
+            {
+                Count = 0;
+            });
+        }
+
+        private int Count;
+
+        public ManaGroup AddCost = new ManaGroup() { Any = 1 };
+
+        public override ManaGroup AdditionalCost => new ManaGroup() { Any = Count };
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DebuffAction<EnokoConstrainSe>(selector.SelectedEnemy, Value1);
@@ -48,6 +63,7 @@ namespace EnokoMod.Cards
             yield return new DrawManyCardAction(count);
             ManaGroup gainMana = new ManaGroup() { Philosophy = count };
             yield return new GainManaAction(gainMana);
+            Count++;
             yield break;
         }
     }

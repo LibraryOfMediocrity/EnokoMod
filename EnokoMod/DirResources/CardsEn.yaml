@@ -183,7 +183,7 @@ EnokoHiddenTrap:
 EnokoHiddenSummon:
   Name: Hidden Move
   Description: |-
-    Choose to add either |Hidden Trap| or |Hidden Bunker| to the hand.
+    Choose to add either |Hidden Snare| or |Hidden Bunker| to the hand.
   Header: Choose a card to add.
 
 EnokoWeapon:
@@ -293,6 +293,7 @@ EnokoEdge:
   Description: |-
     Apply {Value1} |Constrain|.
     Draw {Value2} card and gain {Mana} for each unique debuff on the enemy.
+    This costs {AddCost} more in this turn.
 
 EnokoShovelSummon:
   Name: Reserve Stash
@@ -310,9 +311,11 @@ EnokoSticky:
 EnokoScrappy:
   Name: Scrappy Trapper
   Description: |-
+    Gain {Shield} |Barrier|.
     |Choose|: |Upgrade| {Value1} random cards in hand, or |Exile| this card.
     |Burial|: Whenever a card is |Exiled|, deal {Value2} damage to each enemy.
   UpgradedDescription: |-
+    Gain {Shield} |Barrier|.
     |Choose|: |Upgrade| all cards in hand, or |Exile| this card.
     |Burial|: Whenever a card is |Exiled|, deal {Value2} damage to each enemy.
   ExtraDescription1: |-
@@ -450,10 +453,10 @@ EnokoWire:
   Name: Steel Wire
   Description: |-
     Apply {Value1} |Constrain| to each enemy.
-    Add |Barbed Wire| to the hand.
+    Add |Barbs| to the hand.
 
 EnokoBarbTrap:
-  Name: Barbed Wire
+  Name: Barbs
   Description: |-
     |Trap Card|: Triggers when an attack card is played, using the targeting of that card.
     |Triggered|: Deal {Damage} damage.
@@ -464,7 +467,54 @@ EnokoMaster:
     Whenever a |Trap Card| is triggered, gain {Value1} |Block|.
     If it was an attack, increase its damage by {Value2}.
 
-  
+EnokoImmortal:
+  Name: Immortal Yamainu
+  Description: |-
+    Whenever any enemy loses a debuff, gain {Value1} |Barrier|.  
+  FlavorText: People die when they are killed, or so they say.
+
+EnokoEternal:
+  Name: Eternal and Unchanging
+  Description: |-
+    Gain {Barrier} |Barrier|.
+    Prevent the next {Value2} times each enemy would lose |Constrain|.
+    |For each additional {Mana} spent|: Gain {Value1} more |Barrier| and prevent |Constrain| loss an additional time.
+  FlavorText: Forever is a long time, you know?
+
+EnokoGrave:
+  Name: Gravedigger
+  Description: |-
+    Randomly |Exile| half of the cards in the draw pile. Prioritizes non |Exile| cards.
+    At the start of each turn, add a |Spade| to the hand.
+  UpgradedDescription: |-
+    Randomly |Exile| half of the cards in the draw pile. Prioritizes non |Exile| cards.
+    Add a |Spade| to the hand.
+    At the start of each turn, add a |Spade| to the hand.
+
+EnokoSpade:
+  Name: Spade
+  Description: |-
+    Choose a non |Exile| or |Trap Card| to return to the hand.
+  UpgradedDescription: |-
+    Choose a non |Exile| or |Trap Card| to return to the hand.
+    Gain {Mana}.
+  Header: Choose a card to return to the hand.
+
+EnokoGoldberg:
+  Name: Rube Goldberg Machine
+  Description: |-
+    Choose {Value1} |Trap Cards| in hand, one after the other.
+    Whenever the first |Trap Card| is triggered, trigger the second |Trap Card|. It uses the same targeting as the first.
+  DetailText: Can only be played if there are at least two |Trap Cards| in hand.
+  Header1: Choose the Trap Card that gives Triggers
+  Header2: Choose the Trap Card that recieves Triggers
+
+EnokoBackup:
+  Name: Backup Plan
+  Description: |-
+    |Burial|: The next time {PlayerName} is attacked by an enemy, reduce that damage to zero. Then, deal {Damage} damage {Value1} times to that enemy and return {SelfName} to the draw pile.
+  ShortDescription: |-
+    The next time {PlayerName} is attacked, reduce the damage to zero, deal damage to the attacker, and return |Backup Plan| to the draw pile.
 
 
 # Debug - No need to translate

@@ -101,6 +101,11 @@ EnokoGoldbergSe:
   Description: |-
     Whenever {First} is triggered, trigger {Second} using the same targeting.
 
+EnokoLimitSe: 
+  Name: Limit Break
+  Description: |-
+    The next {Count} card{Count:plural one='' other='s'} played this turn are played twice.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

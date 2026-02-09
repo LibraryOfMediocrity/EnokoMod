@@ -516,6 +516,36 @@ EnokoBackup:
   ShortDescription: |-
     The next time {PlayerName} is attacked, reduce the damage to zero, deal damage to the attacker, and return |Backup Plan| to the draw pile.
 
+EnokoSight:
+  Name: In Sight
+  Description: |-
+    Gain {Block} |Block|.
+    Apply |Lock On| to each enemy equal to their |Constrain|.
+    If the enemy has no |Constrain|, apply {Value1} |Lock On| instead.
+    Remove |Constrain| from each enemy.
+
+EnokoMad:
+  Name: Mad Dog
+  Description: |-
+    Deal {Damage} damage and deal half that much damage to each other enemy{Value1:plural one='' other=' % times'}.
+    |Growth|: Deal damage {Value2} additional time{Value2:plural one='' other='s'}.
+
+EnokoLimit:
+  Name: Limit Break
+  Description: |-
+    Gain {Mana}.
+    The next {Value1} cards played this turn are played twice.
+    Enemies take an extra turn the next time it's their turn.
+
+EnokoHellBack:
+  Name: Back From Hell
+  Description: |-
+    Deal {Damage} damage.
+    Choose up to {Value1} card in |Exile|. Play it.
+  DetailText: "{SelfName} cannot be chosen for this effect."
+  Header1: Choose a card to play
+  Header2: Choose a different card to play
+  Nope: Nope
 
 # Debug - No need to translate
 TempMaxHpGain:

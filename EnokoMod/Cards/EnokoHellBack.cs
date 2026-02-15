@@ -6,12 +6,9 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
-using LBoL.EntityLib.Cards.Neutral.Colorless.YijiSkills;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.IO.Archive;
-using Unity.Profiling;
 
 namespace EnokoMod.Cards
 {
@@ -38,7 +35,9 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoHellBackDef))]
     public sealed class EnokoHellBack : Card
     {
-
+        /* So it runs out that this card can't even infinite so all this work was for nothing
+         * At least, I figured out how to make conditional detailtext
+         * 
         static bool NuhUh = false;
 
         protected override string LocalizeProperty(string key, bool decorated = false, bool required = true)
@@ -46,24 +45,25 @@ namespace EnokoMod.Cards
             if (!NuhUh && key is "DetailText") return null;
             else return base.LocalizeProperty(key, decorated, required);
         }
-
+        */
         private string Header1 => LocalizeProperty("Header1");
 
-        private string Header2 => LocalizeProperty("Header2");
+        // private string Header2 => LocalizeProperty("Header2");
 
-        private string Nope => LocalizeProperty("Nope");
+        // private string Nope => LocalizeProperty("Nope");
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            /*
             if (RemoveFromBattleAfterPlay && !IsPlayTwiceToken)
             {
                 yield return PerformAction.Chat(Battle.Player, Nope, chatTime: 2f, waitTime: 0.5f);
                 yield break;
             }
-            // note: check for no valid targets
+            */
             yield return AttackAction(selector);
             if(!Battle.ExileZone.Where((Card c) => !c.IsForbidden && !(c is EnokoHellBack)).Any()) yield break;
-            SelectCardInteraction interaction = new SelectCardInteraction(0, 1, Battle.ExileZone.Where((Card c) => !c.IsForbidden && (!NuhUh || !(c is EnokoHellBack))))
+            SelectCardInteraction interaction = new SelectCardInteraction(0, 1, Battle.ExileZone.Where((Card c) => !c.IsForbidden /*&& (!NuhUh || !(c is EnokoHellBack))*/))
             {
                 Source = this,
                 Description = Header1
@@ -71,7 +71,7 @@ namespace EnokoMod.Cards
             yield return new InteractionAction(interaction);
             if (interaction.SelectedCards[0] == null) yield break;
             Card card = interaction.SelectedCards[0];
-            if (card is EnokoHellBack hell)
+            /*if (card is EnokoHellBack hell)
             {
                 NuhUh = true;
                 hell.RemoveFromBattleAfterPlay = true;
@@ -85,7 +85,7 @@ namespace EnokoMod.Cards
                 yield return new InteractionAction(interaction);
                 if (interaction.SelectedCards[0] == null) yield break;
                 card = interaction.SelectedCards[0];
-            }
+            }*/
             bool unexile = false;
             if (!card.IsExile)
             {

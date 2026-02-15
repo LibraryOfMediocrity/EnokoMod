@@ -16,21 +16,13 @@ namespace EnokoMod.ImageLoader
             return sprites;
         }
 
-        public static CardImages LoadCardImages(CardTemplate cardTemplate, bool UseDefault = false)
+        public static CardImages LoadCardImages(CardTemplate cardTemplate)
         {
-            
-            if (!UseDefault)
-            {
-                var imgs = new CardImages(BepinexPlugin.embeddedSource);
-                imgs.AutoLoad(cardTemplate, extension: file_extension);
-                return imgs;
-            }
-            else
-            {
-                var imgs = new CardImages(BepinexPlugin.embeddedSource);
-                imgs.AutoLoad("EnokoDefault", extension: file_extension, "");
-                return imgs;
-            }
+            var imgs = new CardImages(BepinexPlugin.embeddedSource);
+            imgs.AutoLoad(cardTemplate, extension: file_extension);
+            if (imgs.main != null) return imgs;
+            imgs.AutoLoad("EnokoDefault", extension: file_extension, "");
+            return imgs;
         }
 
         public static ExhibitSprites LoadExhibitSprite(ExhibitTemplate exhibit)
@@ -44,7 +36,7 @@ namespace EnokoMod.ImageLoader
         public static Sprite LoadUltLoader(UltimateSkillTemplate ult)
         {
             return LoadSprite(ult.GetId());
-        }
+        } 
 
         public static Sprite LoadStatusEffectLoader(StatusEffectTemplate status)
         {

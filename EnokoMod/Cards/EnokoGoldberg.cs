@@ -10,7 +10,6 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
-using LBoL.EntityLib.Cards.Neutral.Blue;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using System.Linq;

@@ -25,8 +25,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
             config.Damage = 14;
             config.UpgradedDamage = 16;
-            config.Value1 = 2;
-            config.UpgradedValue1 = 3;
+            config.Value1 = 3;
+            config.UpgradedValue1 = 5;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };
             config.TargetType = TargetType.SingleEnemy;

@@ -131,9 +131,9 @@ EnokoPitfall:
   Description: |-
     Gain {Block} |Block|.
     If any enemy has |Constrain|, trigger the leftmost and rightmost |Trap Card|.
-    |Burial|: Whenever a non attack card is played, apply {Value1} |Constrain| to each enemy.
+    |Burial|: Whenever a defense card is played, apply {Value1} |Constrain| to each enemy.
   ShortDescription: |-
-    Whenever a non attack card is played, apply |Constrain| to each enemy.
+    Whenever a defense card is played, apply |Constrain| to each enemy.
 
 EnokoMulligan:
   Name: Mulligan
@@ -361,7 +361,7 @@ EnokoKill:
   Header: Choose a Trap Card to trigger.
 
 EnokoPlaySummon: 
-  Name: Mystic Arts
+  Name: Arcane Arts
   Description: |-
     Gain {Block} |Block|.
     Gain {Shield} |Barrier|.
@@ -537,15 +537,39 @@ EnokoLimit:
     The next {Value1} cards played this turn are played twice.
     Enemies take an extra turn the next time it's their turn.
 
+# dont worry about what happened here
 EnokoHellBack:
   Name: Back From Hell
   Description: |-
     Deal {Damage} damage.
     Choose up to {Value1} card in |Exile|. Play it.
-  DetailText: "{SelfName} cannot be chosen for this effect."
+#  DetailText: "{SelfName} cannot be chosen for this effect."
   Header1: Choose a card to play
-  Header2: Choose a different card to play
-  Nope: Nope
+#  Header2: Choose a different card to play
+#  Nope: Nope
+
+EnokoRecycle:
+  Name: Weapon Recycler
+  Description: |-
+   Whenever and attack card is |Exiled|, apply {Value1} |Constrain| to each enemy.
+
+EnokoReinforce:
+  Name: Reinforced Chains
+  Description: |-
+    Enemies gain twice as much |Constrain|.
+    Apply {Value1} |Constrain| to each enemy.
+
+EnokoMalady:
+  Name: Malady Claws
+  Description: |-
+    Deal {Damage} damage and apply {Value1} |Poison| to a random enemy {Value2} times.
+
+EnokoSakiFirend:
+  Name: Saki, Keiga Matriarch
+  Description: "|Burial|: At the start of the turn, return this card to the hand.\n\
+    {FriendP}Gain |Temporary Firepower| equal to {SelfName}'s |Unity|."
+  ExtraDescription1: "{FriendA}Deal {Damage} damage to each enemy {Value1} times, then |Exile| {SelfName}."
+  FlavorText: A true leader lends her strength to her allies.
 
 # Debug - No need to translate
 TempMaxHpGain:

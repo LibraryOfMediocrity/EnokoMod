@@ -1,20 +1,15 @@
-﻿using EnokoMod.Cards.Templates;
+﻿using EnokoMod.BattleActions;
+using EnokoMod.Cards.Templates;
+using EnokoMod.StatusEffects;
 using LBoL.Base;
 using LBoL.ConfigData;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
-using LBoL.Core;
-using LBoLEntitySideloader.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using LBoL.Core.Battle.BattleActions;
-using EnokoMod.StatusEffects;
-using System.Linq;
-using EnokoMod.BattleActions;
 using LBoL.Core.Units;
-using LBoL.EntityLib.StatusEffects.Cirno;
-using LBoL.Core.StatusEffects;
+using LBoLEntitySideloader.Attributes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EnokoMod.Cards
 {
@@ -53,7 +48,7 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            if (IsBuried && args.Card.CardType != CardType.Attack)
+            if (IsBuried && args.Card.CardType == CardType.Defense)
             {
                 Indicator.NotifyActivating();
                 foreach (BattleAction action in DebuffAction<EnokoConstrainSe>(base.Battle.AllAliveEnemies, Value1))

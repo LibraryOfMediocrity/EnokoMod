@@ -1,6 +1,7 @@
 ﻿using EnokoMod.BattleActions;
 using EnokoMod.Cards.Templates;
 using EnokoMod.StatusEffects;
+using EnokoMod.TrapToolBox;
 using LBoL.Base;
 using LBoL.ConfigData;
 using LBoL.Core;
@@ -10,6 +11,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EnokoMod.Cards
 {
@@ -81,7 +83,9 @@ namespace EnokoMod.Cards
             if (Battle.BattleShouldEnd) yield break;
             if(args.Card.CardType == CardType.Attack)
             {
-                yield return new TriggerTrapAction(this, args.Selector.GetUnits(Battle));
+                Unit[] units = args.Selector.GetUnits(Battle).Where((Unit unit) => unit.IsAlive).ToArray();
+                if (units.Any()) yield return new TriggerTrapAction(this, units);
+                else yield return new TriggerTrapAction(this, TrapSelector.RandomEnemy);
             }
             yield break;
         }

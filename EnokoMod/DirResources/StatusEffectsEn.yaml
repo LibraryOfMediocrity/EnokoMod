@@ -106,6 +106,16 @@ EnokoLimitSe:
   Description: |-
     The next {Count} card{Count:plural one='' other='s'} played this turn are played twice.
 
+EnokoReinforceSe:
+  Name: Reinforced Chains
+  Description: |-
+    Enemies gain twice as much |Constrain|.
+
+EnokoRecycleSe:
+  Name: Weapon Recycler
+  Description: |-
+    Whenever an attack card is |Exiled|, apply {Level} |Constrain| to each enemy.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

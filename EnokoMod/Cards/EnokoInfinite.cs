@@ -22,8 +22,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Black = 1 };
             config.UpgradedCost = new ManaGroup() { Any = 1 };
             config.Value1 = 1;
-            config.Damage = 7;
-            config.UpgradedDamage = 10;
+            config.Damage = 5;
+            config.UpgradedDamage = 8;
             config.TargetType = TargetType.SingleEnemy;
             config.Keywords = Keyword.Exile;
             config.UpgradedKeywords = Keyword.Exile;

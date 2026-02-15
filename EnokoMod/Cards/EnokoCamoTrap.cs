@@ -25,8 +25,8 @@ namespace EnokoMod.Cards
             config.Type = CardType.Defense;
             config.TargetType = TargetType.Self;
             config.Cost = new ManaGroup() { Any = 1 };
-            config.Block = 7;
-            config.UpgradedBlock = 10;
+            config.Block = 6;
+            config.UpgradedBlock = 8;
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);

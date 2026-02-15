@@ -17,14 +17,9 @@ namespace EnokoMod.Cards.Templates
             return EnokoDefaultConfig.GetDefaultID(this);
         }
 
-        public virtual bool UseDefault
-        {
-            get { return true; }
-        }
-
         public override CardImages LoadCardImages()
         {
-            return EnokoImageLoader.LoadCardImages(this, UseDefault);
+            return EnokoImageLoader.LoadCardImages(this);
         }
 
         public override LocalizationOption LoadLocalization()

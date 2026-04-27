@@ -52,7 +52,7 @@ namespace EnokoMod.Cards
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)
         {
-            if (IsBuried)
+            if (IsBuried && !Battle.BattleShouldEnd)
             {
                 yield return new MoveCardAction(this, CardZone.Hand);
             }

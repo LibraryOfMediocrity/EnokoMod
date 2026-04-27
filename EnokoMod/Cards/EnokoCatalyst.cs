@@ -24,7 +24,8 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.TargetType = TargetType.SingleEnemy;
             config.Cost = new ManaGroup() { Any = 2, Black = 1 };
-            config.Keywords = Keyword.Exile;
+            config.UpgradedCost = new ManaGroup() { Any = 1, Black = 1 };
+            config.Keywords = Keyword.Exile | Keyword.Retain;
             config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

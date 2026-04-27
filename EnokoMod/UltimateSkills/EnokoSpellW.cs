@@ -50,7 +50,7 @@ namespace EnokoMod.UltimateSkills
                     TrapCard card = interaction.SelectedCards[0] as TrapCard;
                     for (int i = 0; i < Value2; i++)
                     {
-                        yield return new TriggerTrapAction(card, selector.SelectedEnemy);
+                        yield return new TriggerTrapAction(card, enemy.IsAlive?enemy:Battle.RandomAliveEnemy);
                     }
                 }
             }

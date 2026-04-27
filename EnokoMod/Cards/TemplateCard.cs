@@ -28,7 +28,7 @@ namespace EnokoMod.Cards
     }
 
     [EntityLogic(typeof(ReplaceMeDef))]
-    public sealed class ReplaceMe : Card
+    public sealed class ReplaceMe : Card //7
     {
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

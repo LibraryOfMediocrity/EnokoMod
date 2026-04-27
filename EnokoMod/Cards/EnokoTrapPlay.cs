@@ -22,6 +22,7 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 1, White = 1 };
             config.Damage = 8;
+            config.UpgradedDamage = 12;
             config.TargetType = TargetType.SingleEnemy;
             config.RelativeCards = new List<string>() { "EnokoBearTrap" };
             config.UpgradedRelativeCards = new List<string>() { "EnokoBearTrap+" };

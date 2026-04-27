@@ -43,9 +43,20 @@ namespace EnokoMod.Cards
         {
             yield return AttackAction(selector, this.GunName, base.Damage);
             foreach(var action in DebuffAction<TempFirepowerNegative>(selector, base.Value1)) yield return action;
+            yield return new RemoveCardAction(this);
             yield break;
         }
 
+        public override IEnumerable<BattleAction> AfterUseAction()
+        {
+            if (Zone != CardZone.None) foreach(var action in base.AfterUseAction()) yield return action;
+            yield break;
+        }
 
+        public override IEnumerable<BattleAction> AfterFollowPlayAction()
+        {
+            if (Zone != CardZone.None) foreach (var action in base.AfterFollowPlayAction()) yield return action;
+            yield break;
+        }
     }
 }

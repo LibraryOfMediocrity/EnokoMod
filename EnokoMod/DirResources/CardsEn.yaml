@@ -30,12 +30,25 @@ EnokoCatalyst:
   Description: |-
     Apply the selected enemy's debuffs to each enemy. 
   DetailText: Level/Duration is equal to the original's Level/Duration.
+  FlavorText: It Spreads
 
 EnokoFort:
   Name: Fortification
   Description: |-
     Gain {Block} |Block|.
-    Add a |Bear Trap| to the hand.
+    |Debut|: Add a |Bear Trap| to the hand.
+  UpgradedDescription: |-
+    Gain {Block} |Block|.
+    Trigger a |Trap Card| in hand.
+    |Debut|: Add a |Bear Trap| to the hand.
+  ExtraDescription1: |-
+    Gain {Block} |Block|.
+    |d:Debut: Add a Bear Trap to the hand.|
+  UpgradedExtraDescription1: |-
+    Gain {Block} |Block|.
+    Trigger a |Trap Card| in hand.
+    |d:Debut: Add a Bear Trap to the hand.|
+  Header: Choose a card to Trigger
   FlavorText: The best offense is a good defense, as they say.
 
 EnokoBearTrap:
@@ -43,14 +56,13 @@ EnokoBearTrap:
   Description: |-
     |Trap Card|: Triggers when {PlayerName} is attacked. Targets that enemy.
     |Triggered|: Deal {Damage} damage.
-  FlacorText: Classic.
+  FlavorText: The Classic
 
 EnokoNetGun:
   Name: Net Gun
   Description: |-
     Deal {Damage} damage.
     Apply {Value1} |Constrain| to each enemy.
-  FlavorText: All tangled up, are ya?
 
 EnokoTrapPlay:
   Name: Yamainu Combo
@@ -78,7 +90,7 @@ EnokoTinyTrap:
   Name: Tiny Traps
   Description: |-
     |Trap Card|: Triggers at the end of the turn. When played, trigger and increase damage by {Value2} for all {SelfName}.
-    |Triggered|: Deal {Damage} damage {Value1} times.
+    |Triggered|: Deal {Damage} damage{Value1:plural one='' other=' % times'}.
   FlavorText: They make up for their size with large numbers.
 
 EnokoClawTrap:
@@ -104,12 +116,14 @@ EnokoAdapt:
   Description: |-
     Choose to add |Honed Claws|, |Camoflauge|, or |Sharp Eyes| to the hand.
   Header: Choose a card to add to the hand.
+  FlavorText: I love choosing 1 of 3 things!
 
 EnokoBoon:
   Name: Beast King's Blessing
   Description: |-
     |At the start of combat|: |Exile| {SelfName}. Then, choose 1 of 3 |Boons| and add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile.
   Header: Choose a Boon for this battle.
+  FlavorText: I LOVE CHOOSING 1 OF 3 THINGS!!!
 
 BoonCardW:
   Name: Boon of Power
@@ -124,7 +138,7 @@ BoonCardE:
 BoonCardO:
   Name: Boon of Safety
   Description: |-
-    Gain {Value1} |Defense Matrix|.
+    Gain {Value1} |Defense Matrix| and {Value2} life.
 
 EnokoPitfall:
   Name: Pitfall
@@ -171,13 +185,23 @@ EnokoBunkerTrap:
   Name: Hidden Bunker
   Description: |-
     |Trap Card|: Triggers at the end of the turn.
-    |Triggered|: Gain {Block} |Block|. Gain additional |Block| equal to {Value1} times the number of |Exiled| cards.
+    |Triggered|: Gain {TriggerBlock} |Block|. Gain additional |Block| equal to {Value1} times the number of |Exiled| cards.
+  DetailText: This card does not scale with defensive modifiers such as |Spirit| or |Frail|.
 
 EnokoHiddenTrap:
   Name: Hidden Snare
   Description: |-
     |Trap Card|: Triggers at the start of the turn, targeting the enemy with the most life. 
-    |Triggered|: Apply |Constrain| equal to {Value1} times the number of cards in the hand.
+    |Triggered|: Apply |Constrain| equal to the number of cards in the hand. ({TriggerConstrain})
+  UpgradedDescription: |-
+    |Trap Card|: Triggers at the start of the turn, targeting the enemy with the most life. 
+    |Triggered|: Apply |Constrain| equal to the number of cards in the hand + {Value1}. ({TriggerConstrain})
+  NonbattleDescription: |-
+    |Trap Card|: Triggers at the start of the turn, targeting the enemy with the most life. 
+    |Triggered|: Apply |Constrain| equal to the number of cards in the hand.
+  UpgradedNonbattleDescription: |-
+    |Trap Card|: Triggers at the start of the turn, targeting the enemy with the most life. 
+    |Triggered|: Apply |Constrain| equal to the number of cards in the hand + {Value1}.
 #  DetailText: "Default target is the enemy with the most life."
 
 EnokoHiddenSummon:
@@ -197,6 +221,7 @@ EnokoSenseWeakTrap:
   Description: |-
     |Trap Card|: Triggers whenever an enemy loses a debuff, targeting that enemy.
     |Triggered|: Deal {Damage} damage. Increase this card's damage by {Value1} for the rest of combat.
+  FlavorText: Erm, she's right behind me, isn't she...
 
 EnokoGrasp:
   Name: Inescapable Grasp
@@ -346,11 +371,14 @@ EnokoDig:
     |d:Debut: Create and play Buried Treasure+.|
     |Burial|: At the start of the turn, return this card to the hand.
   ShortDescription: "At the start of the turn, return this card to the hand."
+  FlavorText: 99% of miners QUIT before they strike gold.
 
 EnokoTreasure:
   Name: Buried Treasure
   Description: |-
     Whenever a card leaves |Exile|, gain {Value1} |Firepower|.
+  FlavorText: Ah! That is a sewage pipe.
+
 
 EnokoKill: 
   Name: Killer Instinct
@@ -377,6 +405,7 @@ EnokoPlayTrap:
     |Trap Card|: Triggers whenever a card is played through an effect, targeting all enemies. When played, this targets all enemies.
     |Triggered|: Deal {Damage} damage and gain {Block} |Block|.
   DetailText: "\"Played through an effect\" refers to when a card is played by a battle effect like another card, rather than by the Player."
+  FlavorText: Do not concern yourself with the ethics of a mouse trap fashioned from a Magic Cannon.
 
 EnokoInfinite:
   Name: Endless Strikes
@@ -504,11 +533,13 @@ EnokoGoldberg:
   Name: Rube Goldberg Machine
   Description: |-
     Choose {Value1} |Trap Cards| in hand, one after the other.
-    Whenever the first |Trap Card| is triggered, trigger the second |Trap Card|. It uses the same targeting as the first.
-  DetailText: Can only be played if there are at least two |Trap Cards| in hand.
+    Whenever the first |Trap Card| is triggered, trigger the second |Trap Card|{Value2:plural one='' other=' % times'}. It uses the same targeting as the first.
+    There must be at least two |Trap Cards| in hand to play this card.
+  DetailText: Triggering the trap with this effect won't activate the effect because that would allow an infinite loop of course
   Header1: Choose the Trap Card that gives Triggers
   Header2: Choose the Trap Card that recieves Triggers
 
+  #removed because kinda jank
 EnokoBackup:
   Name: Backup Plan
   Description: |-
@@ -564,12 +595,37 @@ EnokoMalady:
   Description: |-
     Deal {Damage} damage and apply {Value1} |Poison| to a random enemy {Value2} times.
 
-EnokoSakiFirend:
+EnokoSakiFriend:
   Name: Saki, Keiga Matriarch
-  Description: "|Burial|: At the start of the turn, return this card to the hand.\n\
+  Description: "{FriendS}|Burial|: At the start of the turn, return {SelfName} to the hand.\n\
     {FriendP}Gain |Temporary Firepower| equal to {SelfName}'s |Unity|."
   ExtraDescription1: "{FriendA}Deal {Damage} damage to each enemy {Value1} times, then |Exile| {SelfName}."
+  ShortDescription: At the start of the turn, return this card to the hand.
   FlavorText: A true leader lends her strength to her allies.
+
+EnokoDucks:
+  Name: Sitting Ducks
+  Description: |- 
+    Whenever an enemy would gain |Constrain|, they gain an equal amount of |Lock On| instead.
+    Enemies can no longer remove |Lock On|.
+
+EnokoSlumberingTrap:
+  Name: Slumbering Maw
+  Description: |-
+    |Trap Card|: Triggers at the end of each turn.
+    |Triggered|: Deal {Damage} damage. After this card has been triggered for the {Value1}th time, add |Awakened Maw| to the hand and remove this card from combat.
+
+EnokoAwakenedTrap:
+  Name: Awakened Maw
+  Description: |-
+    |Trap Card|: Triggers at the end of each turn, targeting the enemy with the most life.
+    |Triggered|: Deal {Damage} damage. Double this card's damage.
+
+EnokoTunneler:
+  Name: Tunneler
+  Description: |-
+    Deal {Damage} damage.
+    |Burial|: At the start of the turn, play this card.
 
 # Debug - No need to translate
 TempMaxHpGain:

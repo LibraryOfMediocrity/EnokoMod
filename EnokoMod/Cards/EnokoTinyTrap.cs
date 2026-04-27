@@ -20,9 +20,9 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Common;
             config.Cost = new ManaGroup() { Any = 1 };
             config.Damage = 5;
-            config.Value1 = 2;
-            config.Value2 = 2;
-            config.UpgradedValue2 = 4;
+            config.Value1 = 1;
+            config.UpgradedValue1 = 2;
+            config.Value2 = 4;
             config.Index = CardIndexGenerator.GetUniqueIndex(config, true);
             return config;
         }

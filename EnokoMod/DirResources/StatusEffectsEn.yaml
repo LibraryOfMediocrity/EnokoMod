@@ -116,6 +116,12 @@ EnokoRecycleSe:
   Description: |-
     Whenever an attack card is |Exiled|, apply {Level} |Constrain| to each enemy.
 
+EnokoDucksSe:
+  Name: Sitting Ducks
+  Description: |-
+    Whenever an enemy would gain |Constrain|, they gain an equal amount of |Lock On| instead.
+    Enemies can no longer remove |Lock On|.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

@@ -26,8 +26,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1 };
             config.Damage = 5;
             config.UpgradedDamage = 7;
-            config.Value1 = 2;
-            config.UpgradedValue1 = 3;
+            config.Value1 = 3;
+            config.UpgradedValue1 = 4;
             config.Rarity = Rarity.Uncommon;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Index = CardIndexGenerator.GetUniqueIndex(config);

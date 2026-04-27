@@ -21,7 +21,7 @@ namespace EnokoMod.TrapToolBox
         /// </summary>
         public static Unit[] SelectUnit(TrapSelector selector, BattleController battle)
         {
-
+            if(battle == null) return null;
             return selector switch
             {
                 TrapSelector.RandomEnemy => new Unit[1] { battle.RandomAliveEnemy },

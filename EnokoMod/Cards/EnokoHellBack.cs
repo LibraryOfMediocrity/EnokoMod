@@ -87,7 +87,7 @@ namespace EnokoMod.Cards
                 card = interaction.SelectedCards[0];
             }*/
             bool unexile = false;
-            if (!card.IsExile)
+            if (!card.IsExile && card.CardType != CardType.Ability)
             {
                 card.IsExile = true;
                 unexile = true;

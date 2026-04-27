@@ -23,6 +23,7 @@ namespace EnokoMod.Cards
             config.Type = CardType.Attack;
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 2, White = 1 };
+            //config.UpgradedCost = new ManaGroup() { Any = 1, White = 1 };
             config.TargetType = TargetType.SingleEnemy;
             config.Damage = 16;
             config.UpgradedDamage = 20;

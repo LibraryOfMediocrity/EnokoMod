@@ -14,6 +14,7 @@ namespace EnokoMod.BattleActions
 
         public override string GetBaseDebugString()
         {
+            if (Units == null || Units.Length == 0) return "Triggered " + this.Card.Name + " with null units. Card may have been removed from battle."; 
             string[] targets = Units.Select(unit => unit.Name).ToArray();
             return "Card: " + this.Card.Name + " -> Units: " + string.Join(", ", targets);
         }

@@ -24,9 +24,10 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Rare;
             config.Type = CardType.Ability;
             config.Colors = new List<ManaColor>() { ManaColor.White };
-            config.Cost = new ManaGroup() { White = 2 };
-            config.UpgradedCost = new ManaGroup() { Any = 0 };
+            config.Cost = new ManaGroup() { Any = 0 };
             config.Value1 = 2;
+            config.Value2 = 1;
+            config.UpgradedValue2 = 2;
             config.RelativeEffects = new List<string>() { nameof(TrapCardDisc) };
             config.UpgradedRelativeEffects = config.RelativeEffects;
             config.TargetType = TargetType.Nobody;
@@ -127,8 +128,12 @@ namespace EnokoMod.Cards
             if (args.ActionSource is EnokoGoldbergSe || Card1 == null || Card2 == null) yield break;
             if(args.Card == Card1 && Card2.Zone == CardZone.Hand)
             {
-                Unit[] units = args.Units.Where((Unit unit) => unit != null && !unit.IsDead).ToArray();
+
+                Unit[] units = args.Units.Where(unit => unit != null && !unit.IsDead).ToArray();
                 yield return new TriggerTrapAction(Card2, units.Any()? units : Card2.DefaultTarget);
+                if (Limit != 1) yield break;
+                units = args.Units.Where(unit => unit != null && !unit.IsDead).ToArray();
+                yield return new TriggerTrapAction(Card2, units.Any() ? units : Card2.DefaultTarget);
             }
             yield break;
         }
@@ -137,7 +142,10 @@ namespace EnokoMod.Cards
         {
             if(args.Card == Card1 || args.Card == Card2)
             {
-                yield return new AddCardsToHandAction(Library.CreateCard<EnokoGoldberg>(Limit == 1));
+                if(Battle.HandIsNotFull)
+                    yield return new AddCardsToHandAction(Library.CreateCard<EnokoGoldberg>(Limit == 1));
+                else 
+                    yield return new AddCardsToDrawZoneAction(Library.CreateCards<EnokoGoldberg>(1, Limit == 1), DrawZoneTarget.Top);
                 yield return new RemoveStatusEffectAction(this);
             }
             yield break;

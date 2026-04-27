@@ -20,8 +20,7 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 2 };
-            config.Value1 = 1;
-            config.UpgradedValue1 = 2;
+            config.Value1 = 4;
             config.TargetType = TargetType.SingleEnemy;
             config.RelativeEffects = new List<string>() { nameof(TrapCardDisc), nameof(EnokoConstrainSe) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(TrapCardDisc), nameof(EnokoConstrainSe) };
@@ -37,7 +36,7 @@ namespace EnokoMod.Cards
         {
             get
             {
-                return base.Battle != null ? base.Battle.HandZone.Count * Value1 : 0;
+                return base.Battle != null ? base.Battle.HandZone.Count + Value1 : 0 + Value1;
             }
         }
 

@@ -27,7 +27,8 @@ namespace EnokoMod.Cards
             config.Value1 = 20;
             config.UpgradedValue1 = 17;
             config.Value2 = 3;
-            config.Mana = new ManaGroup() { Philosophy = 3 };
+            config.Mana = new ManaGroup() { Philosophy = 1, White = 1, Colorless = 1 };
+            config.UpgradedMana = new ManaGroup() { Philosophy = 2, White = 1 };
             config.TargetType = TargetType.Nobody;
             config.RelativeKeyword = Keyword.Exile|Keyword.Philosophy;
             config.UpgradedRelativeKeyword = Keyword.Exile|Keyword.Philosophy;

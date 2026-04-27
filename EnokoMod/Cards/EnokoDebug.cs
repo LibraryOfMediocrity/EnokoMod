@@ -7,6 +7,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.Cards.Enemy;
 using LBoL.Presentation.UI.Panels;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -47,6 +48,8 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return new DrawCardAction();
+            yield return new PlayCardAction(this);
             // works but card is not shown (investigate cardUI widget)
             // try creating a new battleaction that extends movecardaction
             Card card = base.Battle.DrawZone.First();

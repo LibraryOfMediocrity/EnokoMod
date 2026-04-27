@@ -24,8 +24,8 @@ namespace EnokoMod.Cards
             config.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 1 };
             config.Block = 13;
             config.UpgradedBlock = 17;
-            config.Value1 = 2;
-            config.UpgradedValue1 = 3;
+            config.Value1 = 3;
+            config.UpgradedValue1 = 4;
             config.TargetType = TargetType.Self;
             config.RelativeKeyword = Keyword.Block;
             config.UpgradedRelativeKeyword = Keyword.Block;

@@ -6,12 +6,25 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace EnokoMod.Cards.Templates
 {
     public abstract class BurialCard : Card
     {
+        // There is no animation for special moving a card from follow area to exile
+        // so I have to temporarily turn off special exile anim when follow playing a burial card
+        // or the card gets stuck visually
+        public override bool OnExileVisual => _exileVisual;
+
+        private bool _exileVisual = true;
+
+        public override IEnumerable<BattleAction> AfterFollowPlayAction()
+        {
+            if(IsExile || IsTempExile) _exileVisual = false;
+            return base.AfterFollowPlayAction();
+        }
 
         public string BurialDescription
         {
@@ -58,20 +71,22 @@ namespace EnokoMod.Cards.Templates
             get { return this.Zone == CardZone.Exile; }
         }
 
-        public abstract int CardIndex { get; }  // currently: 5
+        public abstract int CardIndex { get; }  // currently: 7
 
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {
+            _exileVisual = true;
             if (base.Battle.BattleShouldEnd)
             {
                 yield break;
             }
             StatusEffect effect = Indicator;
-            if(effect == null)
+            int buryCount = Battle.ExileZone.Where((Card card) => card.GetType() == this.GetType()).Count();
+            if (effect == null && buryCount == 1)
             {
                 yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
             }
-            else
+            else if(buryCount != effect.Level)
             {
                 effect.Level++;
             }
@@ -86,14 +101,15 @@ namespace EnokoMod.Cards.Templates
             {
                 yield break;
             }
+            int buryCount = Battle.ExileZone.Where((Card card) => card.GetType() == this.GetType()).Count();
             if (srcZone != CardZone.Exile && dstZone == CardZone.Exile)
             {
                 StatusEffect effect = Indicator;
-                if (effect == null)
+                if (effect == null && buryCount == 1)
                 {
                     yield return BuffAction<BurialIndicator>(level: 1, limit: CardIndex);
                 }
-                else
+                else if(buryCount != effect.Level)
                 {
                     effect.Level++;
                 }
@@ -101,7 +117,7 @@ namespace EnokoMod.Cards.Templates
             if (srcZone == CardZone.Exile && dstZone != CardZone.Exile)
             {
                 StatusEffect effect = Indicator;
-                if (effect != null)
+                if (effect != null && buryCount != effect.Level)
                 {
                     effect.Level--;
                     if (effect.Level == 0) yield return new RemoveStatusEffectAction(effect);

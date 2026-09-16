@@ -121,7 +121,7 @@ EnokoAdapt:
 EnokoBoon:
   Name: Beast King's Blessing
   Description: |-
-    |At the start of combat|: |Exile| {SelfName}. Then, choose 1 of 3 |Boons| and add {Value1} |Glare{Value1:plural one='' other='s'}| to the draw pile.
+    |At the start of combat|: |Exile| {SelfName}. Then, choose 1 of 3 |Boons| and add a |Glare| to the draw and discard piles.
   Header: Choose a Boon for this battle.
   FlavorText: I LOVE CHOOSING 1 OF 3 THINGS!!!
 
@@ -271,14 +271,11 @@ EnokoReckless:
   Name: Life Burns Bright
   Description: |-
     Lose {Value1} Life.
-    Choose a card in the draw pile. Play it.
-  UpgradedDescription: |-
-    Lose {Value1} Life.
     Choose a card in the draw or discard pile. Play it.
   Header: Choose a card to play.
 
 EnokoDomain:
-  Name: Domain Expansion
+  Name: Home Turf
   Description: |-
     The maximum hand size becomes {Value1}.
     Choose up to {Value2} {Value2:plural one='card' other='cards'} in the hand. Add a |Copy| of {Value2:plural one='it' other='each'} to the hand.
@@ -307,11 +304,12 @@ EnokoRefine:
   Header2: Choose a Trap Card to Trigger
 
 EnokoShovelTrap:
-  Name: Shovel
+  Name: Teleporter Trap
   Description: |-
     |Trap Card|: Triggers the first time a card is |Exiled| each turn.
     |Triggered|: Choose up to {Value1} non |Exile| card or |Trap Card| from |Exile| to return to the hand. If there are none, draw {Value2} card{Value2:plural one="" other="s"}.
   Header: Choose a card to return from Exile
+  FlavorText: "\"lol, lmao\"\n- Zanmu Nippaku"
 
 EnokoEdge:
   Name: Battle Edge
@@ -321,7 +319,7 @@ EnokoEdge:
     This costs {AddCost} more in this turn.
 
 EnokoShovelSummon:
-  Name: Reserve Stash
+  Name: Go to Hell
   Description: |-
     |Exile| a card in the hand.
     If there is not a |Shovel| in the hand, add one to the hand.
@@ -441,7 +439,7 @@ EnokoSnareTrap:
     |Triggered|: Deal {Damage} damage.
 
 EnokoBarrage:
-  Name: Biting Barrage
+  Name: Imitation Cerberus
   Description: |-
     Add {Value1} |Tiny Traps| to the hand.
     |Burial|: At the end of each turn, trigger all attack |Trap Cards| in hand.
@@ -471,6 +469,7 @@ EnokoWait:
     Gain {Shield} |Barrier|.
     Choose up to {Value1} card in the hand, draw pile, or discard pile. It gains |Echo|. Place it on top of the draw pile.
     For each card chosen, add a |Glare| to the draw pile.
+  Header: Choose a card to give echo and place on top of the deck.
 
 EnokoFinisher:
   Name: Finishing Move
@@ -521,7 +520,7 @@ EnokoGrave:
     At the start of each turn, add a |Spade| to the hand.
 
 EnokoSpade:
-  Name: Spade
+  Name: Teleporter Trap
   Description: |-
     Choose a non |Exile| or |Trap Card| to return to the hand.
   UpgradedDescription: |-
@@ -539,7 +538,7 @@ EnokoGoldberg:
   Header1: Choose the Trap Card that gives Triggers
   Header2: Choose the Trap Card that recieves Triggers
 
-  #removed because kinda jank
+#removed because kinda jank
 EnokoBackup:
   Name: Backup Plan
   Description: |-
@@ -593,7 +592,7 @@ EnokoReinforce:
 EnokoMalady:
   Name: Malady Claws
   Description: |-
-    Deal {Damage} damage and apply {Value1} |Poison| to a random enemy {Value2} times.
+    Deal {Damage} damage and apply {Value1} |Temporary Firepower Down| to a random enemy {Value2} times.
 
 EnokoSakiFriend:
   Name: Saki, Keiga Matriarch
@@ -626,6 +625,30 @@ EnokoTunneler:
   Description: |-
     Deal {Damage} damage.
     |Burial|: At the start of the turn, play this card.
+  ShortDescription: At the start of the turn, play this card.
+
+EnokoHellPower:
+  Name: Hell's Power
+  Description: |-
+    Deal {Damage} damage.
+    |Overflow|: Gain {Mana}.
+    |Burial|: At the start of each turn, gain |Temporary Firepower| equal to the number of cards in |Exile|.
+  ExtraDescription1: |-
+    Deal {Damage} damage.
+    |Overflow: Gain {Mana}.|
+    |Burial|: At the start of each turn, gain |Temporary Firepower| equal to the number of cards in |Exile|.
+
+EnokoBindingTime:
+  Name: Binding Time
+  Description: |-
+    Apply {Value1} |Constrain| to each enemy.
+    Prevent the next {Value2} times each enemy would lose |Constrain|.
+
+EnokoHighlander: 
+  Name: Highlander
+  Description: |-
+    Choose a |Trap Card|. |Exile| all other |Trap Cards| in hand. Trigger the selected |Trap Card| once for each card |Exiled| this way.
+    Whenever another |Trap Card| enters the hand, |Exile| it and trigger the selected |Trap Card|.
 
 # Debug - No need to translate
 TempMaxHpGain:

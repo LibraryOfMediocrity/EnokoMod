@@ -122,6 +122,11 @@ EnokoDucksSe:
     Whenever an enemy would gain |Constrain|, they gain an equal amount of |Lock On| instead.
     Enemies can no longer remove |Lock On|.
 
+EnokoHighlanderSe:
+  Name: Highlander
+  Description: |-
+    Whenever a |Trap Card| enters the hand, |Exile| it and trigger {CardName}{Level:plural one="" other=" % times"}.
+
 # Debug - No need to translate
 
 ReactToPassiveSe:

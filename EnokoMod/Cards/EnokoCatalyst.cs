@@ -23,10 +23,10 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Rare;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.TargetType = TargetType.SingleEnemy;
-            config.Cost = new ManaGroup() { Any = 2, Black = 1 };
-            config.UpgradedCost = new ManaGroup() { Any = 1, Black = 1 };
-            config.Keywords = Keyword.Exile | Keyword.Retain;
-            config.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
+            config.Cost = new ManaGroup() { Black = 1 };
+            config.UpgradedCost = new ManaGroup() { Black = 1 };
+            config.Keywords = Keyword.Exile|Keyword.Retain; 
+            config.UpgradedKeywords = Keyword.Retain;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }

@@ -39,7 +39,7 @@ namespace EnokoMod.StatusEffects
                 }
                 else
                 {
-                    return base.Name;
+                    return base.Name; // should never return this
                 }
             }
         }

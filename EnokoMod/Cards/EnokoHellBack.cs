@@ -86,14 +86,8 @@ namespace EnokoMod.Cards
                 if (interaction.SelectedCards[0] == null) yield break;
                 card = interaction.SelectedCards[0];
             }*/
-            bool unexile = false;
-            if (!card.IsExile && card.CardType != CardType.Ability)
-            {
-                card.IsExile = true;
-                unexile = true;
-            }
+            card.IsTempExile = true;
             yield return new PlayCardAction(card, selector);
-            if (unexile) card.IsExile = false;
             yield break;
         }
     }

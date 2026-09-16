@@ -50,11 +50,13 @@ namespace EnokoMod.Cards
             yield break;
         }
 
+        public override bool Triggered => Counter >= Value1-1;
+
         public override IEnumerable<BattleAction> TrapTriggered(Unit[] units)
         {
             yield return AttackAction(units);
             Counter++;
-            if (Counter == Value1)
+            if (Counter >= Value1)
             {
                 if (Battle.HandIsNotFull)
                     yield return new AddCardsToHandAction(Library.CreateCard<EnokoSlumberingTrap>());

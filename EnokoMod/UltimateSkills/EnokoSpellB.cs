@@ -16,8 +16,8 @@ namespace EnokoMod.UltimateSkills
         public override UltimateSkillConfig MakeConfig()
         {
             UltimateSkillConfig config = GetDefaulUltConfig();
-            config.Damage = 18;
-            config.Value1 = 6;
+            config.Value2 = 15;
+            config.Value1 = 10;
             config.RelativeEffects = new List<string>() { "EnokoConstrainSe" };
             return config;
         }
@@ -36,7 +36,8 @@ namespace EnokoMod.UltimateSkills
         {
             yield return PerformAction.Spell(base.Battle.Player, "EnokoUltB");
             Unit[] targets = selector.GetUnits(base.Battle);
-            yield return new DamageAction(Owner, targets, Damage, GunName, GunType.Single);
+            //yield return new DamageAction(Owner, targets, Damage, GunName, GunType.Single);
+            yield return new CastBlockShieldAction(Battle.Player, 0, Value2, cast: false);
             foreach (Unit target in targets) 
             {
                 yield return new ApplyStatusEffectAction<EnokoConstrainSe>(target, Value1);

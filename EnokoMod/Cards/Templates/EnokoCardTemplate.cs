@@ -27,7 +27,6 @@ namespace EnokoMod.Cards.Templates
             return EnokoLocalization.CardsBatchLoc.AddEntity(this);
         }
 
-
         public CardConfig GetCardDefaultConfig()
         {
             return EnokoDefaultConfig.GetCardDefaultConfig();

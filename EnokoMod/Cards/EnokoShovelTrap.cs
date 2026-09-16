@@ -62,6 +62,8 @@ namespace EnokoMod.Cards
             }
         }
 
+        public override bool Triggered => First;
+
         public override IEnumerable<BattleAction> TrapTriggered(Unit[] units)
         {
             List<Card> cards = base.Battle.ExileZone.Where((Card exile) => exile is TrapCard || !exile.IsExile).ToList();

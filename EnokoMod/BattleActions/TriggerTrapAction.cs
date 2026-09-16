@@ -29,7 +29,7 @@ namespace EnokoMod.BattleActions
                 Units = card.Zone != CardZone.None ? card.DefaultTarget : null // in case card gets removed from battle
             };
         }
-
+        
         public TriggerTrapAction(TrapCard card, Unit unit) : this(card, TrapTools.SelectUnit(unit))
         {
         }

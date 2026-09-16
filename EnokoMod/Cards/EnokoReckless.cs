@@ -24,6 +24,7 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Hybrid = 2, HybridColor = 1 };
+            config.UpgradedCost = new ManaGroup() { Hybrid = 2, HybridColor = 1 };
             config.Value1 = 4;
             config.TargetType = TargetType.SingleEnemy;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
@@ -44,9 +45,9 @@ namespace EnokoMod.Cards
 
         public override Interaction Precondition()
         {
-            if (base.Battle.DrawZone.Count > 0)
+            if (base.Battle.DrawZone.Count > 0 || base.Battle.DiscardZone.Count > 0)
             {
-                SelectCardInteraction interaction = new SelectCardInteraction(1, 1, (this.IsUpgraded ? base.Battle.DrawZoneToShow.Concat(base.Battle.DiscardZone) : base.Battle.DrawZoneToShow))
+                SelectCardInteraction interaction = new SelectCardInteraction(1, 1, base.Battle.DrawZoneToShow.Concat(base.Battle.DiscardZone))
                 {
                     Source = this,
                     Description = Header

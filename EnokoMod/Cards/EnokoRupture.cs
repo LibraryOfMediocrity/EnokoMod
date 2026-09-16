@@ -40,9 +40,20 @@ namespace EnokoMod.Cards
     {
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {
+            _exileVisual = true;
             yield return AttackAllAliveEnemyAction();
             yield return new MoveCardAction(this, CardZone.Hand);
             yield break;
+        }
+
+        public override bool OnExileVisual => _exileVisual;
+
+        private bool _exileVisual = true;
+
+        public override IEnumerable<BattleAction> AfterFollowPlayAction()
+        {
+            if (IsExile || IsTempExile) _exileVisual = false;
+            return base.AfterFollowPlayAction();
         }
 
         public override ManaGroup? PlentifulMana => this.Mana;

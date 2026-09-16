@@ -30,7 +30,6 @@ namespace EnokoMod.Cards
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 2 };
-            config.Value1 = 2;
             config.Keywords = Keyword.Forbidden | Keyword.Ethereal;
             config.UpgradedKeywords = Keyword.Forbidden | Keyword.Ethereal;
             config.RelativeKeyword = Keyword.Exile;
@@ -82,7 +81,8 @@ namespace EnokoMod.Cards
                     yield return battleAction;
                 }
             }
-            yield return new AddCardsToDrawZoneAction(Library.CreateCards<Xuanguang>(Value1), DrawZoneTarget.Random);
+            yield return new AddCardsToDrawZoneAction(Library.CreateCards<Xuanguang>(1), DrawZoneTarget.Random);
+            yield return new AddCardsToDiscardAction(Library.CreateCards<Xuanguang>(1));
             yield break;
         }
 

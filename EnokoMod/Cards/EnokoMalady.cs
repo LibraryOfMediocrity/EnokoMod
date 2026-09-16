@@ -4,6 +4,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoL.EntityLib.StatusEffects.Others;
 using LBoLEntitySideloader.Attributes;
@@ -24,7 +25,7 @@ namespace EnokoMod.Cards
             config.Value1 = 1;
             config.Value2 = 3;
             config.UpgradedValue2 = 5;
-            config.RelativeEffects = new List<string>() { nameof(Poison) };
+            config.RelativeEffects = new List<string>() { nameof(TempFirepowerNegative) };
             config.UpgradedRelativeEffects = config.RelativeEffects;
             config.TargetType = TargetType.RandomEnemy;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
@@ -46,7 +47,7 @@ namespace EnokoMod.Cards
                 if(unit.IsAlive)
                     yield return AttackAction(unit);
                 if(unit.IsAlive)
-                    yield return DebuffAction<Poison>(unit, level: Value1);
+                    yield return DebuffAction<TempFirepowerNegative>(unit, level: Value1);
             }
             yield break;
         }

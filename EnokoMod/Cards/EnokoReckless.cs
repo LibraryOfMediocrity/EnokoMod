@@ -35,11 +35,11 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoRecklessDef))]
     public sealed class EnokoReckless : Card
     {
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -50,7 +50,7 @@ namespace EnokoMod.Cards
                 SelectCardInteraction interaction = new SelectCardInteraction(1, 1, base.Battle.DrawZoneToShow.Concat(base.Battle.DiscardZone))
                 {
                     Source = this,
-                    Description = Header
+                    Description = Header1
                 };
                 return interaction;
             }

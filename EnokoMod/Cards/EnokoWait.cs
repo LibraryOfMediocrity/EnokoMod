@@ -39,11 +39,11 @@ namespace EnokoMod.Cards
     public sealed class EnokoWait : Card
     {
 
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -54,7 +54,7 @@ namespace EnokoMod.Cards
             SelectCardInteraction interaction = new SelectCardInteraction(0, Value1, cards)
             {
                 Source = this,
-                Description = Header
+                Description = Header1
             };
             yield return new InteractionAction(interaction);
             Card card = interaction.SelectedCards[0];

@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace EnokoMod.Cards
 {
-    public sealed class EnokoShovelTrapDef : TrapTemplate
+    public sealed class EnokoTeleportTrapDef : TrapTemplate
     {
         public override CardConfig MakeConfig()
         {
@@ -31,8 +31,8 @@ namespace EnokoMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnokoShovelTrapDef))]
-    public sealed class EnokoShovelTrap : TrapCard
+    [EntityLogic(typeof(EnokoTeleportTrapDef))]
+    public sealed class EnokoTeleportTrap : TrapCard
     {
 
         protected override void OnEnterBattle(BattleController battle)
@@ -54,11 +54,11 @@ namespace EnokoMod.Cards
             yield break;
         }
 
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -72,7 +72,7 @@ namespace EnokoMod.Cards
                 SelectCardInteraction interaction = new SelectCardInteraction(0, 1/*Value1*/, cards)
                 {
                     Source = this,
-                    Description = Header
+                    Description = Header1
                 };
                 yield return new InteractionAction(interaction); 
                 if (interaction.SelectedCards != null && interaction.SelectedCards.Count > 0)

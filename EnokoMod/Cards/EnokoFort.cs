@@ -51,7 +51,7 @@ namespace EnokoMod.Cards
             return base.GetExtraDescription1;
         }
 
-        private string Header => this.LocalizeProperty("Header");
+        private string Header1 => this.LocalizeProperty("Header1");
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -64,7 +64,7 @@ namespace EnokoMod.Cards
                     SelectHandInteraction interaction = new SelectHandInteraction(0, 1, list)
                     {
                         Source = this,
-                        Description = Header
+                        Description = Header1
                     };
                     yield return new InteractionAction(interaction);
                     if (interaction.SelectedCards.Count > 0) yield return new TriggerTrapAction(interaction.SelectedCards[0] as TrapCard);

@@ -48,7 +48,7 @@ EnokoFort:
     Gain {Block} |Block|.
     Trigger a |Trap Card| in hand.
     |d:Debut: Add a Bear Trap to the hand.|
-  Header: Choose a card to Trigger
+  Header1: Choose a card to Trigger
   FlavorText: The best offense is a good defense, as they say.
 
 EnokoBearTrap:
@@ -115,14 +115,14 @@ EnokoAdapt:
   Name: Adaptability
   Description: |-
     Choose to add |Honed Claws|, |Camoflauge|, or |Sharp Eyes| to the hand.
-  Header: Choose a card to add to the hand.
+  Header1: Choose a card to add to the hand.
   FlavorText: I love choosing 1 of 3 things!
 
 EnokoBoon:
   Name: Beast King's Blessing
   Description: |-
     |At the start of combat|: |Exile| {SelfName}. Then, choose 1 of 3 |Boons| and add a |Glare| to the draw and discard piles.
-  Header: Choose a Boon for this battle.
+  Header1: Choose a Boon for this battle.
   FlavorText: I LOVE CHOOSING 1 OF 3 THINGS!!!
 
 BoonCardW:
@@ -162,7 +162,7 @@ EnokoTrueDraw:
   Description: |-
     Choose a card in the draw pile to move to the hand.
     It will be replaced with a |Glare|.
-  Header: Choose a card to move to the hand.
+  Header1: Choose a card to move to the hand.
 
 EnokoRupture:
   Name: Ruptured Earth
@@ -208,7 +208,7 @@ EnokoHiddenSummon:
   Name: Hidden Move
   Description: |-
     Choose to add either |Hidden Snare| or |Hidden Bunker| to the hand.
-  Header: Choose a card to add.
+  Header1: Choose a card to add.
 
 EnokoWeapon:
   Name: Secret Weapon
@@ -272,7 +272,7 @@ EnokoReckless:
   Description: |-
     Lose {Value1} Life.
     Choose a card in the draw or discard pile. Play it.
-  Header: Choose a card to play.
+  Header1: Choose a card to play.
 
 EnokoDomain:
   Name: Home Turf
@@ -303,12 +303,12 @@ EnokoRefine:
   Header1: Choose a Trap Card to Exile
   Header2: Choose a Trap Card to Trigger
 
-EnokoShovelTrap:
+EnokoTeleportTrap:
   Name: Teleporter Trap
   Description: |-
     |Trap Card|: Triggers the first time a card is |Exiled| each turn.
     |Triggered|: Choose up to {Value1} non |Exile| card or |Trap Card| from |Exile| to return to the hand. If there are none, draw {Value2} card{Value2:plural one="" other="s"}.
-  Header: Choose a card to return from Exile
+  Header1: Choose a card to return from Exile
   FlavorText: "\"lol, lmao\"\n- Zanmu Nippaku"
 
 EnokoEdge:
@@ -318,12 +318,12 @@ EnokoEdge:
     Draw {Value2} card and gain {Mana} for each unique debuff on the enemy.
     This costs {AddCost} more in this turn.
 
-EnokoShovelSummon:
+EnokoTeleportSummon:
   Name: Go to Hell
   Description: |-
     |Exile| a card in the hand.
-    If there is not a |Shovel| in the hand, add one to the hand.
-  Header: "Choose a card to exile"
+    If there is not a |Teleporter Trap| in the hand, add one to the hand.
+  Header1: "Choose a card to exile"
 
 EnokoSticky:
   Name: Sticky Bullets
@@ -384,7 +384,7 @@ EnokoKill:
     Deal {Damage} damage.
     Trigger a |Trap Card| in hand, targeting that enemy.
     If {SelfName} defeated an enemy, trigger all |Trap Cards| in hand instead.
-  Header: Choose a Trap Card to trigger.
+  Header1: Choose a Trap Card to trigger.
 
 EnokoPlaySummon: 
   Name: Arcane Arts
@@ -469,7 +469,7 @@ EnokoWait:
     Gain {Shield} |Barrier|.
     Choose up to {Value1} card in the hand, draw pile, or discard pile. It gains |Echo|. Place it on top of the draw pile.
     For each card chosen, add a |Glare| to the draw pile.
-  Header: Choose a card to give echo and place on top of the deck.
+  Header1: Choose a card to give echo and place on top of the deck.
 
 EnokoFinisher:
   Name: Finishing Move
@@ -513,20 +513,20 @@ EnokoGrave:
   Name: Gravedigger
   Description: |-
     Randomly |Exile| half of the cards in the draw pile. Prioritizes non |Exile| cards.
-    At the start of each turn, add a |Spade| to the hand.
+    At the start of each turn, add a |Shovel| to the hand.
   UpgradedDescription: |-
     Randomly |Exile| half of the cards in the draw pile. Prioritizes non |Exile| cards.
-    Add a |Spade| to the hand.
-    At the start of each turn, add a |Spade| to the hand.
+    Add a |Shovel| to the hand.
+    At the start of each turn, add a |Shovel| to the hand.
 
 EnokoSpade:
-  Name: Teleporter Trap
+  Name: Shovel
   Description: |-
     Choose a non |Exile| or |Trap Card| to return to the hand.
   UpgradedDescription: |-
     Choose a non |Exile| or |Trap Card| to return to the hand.
     Gain {Mana}.
-  Header: Choose a card to return to the hand.
+  Header1: Choose a card to return to the hand.
 
 EnokoGoldberg:
   Name: Rube Goldberg Machine
@@ -649,6 +649,7 @@ EnokoHighlander:
   Description: |-
     Choose a |Trap Card|. |Exile| all other |Trap Cards| in hand. Trigger the selected |Trap Card| once for each card |Exiled| this way.
     Whenever another |Trap Card| enters the hand, |Exile| it and trigger the selected |Trap Card|.
+  Header1: Choose a Trap Card.
 
 # Debug - No need to translate
 TempMaxHpGain:

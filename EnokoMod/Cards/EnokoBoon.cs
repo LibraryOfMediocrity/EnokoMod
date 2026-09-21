@@ -45,11 +45,11 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoBoonDef))]
     public sealed class EnokoBoon : Card
     {
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -70,7 +70,7 @@ namespace EnokoMod.Cards
             SelectCardInteraction interaction = new SelectCardInteraction(1, 1, list, SelectedCardHandling.DoNothing)
             {
                 Source = this,
-                Description = Header
+                Description = Header1
             };
             yield return new InteractionAction(interaction, false);
             if (interaction.SelectedCards[0] is OptionCard optionCard)

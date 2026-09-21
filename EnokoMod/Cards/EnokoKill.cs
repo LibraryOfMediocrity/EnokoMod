@@ -48,11 +48,11 @@ namespace EnokoMod.Cards
 
         private bool Killed;
 
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -76,7 +76,7 @@ namespace EnokoMod.Cards
                 SelectHandInteraction interaction = new SelectHandInteraction(1, 1, trapCards)
                 {
                     Source = this,
-                    Description = Header
+                    Description = Header1
                 };
                 yield return new InteractionAction(interaction);
                 if (interaction.SelectedCards[0] is TrapCard trap)

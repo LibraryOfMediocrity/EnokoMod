@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace EnokoMod.Cards
 {
-    public sealed class EnokoShovelSummonDef : EnokoCardTemplate
+    public sealed class EnokoTeleportSummonDef : EnokoCardTemplate
     {
         public override CardConfig MakeConfig()
         {
@@ -22,8 +22,8 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { White = 1 };
             config.TargetType = TargetType.Nobody;
-            config.RelativeCards = new List<string>() { nameof(EnokoShovelTrap) };
-            config.UpgradedRelativeCards = new List<string>() { nameof(EnokoShovelTrap) };
+            config.RelativeCards = new List<string>() { nameof(EnokoTeleportTrap) };
+            config.UpgradedRelativeCards = new List<string>() { nameof(EnokoTeleportTrap) };
             config.RelativeKeyword = Keyword.Exile;
             config.UpgradedRelativeKeyword = Keyword.Exile;
             config.UpgradedKeywords = Keyword.Replenish;
@@ -32,12 +32,12 @@ namespace EnokoMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnokoShovelSummonDef))]
-    public sealed class EnokoShovelSummon : Card
+    [EntityLogic(typeof(EnokoTeleportSummonDef))]
+    public sealed class EnokoTeleportSummon : Card
     {
         private Card _exileTarget;
 
-        private string Header { get => this.LocalizeProperty("Header"); }
+        private string Header1 { get => this.LocalizeProperty("Header1"); }
         
 
         public override Interaction Precondition()
@@ -54,7 +54,7 @@ namespace EnokoMod.Cards
             return new SelectHandInteraction(1, 1, cards)
             {
                 Source = this,
-                Description = Header
+                Description = Header1
             }; 
         }
 
@@ -68,11 +68,11 @@ namespace EnokoMod.Cards
             {
                 yield return new ExileCardAction(_exileTarget);
             }
-            if(base.Battle.HandZone.OfType<EnokoShovelTrap>().Count() > 0)
+            if(base.Battle.HandZone.OfType<EnokoTeleportTrap>().Count() > 0)
             {
                 yield break;
             }
-            yield return new AddCardsToHandAction(Library.CreateCard<EnokoShovelTrap>());
+            yield return new AddCardsToHandAction(Library.CreateCard<EnokoTeleportTrap>());
             yield break;
         }
     }

@@ -36,11 +36,11 @@ namespace EnokoMod.Cards
     [EntityLogic(typeof(EnokoAdaptDef))]
     public sealed class EnokoAdapt : Card
     {
-        private string Header
+        private string Header1
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 
@@ -50,7 +50,7 @@ namespace EnokoMod.Cards
             return new SelectCardInteraction(1, 1, cards)
             {
                 Source = this,
-                Description = Header
+                Description = Header1
             };
         }
 

@@ -71,7 +71,7 @@ namespace EnokoMod.Cards.Templates
             get { return this.Zone == CardZone.Exile; }
         }
 
-        public abstract int CardIndex { get; }  // currently: 7
+        public abstract int CardIndex { get; }  // currently: 8
 
         public override IEnumerable<BattleAction> OnExile(CardZone srcZone)
         {

@@ -1,11 +1,10 @@
-﻿using LBoL.ConfigData;
+﻿using EnokoMod.Config;
+using EnokoMod.ImageLoader;
+using EnokoMod.Localization;
+using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using System;
-using EnokoMod.Config;
-using EnokoMod.ImageLoader;
-using EnokoMod.Localization;
 
 
 namespace EnokoMod.Cards.Templates

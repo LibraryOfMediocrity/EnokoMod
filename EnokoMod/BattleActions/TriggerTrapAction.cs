@@ -5,6 +5,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace EnokoMod.BattleActions
@@ -43,10 +44,10 @@ namespace EnokoMod.BattleActions
             // nothing happens if the card doesn't exist
             if (Args.Card != null && Args.Card.Zone != CardZone.None)
             {
-                // unit null check
-                if (Args.Units == null)
+                // unit null check, may need dead check?
+                if (Args.Units == null /*|| Args.Units.Any((Unit u) => u.IsAlive == false)*/)
                 {
-                    Debug.LogWarning("Null Units");
+                    Debug.LogWarning("Null or Dead Units");
                     yield break;
                 }
                 // card must be in a valid zone to be triggered

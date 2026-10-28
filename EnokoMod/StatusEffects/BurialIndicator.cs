@@ -1,15 +1,10 @@
-﻿using EnokoMod.Cards;
-using EnokoMod.Cards.Templates;
+﻿using EnokoMod.Cards.Templates;
 using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace EnokoMod.StatusEffects
 {

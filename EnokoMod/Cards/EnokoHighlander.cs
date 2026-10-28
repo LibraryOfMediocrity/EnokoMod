@@ -26,7 +26,8 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Blue };
             config.Cost = new ManaGroup() { Any = 2, Blue = 1 };
             config.Value1 = 1;
-            config.UpgradedKeywords = Keyword.Retain;
+            config.Keywords = Keyword.Retain;
+            config.UpgradedKeywords = Keyword.Retain|Keyword.Initial;
             config.RelativeKeyword = Keyword.Exile;
             config.UpgradedRelativeKeyword = Keyword.Exile;
             config.RelativeEffects = new List<string>() { nameof(TrapCardDisc) };

@@ -42,7 +42,8 @@ namespace EnokoMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            yield return DebuffAction<EnokoStickySe>(selector._selectedEnemy, level: Value1);
+            yield return DebuffAction<EnokoConstrainSe>(selector.SelectedEnemy, level: Value1);
+            yield return DebuffAction<EnokoStickySe>(selector.SelectedEnemy, level: Value1);
             yield break;
         }
     }

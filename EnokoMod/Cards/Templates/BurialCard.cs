@@ -1,13 +1,10 @@
 ﻿using EnokoMod.StatusEffects;
-using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EnokoMod.Cards.Templates
 {

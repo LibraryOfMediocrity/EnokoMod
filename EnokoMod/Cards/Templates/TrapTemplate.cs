@@ -1,7 +1,6 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace EnokoMod.Cards.Templates
 {

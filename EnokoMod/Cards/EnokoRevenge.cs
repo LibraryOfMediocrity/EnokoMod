@@ -28,7 +28,7 @@ namespace EnokoMod.Cards
             config.UpgradedCost = new ManaGroup() { Any = 2 };
             config.Block = 13;
             config.UpgradedBlock = 16;
-            config.Value1 = 3;
+            config.Value1 = 4;
             config.Value2 = 2;
             config.TargetType = TargetType.Self;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };

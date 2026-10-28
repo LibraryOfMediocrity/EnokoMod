@@ -329,6 +329,7 @@ EnokoSticky:
   Name: Sticky Bullets
   Description: |-
     Deal {Damage} damage.
+    Apply {Value1} |Constrain|.
     Apply {Value1} |Constrain| to the selected enemy at the start of each turn.
 
 EnokoScrappy:
@@ -594,13 +595,13 @@ EnokoMalady:
   Description: |-
     Deal {Damage} damage and apply {Value1} |Temporary Firepower Down| to a random enemy {Value2} times.
 
-EnokoSakiFriend:
-  Name: Saki, Keiga Matriarch
-  Description: "{FriendS}|Burial|: At the start of the turn, return {SelfName} to the hand.\n\
-    {FriendP}Gain |Temporary Firepower| equal to {SelfName}'s |Unity|."
-  ExtraDescription1: "{FriendA}Deal {Damage} damage to each enemy {Value1} times, then |Exile| {SelfName}."
-  ShortDescription: At the start of the turn, return this card to the hand.
-  FlavorText: A true leader lends her strength to her allies.
+# { ---------- red ---------- }
+
+EnokoRushdown:
+  Name: Rushdown
+  Description: |-
+    Apply {Value1} |Constrain|.
+    Trigger an attack |Trap Card| in hand {Value2} times, targeting that enemy.
 
 EnokoDucks:
   Name: Sitting Ducks
@@ -620,6 +621,16 @@ EnokoAwakenedTrap:
     |Trap Card|: Triggers at the end of each turn, targeting the enemy with the most life.
     |Triggered|: Deal {Damage} damage. Double this card's damage.
 
+# { ---------- geen ---------- }
+
+EnokoSakiFriend:
+  Name: Saki, Keiga Matriarch
+  Description: "{FriendS}|Burial|: At the start of the turn, return {SelfName} to the hand.\n\
+    {FriendP}Gain |Temporary Firepower| equal to {SelfName}'s |Unity|."
+  ExtraDescription1: "{FriendA}Deal {Damage} damage to each enemy {Value1} times, then |Exile| {SelfName}."
+  ShortDescription: At the start of the turn, return this card to the hand.
+  FlavorText: A true leader lends her strength to her allies.
+
 EnokoTunneler:
   Name: Tunneler
   Description: |-
@@ -637,6 +648,8 @@ EnokoHellPower:
     Deal {Damage} damage.
     |Overflow: Gain {Mana}.|
     |Burial|: At the start of each turn, gain |Temporary Firepower| equal to the number of cards in |Exile|.
+
+# { ---------- boo ---------- }
 
 EnokoBindingTime:
   Name: Binding Time

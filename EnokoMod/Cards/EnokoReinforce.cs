@@ -7,7 +7,6 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
-using LBoL.EntityLib.Cards.Neutral.TwoColor;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 
@@ -23,7 +22,7 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 2, Black = 3 };
             config.UpgradedCost = new ManaGroup() { Any = 1, Black = 2 };
-            config.Value1 = 4;
+            config.Value1 = 3;
             config.RelativeEffects = new List<string>() { nameof(EnokoConstrainSe) };
             config.UpgradedRelativeEffects = config.RelativeEffects;
             config.TargetType = TargetType.Nobody;

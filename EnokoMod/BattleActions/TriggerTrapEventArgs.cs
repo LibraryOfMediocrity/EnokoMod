@@ -1,6 +1,5 @@
 ﻿using EnokoMod.Cards.Templates;
 using LBoL.Core;
-using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using System;
 using System.Linq;

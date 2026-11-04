@@ -92,6 +92,7 @@ namespace EnokoMod.Cards
         }
     }
 
+    [EntityLogic(typeof(EnokoHighlanderSeDef))]
     public sealed class EnokoHighlanderSe : StatusEffect
     {
         protected override void OnAdded(Unit unit)

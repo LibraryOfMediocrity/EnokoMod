@@ -87,7 +87,7 @@ EnokoAoe:
     Trigger an attack |Trap Card| in hand. It will target all enemies.
 
 EnokoTinyTrap:
-  Name: Tiny Traps
+  Name: Tiny Trap
   Description: |-
     |Trap Card|: Triggers at the end of the turn. When played, trigger and increase damage by {Value2} for all {SelfName}.
     |Triggered|: Deal {Damage} damage{Value1:plural one='' other=' % times'}.
@@ -421,7 +421,7 @@ EnokoSet:
   Name: Setup
   Description: |-
     Gain {Block} |Block|.
-    Add |Tiny Traps| to the hand.
+    Add a |Tiny Trap| to the hand.
 
 EnokoBlade:
   Name: Hunting Blade
@@ -476,7 +476,7 @@ EnokoFinisher:
   Name: Finishing Move
   Description: |-
     Deal {Damage} damage.
-    Repeat this damage for each unique debuff on the enemy.
+    Hits an additional time for each unique debuff on the enemy.
 
 EnokoWire:
   Name: Steel Wire
@@ -656,6 +656,13 @@ EnokoBindingTime:
   Description: |-
     Apply {Value1} |Constrain| to each enemy.
     Prevent the next {Value2} times each enemy would lose |Constrain|.
+
+EnokoLink:
+  Name: Chain Link
+  Description: |-
+    |Trap Card|: Triggers when this enters the hand.
+    |Triggered|: Choose {Value1} of {Value2} random cards in the draw pile to put into the hand. 
+  Header1: Choose a card to add to the hand.
 
 EnokoHighlander: 
   Name: Highlander

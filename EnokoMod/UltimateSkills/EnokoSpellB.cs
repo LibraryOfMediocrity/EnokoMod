@@ -18,6 +18,7 @@ namespace EnokoMod.UltimateSkills
             UltimateSkillConfig config = GetDefaulUltConfig();
             config.Value2 = 15;
             config.Value1 = 10;
+            config.Keywords = Keyword.Shield;
             config.RelativeEffects = new List<string>() { "EnokoConstrainSe" };
             return config;
         }

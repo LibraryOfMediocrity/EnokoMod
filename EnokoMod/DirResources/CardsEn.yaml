@@ -89,7 +89,7 @@ EnokoAoe:
 EnokoTinyTrap:
   Name: Tiny Trap
   Description: |-
-    |Trap Card|: Triggers at the end of the turn. When played, trigger and increase damage by {Value2} for all {SelfName}.
+    |Trap Card|: Triggers at the end of the turn. When played, trigger and increase all {SelfName}'s damage by {Value2}.
     |Triggered|: Deal {Damage} damage{Value1:plural one='' other=' % times'}.
   FlavorText: They make up for their size with large numbers.
 
@@ -153,7 +153,7 @@ EnokoMulligan:
   Name: Mulligan
   Description: |-
     Choose a card in hand. Swap it with a card of the same type in the draw pile.
-    If there are no cards of the same type in the draw pile, instead shuffle the card into the draw pile and draw {Value1} card.
+    If there is none, instead shuffle the card into the draw pile and draw {Value1} card.
   Header1: Choose a card to move to the draw pile.
   Header2: Choose a card to move to the hand.
 
@@ -535,7 +535,7 @@ EnokoGoldberg:
     Choose {Value1} |Trap Cards| in hand, one after the other.
     Whenever the first |Trap Card| is triggered, trigger the second |Trap Card|{Value2:plural one='' other=' % times'}. It uses the same targeting as the first.
     There must be at least two |Trap Cards| in hand to play this card.
-  DetailText: Triggering the trap with this effect won't activate the effect because that would allow an infinite loop of course
+  DetailText: This effect will not trigger if the trap card was triggered by this effect.
   Header1: Choose the Trap Card that gives Triggers
   Header2: Choose the Trap Card that recieves Triggers
 
@@ -610,16 +610,14 @@ EnokoDucks:
     Enemies can no longer remove |Lock On|.
 
 EnokoSlumberingTrap:
-  Name: Slumbering Maw
+  Name: The Great Maw
   Description: |-
     |Trap Card|: Triggers at the end of each turn.
-    |Triggered|: Deal {Damage} damage. After this card has been triggered for the {Value1}th time, add |Awakened Maw| to the hand and remove this card from combat.
-
-EnokoAwakenedTrap:
-  Name: Awakened Maw
-  Description: |-
-    |Trap Card|: Triggers at the end of each turn, targeting the enemy with the most life.
-    |Triggered|: Deal {Damage} damage. Double this card's damage.
+    |Triggered|: Deal {Damage} damage. If this card has been triggered at least {Value1} times, double this card's damage. 
+    ({Remaining} times left)
+  NonbattleDescription: |-
+    |Trap Card|: Triggers at the end of each turn.
+    |Triggered|: Deal {Damage} damage. If this card has been triggered at least {Value1} times, double this card's damage.
 
 # { ---------- geen ---------- }
 
@@ -651,8 +649,8 @@ EnokoHellPower:
 
 # { ---------- boo ---------- }
 
-EnokoBindingTime:
-  Name: Binding Time
+EnokoBonding:
+  Name: Bonding Time
   Description: |-
     Apply {Value1} |Constrain| to each enemy.
     Prevent the next {Value2} times each enemy would lose |Constrain|.
@@ -667,7 +665,7 @@ EnokoLink:
 EnokoHighlander: 
   Name: Highlander
   Description: |-
-    Choose a |Trap Card|. |Exile| all other |Trap Cards| in hand. Trigger the selected |Trap Card| once for each card |Exiled| this way.
+    Choose an attack |Trap Card|. |Exile| all other |Trap Cards| in hand. Trigger the selected |Trap Card| once for each card |Exiled| this way.
     Whenever another |Trap Card| enters the hand, |Exile| it and trigger the selected |Trap Card|.
   Header1: Choose a Trap Card.
 

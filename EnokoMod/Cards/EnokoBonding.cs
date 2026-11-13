@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace EnokoMod.Cards
 {
-    public sealed class EnokoBindingTimeDef : EnokoCardTemplate
+    public sealed class EnokoBondingDef : EnokoCardTemplate
     {
         public override CardConfig MakeConfig()
         {
@@ -32,8 +32,8 @@ namespace EnokoMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnokoBindingTimeDef))]
-    public sealed class EnokoBindingTime : Card 
+    [EntityLogic(typeof(EnokoBondingDef))]
+    public sealed class EnokoBonding : Card 
     {
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

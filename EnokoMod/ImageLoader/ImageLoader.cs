@@ -1,5 +1,4 @@
-﻿using System;
-using LBoLEntitySideloader;
+﻿using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using UnityEngine;

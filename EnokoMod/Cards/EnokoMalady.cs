@@ -21,10 +21,10 @@ namespace EnokoMod.Cards
             config.Type = CardType.Attack;
             config.Colors = new List<ManaColor>() { ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Black = 1 };
-            config.Damage = 7;
+            config.Damage = 6;
             config.Value1 = 1;
             config.Value2 = 3;
-            config.UpgradedValue2 = 5;
+            config.UpgradedValue2 = 4;
             config.RelativeEffects = new List<string>() { nameof(TempFirepowerNegative) };
             config.UpgradedRelativeEffects = config.RelativeEffects;
             config.TargetType = TargetType.RandomEnemy;

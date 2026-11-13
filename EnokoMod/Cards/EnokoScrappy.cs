@@ -22,11 +22,11 @@ namespace EnokoMod.Cards
             config.Type = CardType.Defense;
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 1, White = 1 };
-            config.Shield = 5;
-            config.UpgradedShield = 7;
+            config.Shield = 6;
+            config.UpgradedShield = 8;
             config.Value1 = 3;
-            config.Value2 = 7;
-            config.UpgradedValue2 = 10;
+            config.Value2 = 6;
+            config.UpgradedValue2 = 7;
             config.TargetType = TargetType.Nobody;
             config.RelativeKeyword = Keyword.Upgrade | Keyword.Exile | Keyword.Shield;
             config.UpgradedRelativeKeyword = Keyword.Upgrade | Keyword.Exile | Keyword.Shield;

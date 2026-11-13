@@ -9,5 +9,5 @@ EnokoUltB:
   Title: Title
   Content: Ult B
   Description: |-
-    Deal {Damage} damage to each enemy. |Accurate|
+    Gain {Value1} |Barrier|.
     Apply {Value1} |Constrain| to each enemy.

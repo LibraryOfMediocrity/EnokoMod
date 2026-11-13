@@ -20,12 +20,12 @@ namespace EnokoMod.Cards
             CardConfig config = GetCardDefaultConfig();
             config.Rarity = Rarity.Uncommon;
             config.Type = CardType.Attack;
-            config.Damage = 5;
+            config.Damage = 1;
             config.Value1 = 2;
             config.Value2 = 1;
             config.UpgradedValue2 = 2;
             config.Colors = new List<ManaColor>() { ManaColor.White };
-            config.Cost = new ManaGroup() { Any = 1 };
+            config.Cost = new ManaGroup() { White = 1 };
             config.TargetType = TargetType.SingleEnemy;
             config.RelativeEffects = new List<string>() { nameof(Firepower), nameof(Burial) };
             config.UpgradedRelativeEffects = config.RelativeEffects;

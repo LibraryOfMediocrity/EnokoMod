@@ -3,7 +3,6 @@ using EnokoMod.Cards.Templates;
 using LBoL.Base;
 using LBoL.Base.Extensions;
 using LBoL.ConfigData;
-using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;

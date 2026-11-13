@@ -5,7 +5,6 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace EnokoMod.BattleActions
@@ -54,7 +53,7 @@ namespace EnokoMod.BattleActions
                 if (Args.Card.Zone == CardZone.Hand || Args.Card.Zone == CardZone.PlayArea || Args.Card.Zone == CardZone.FollowArea)
                 {
                     // pre event reactors
-                    yield return CreateEventPhase<TriggerTrapEventArgs>("PreTrigger", Args, EnokoGameEvents.PreTriggerEvent);
+                    yield return CreateEventPhase("PreTrigger", Args, EnokoGameEvents.PreTriggerEvent);
 
                     List<DamageAction> damageActions = new List<DamageAction>();
                     yield return CreatePhase("Main", delegate
@@ -79,7 +78,7 @@ namespace EnokoMod.BattleActions
                         base.Battle.React(new SpecialResolveAction(Args.Card), Args.Card, ActionCause.Card);
                     });
                     // post event reactors
-                    yield return CreateEventPhase<TriggerTrapEventArgs>("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
+                    yield return CreateEventPhase("PostTrigger", Args, EnokoGameEvents.PostTriggerEvent);
                 }
             }
             yield break;

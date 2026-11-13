@@ -23,9 +23,8 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             config.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 1 };
             config.Mana = new ManaGroup() { Philosophy = 3 };
-            config.UpgradedMana = new ManaGroup() { Philosophy = 4 };
+            config.UpgradedMana = new ManaGroup() { Philosophy = 5 };
             config.Value1 = 5;
-            config.UpgradedValue1 = 8;
             config.RelativeKeyword = Keyword.Philosophy;
             config.UpgradedRelativeKeyword = Keyword.Philosophy;
             config.TargetType = TargetType.Nobody;

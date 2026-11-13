@@ -22,8 +22,8 @@ namespace EnokoMod.Cards
             config.Type = CardType.Defense;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Hybrid = 2, HybridColor = 1};
-            config.Shield = 16;
-            config.UpgradedShield = 20;
+            config.Shield = 11;
+            config.UpgradedShield = 14;
             config.Value1 = 1;
             config.RelativeKeyword = Keyword.Shield|Keyword.Echo;
             config.UpgradedRelativeKeyword = Keyword.Shield|Keyword.Echo;

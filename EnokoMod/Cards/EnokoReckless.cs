@@ -20,9 +20,9 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Uncommon;
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
-            config.Cost = new ManaGroup() { Any = 1, Hybrid = 2, HybridColor = 1 };
-            config.UpgradedCost = new ManaGroup() { Hybrid = 2, HybridColor = 1 };
-            config.Value1 = 4;
+            config.Cost = new ManaGroup() { Hybrid = 2, HybridColor = 1 };
+            config.Value1 = 6;
+            config.UpgradedValue1 = 4;
             config.TargetType = TargetType.SingleEnemy;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;

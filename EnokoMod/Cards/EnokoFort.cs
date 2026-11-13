@@ -9,10 +9,8 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader.Attributes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EnokoMod.Cards
 {

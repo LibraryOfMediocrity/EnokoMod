@@ -11,13 +11,10 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Cards;
 using LBoL.EntityLib.Cards.Enemy;
-using LBoL.EntityLib.Cards.Neutral.Green;
 using LBoL.EntityLib.StatusEffects.Enemy;
 using LBoLEntitySideloader.Attributes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EnokoMod.Cards
 {
@@ -244,7 +241,7 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.White };
             config.Cost = new ManaGroup() { Any = 0 };
             config.Value1 = 2;
-            config.UpgradedValue1 = 4;
+            config.UpgradedValue1 = 3;
             config.TargetType = TargetType.Nobody;
             config.RelativeEffects = new List<string>() { "Firepower", "Spirit" };
             config.UpgradedRelativeEffects = new List<string>() { "Firepower", "Spirit" };

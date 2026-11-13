@@ -23,8 +23,8 @@ namespace EnokoMod.Cards
             config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             config.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 1 };
             config.Value1 = 2;
-            config.Value2 = 2;
-            config.UpgradedValue2 = 4;
+            config.Value2 = 3;
+            config.UpgradedValue2 = 5;
             config.TargetType = TargetType.AllEnemies;
             config.RelativeEffects = new List<string>() { nameof(TempFirepowerNegative) };
             config.UpgradedRelativeEffects = new List<string>() { nameof(TempFirepowerNegative) };

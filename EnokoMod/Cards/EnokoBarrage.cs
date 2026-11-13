@@ -21,11 +21,12 @@ namespace EnokoMod.Cards
             config.Rarity = Rarity.Uncommon;
             config.Type = CardType.Skill;
             config.Colors = new List<ManaColor>() { ManaColor.White };
-            config.Value1 = 3;
+            config.Value1 = 2;
+            config.UpgradedValue1 = 3;
             config.Cost = new ManaGroup() { White = 1 };
+            config.UpgradedCost = new ManaGroup() { Any = 1 };
             config.TargetType = TargetType.Nobody;
             config.RelativeCards = new List<string>() { nameof(EnokoTinyTrap) };
-            config.UpgradedRelativeCards = new List<string>() { nameof(EnokoTinyTrap) + "+" };
             config.RelativeEffects = new List<string>() { nameof(TrapCardDisc), nameof(Burial) };
             config.UpgradedRelativeEffects = config.RelativeEffects;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
@@ -58,7 +59,7 @@ namespace EnokoMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new AddCardsToHandAction(Library.CreateCards<EnokoTinyTrap>(Value1, IsUpgraded));
+            yield return new AddCardsToHandAction(Library.CreateCards<EnokoTinyTrap>(Value1));
             yield break;
         }
     }

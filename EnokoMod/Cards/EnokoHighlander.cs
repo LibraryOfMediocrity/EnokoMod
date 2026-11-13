@@ -50,7 +50,7 @@ namespace EnokoMod.Cards
             }
             else
             {
-                SelectHandInteraction interaction = new SelectHandInteraction(1, 1, Battle.HandZone.Where((Card c) => c is TrapCard))
+                SelectHandInteraction interaction = new SelectHandInteraction(1, 1, Battle.HandZone.Where((Card c) => c is TrapCard && c.CardType == CardType.Attack))
                 {
                     Source = this,
                     Description = Header1
@@ -70,10 +70,10 @@ namespace EnokoMod.Cards
                 if(card != null && card is TrapCard trapcard)
                 {
                     Battle.Player.GetStatusEffect<EnokoHighlanderSe>().TrapCard = trapcard;
-                    List<Card> trapcards = Battle.HandZone.Where(card => card is TrapCard).ToList();
+                    List<Card> trapcards = Battle.HandZone.Where((Card c) => c is TrapCard && c != trapcard).ToList();
                     foreach (Card c in trapcards)
                     {
-                        yield return new ExileCardAction(card);
+                        yield return new ExileCardAction(c);
                         yield return new TriggerTrapAction(trapcard);
                     }
                 }

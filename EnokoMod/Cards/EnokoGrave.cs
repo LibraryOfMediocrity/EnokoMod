@@ -117,7 +117,7 @@ namespace EnokoMod.Cards
         {
             get
             {
-                return this.LocalizeProperty("Header");
+                return this.LocalizeProperty("Header1");
             }
         }
 

@@ -27,6 +27,8 @@ namespace EnokoMod.Cards
             config.UpgradedValue1 = 5;
             config.Value2 = 2;
             config.TargetType = TargetType.SingleEnemy;
+            config.RelativeEffects = new List<string>() { nameof(TrapCardDisc), nameof(EnokoConstrainSe) };
+            config.UpgradedRelativeEffects = config.RelativeEffects;
             config.Index = CardIndexGenerator.GetUniqueIndex(config);
             return config;
         }
